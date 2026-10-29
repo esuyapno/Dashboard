@@ -1,0 +1,113 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+$anthracite:      #2B2B2E;
+$anthracite-card: #36363A;
+$anthracite-deep: #1F1F21;
+$gold:            #AF8B2F;   // GOLD: website uses #B5943F
+$gold-light:      #C9AA58;
+$text-light:      #E8E6E1;
+$text-muted:      #B8B0A4;
+$line-grey:       #45454A;
+
+$font-family-sans-serif: "DM Sans", system-ui, sans-serif;
+$headings-font-family:   "Syne", "DM Sans", sans-serif;
+
+$body-bg:            $anthracite;
+$body-color:         $text-light;
+$primary:            $gold;
+$link-color:         $gold-light;
+$navbar-bg:          $anthracite-deep;
+$navbar-fg:          $text-light;
+$navbar-hl:          $gold;
+$card-bg:            $anthracite-card;
+$card-cap-bg:        $anthracite-card;
+$card-border-color:  $line-grey;
+$border-color:       $line-grey;
+$input-bg:           $anthracite-deep;
+$input-color:        $text-light;
+$input-border-color: $line-grey;
+
+/*-- scss:rules --*/
+body {
+  background-color: $anthracite;
+  font-weight: 300;
+}
+
+/* Top bar */
+.navbar {
+  border-bottom: 1px solid rgba(175, 139, 47, 0.18);
+}
+.navbar-title {
+  font-family: $headings-font-family;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.navbar-logo, .navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Cards: rounded like the website */
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Card titles styled like the website's section labels */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  background: transparent;
+  border-bottom: 1px solid $line-grey;
+  color: $gold;
+  font-family: $font-family-sans-serif;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+.card-header::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: $gold;
+}
+
+/* "About this data" text */
+.about-text {
+  font-size: .82rem;
+  line-height: 1.7;
+  color: $text-muted;
+}
+.about-text strong {
+  color: $text-light;
+  font-weight: 500;
+}
+/* Stack the subtitle under the title, with the logo on the left */
+.navbar-brand-container {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: .9rem;
+  row-gap: .1rem;
+  align-items: center;
+}
+.navbar-brand-container .navbar-brand {
+  grid-row: 1 / span 2;          /* logo spans both lines */
+}
+.navbar-brand-container .navbar-title {
+  grid-column: 2;
+  grid-row: 1;
+  line-height: 1.1;
+}
+.navbar-brand-container .navbar-subtitle {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: $text-muted;
+}

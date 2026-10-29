@@ -1,0 +1,68 @@
+iso3,top_crisis,severity,crises,country,inform_month
+MMR,Complex crisis in Myanmar,9.5,1,Myanmar (Burma),Sep2026
+SDN,Complex crisis in Sudan,9.5,1,Sudan,Sep2026
+SSD,Complex crisis in South Sudan,9.5,2,South Sudan,Sep2026
+YEM,Complex crisis in Yemen,9.3,2,Yemen,Sep2026
+AFG,Complex crisis in Afghanistan,9.2,1,Afghanistan,Sep2026
+COD,Complex crisis in DRC,9.2,1,Congo - Kinshasa,Sep2026
+UKR,Conflict in Ukraine,9.1,1,Ukraine,Sep2026
+HTI,Complex crisis in Haiti,8.9,1,Haiti,Sep2026
+SYR,Complex crisis in Syria,8.9,1,Syria,Sep2026
+SOM,Complex crisis in Somalia,8.7,2,Somalia,Sep2026
+ETH,Multiple crises in Ethiopia,8.6,2,Ethiopia,Sep2026
+IRN,Multiple crises in Iran,8.6,2,Iran,Sep2026
+MLI,Complex crisis in Mali,8.6,1,Mali,Sep2026
+COL,Multiple Crises in Colombia,8.5,3,Colombia,Sep2026
+NGA,Multiple Crises in Nigeria,8.5,4,Nigeria,Sep2026
+VEN,Multiple Crises in Venezuela,8.5,2,Venezuela,Sep2026
+BFA,Conflict and Climatic Shocks in Burkina Faso,8.4,1,Burkina Faso,Sep2026
+PSE,Multiple crises in Palestine,8.4,2,Palestinian Territories,Sep2026
+TCD,Complex crisis in Chad,8.4,2,Chad,Sep2026
+PAK,Multiple crises in Pakistan,8.3,2,Pakistan,Sep2026
+CMR,Complex crisis in Cameroon,8.2,1,Cameroon,Sep2026
+LBN,Complex crisis in Lebanon,8.1,2,Lebanon,Sep2026
+CAF,Conflict and Climatic Shocks in CAR,8,1,Central African Republic,Sep2026
+NER,Complex crisis in Niger,7.8,1,Niger,Sep2026
+ECU,Multiple crises in Ecuador,7.4,2,Ecuador,Sep2026
+GTM,Climatic Shocks and Violence in Guatemala,7.4,1,Guatemala,Sep2026
+LBY,Multiple crises in Libya,7.2,2,Libya,Sep2026
+TUR,Multiple Crises in Türkiye,7,2,Turkey,Sep2026
+BGD,Multiple crises in Bangladesh,6.9,2,Bangladesh,Sep2026
+CUB,Complex Crisis in Cuba,6.9,1,Cuba,Sep2026
+HND,Climatic Shocks and Conflict and Violence in Honduras,6.9,1,Honduras,Sep2026
+IRQ,Internal displacement in Iraq,6.9,1,Iraq,Sep2026
+KEN,Multiple crises in Kenya,6.8,2,Kenya,Sep2026
+MWI,Climatic shocks in Malawi,6.6,1,Malawi,Sep2026
+ERI,Complex crisis in Eritrea,6.5,1,Eritrea,Sep2026
+ZMB,Drought in Zambia,6.2,1,Zambia,Sep2026
+DJI,Multiple crises in Djibouti,6.1,2,Djibouti,Sep2026
+MRT,Multiple crises in Mauritania,6.1,2,Mauritania,Sep2026
+PER,Displacement from Venezuela to Peru,6,1,Peru,Sep2026
+EGY,International displacement to Egypt,5.8,1,Egypt,Sep2026
+MEX,International Displacement to Mexico,5.8,1,Mexico,Sep2026
+PHL,Multiple crises in the Philippines,5.8,3,Philippines,Sep2026
+SLV,Political and Economic crisis in El Salvador,5.8,1,El Salvador,Sep2026
+JOR,International displacement from Syria to Jordan,5.7,1,Jordan,Sep2026
+DZA,Multiple crises in Algeria,5.6,2,Algeria,Sep2026
+IDN,Multiple crises in Indonesia,5.5,2,Indonesia,Sep2026
+TZA,Multiple Crises in Tanzania,5.5,2,Tanzania,Sep2026
+NAM,Drought in Namibia,5.3,1,Namibia,Sep2026
+BRA,Displacement from Venezuela to Brazil,5.2,1,Brazil,Sep2026
+SWZ,Drought in Eswatini,5.2,1,Eswatini,Sep2026
+BDI,Displacement from Eastern DRC,5.1,1,Burundi,Sep2026
+CHL,Displacement from Venezuela to Chile,5,1,Chile,Sep2026
+BEN,Conflict in northern region of Benin,4.7,1,Benin,Sep2026
+LSO,Drought in Lesotho,4.7,1,Lesotho,Sep2026
+CRI,Multiple Crises in Costa Rica,4.6,2,Costa Rica,Sep2026
+TGO,Conflict in Savanes region,4.6,1,Togo,Sep2026
+CIV,Displacement from Burkina Faso to northern Côte d’Ivoire,4.5,1,Côte d’Ivoire,Sep2026
+THA,Displacement from Myanmar to Thailand,4.4,1,Thailand,Sep2026
+GRC,International Displacement to Greece,4.3,1,Greece,Sep2026
+DOM,Displacement from Venezuela to Dominican Republic,4.2,1,Dominican Republic,Sep2026
+TUN,International displacement to Tunisia,4,1,Tunisia,Sep2026
+ITA,International Displacement to Italy,3.8,1,Italy,Sep2026
+MYS,International Displacement to Malaysia,3.8,1,Malaysia,Sep2026
+PAN,Displacement from Venezuela to Panama,3.8,1,Panama,Sep2026
+MAR,International displacement to Morocco,3.6,1,Morocco,Sep2026
+ESP,International displacement to Spain,3.5,1,Spain,Sep2026
+TTO,Displacement from Venezuela to Trinidad and Tobago,3.4,1,Trinidad & Tobago,Sep2026

@@ -1,0 +1,284 @@
+---
+title: "Severe Crises. Silent Headlines."
+subtitle: Tracking where suffering is high and global attention is low
+format:
+  dashboard:
+    orientation: rows
+    scrolling: true
+    theme: [darkly, brand.scss]
+    logo: logo.png
+    embed-resources: true
+output-file: index.html
+---
+
+```{r}
+#| include: false
+library(dplyr)
+library(plotly)
+library(reactable)
+library(readr)
+
+# ---- Brand -------------------------------------------------------------
+anthracite <- "#2B2B2E"
+card_grey  <- "#36363A"
+deep_grey  <- "#1F1F21"
+line_grey  <- "#45454A"
+gold       <- "#AF8B2F"   # GOLD: website uses #B5943F
+gold_light <- "#C9AA58"
+gold_pale  <- "#F0D48A"
+text_light <- "#E8E6E1"
+trend_colours <- c("#FFF1C4", gold, text_light, "#E0BE62", "#8C8C92", gold_light, "#B8B0A4", "#7A6328")
+trend_dashes  <- c("solid", "solid", "dash", "dash", "dot", "dot", "dashdot", "dashdot")
+
+chart_font <- list(color = text_light, family = "DM Sans, sans-serif")
+dark_axis  <- list(gridcolor = line_grey, zerolinecolor = line_grey,
+                   linecolor = line_grey, tickfont = chart_font)
+
+# Dates written in English whatever the computer's language
+month_label <- function(ym) paste(month.name[as.integer(substr(ym, 6, 7))], substr(ym, 1, 4))
+date_label  <- function(d) paste(as.integer(format(d, "%d")),
+                                 month.abb[as.integer(format(d, "%m"))], format(d, "%Y"))
+
+# ---- Severity (ACAPS INFORM): decides the countries AND the month ------
+severity <- read_csv("data/severity.csv", show_col_types = FALSE)
+im <- unique(severity$inform_month)
+if (length(im) != 1) stop("severity.csv contains more than one INFORM month. Re-run 03_inform.R.")
+ref_month <- sprintf("%s-%02d", substr(im, 4, 7), match(substr(im, 1, 3), month.abb))
+ref_label <- month_label(ref_month)
+
+# ---- News attention (GDELT): locked to the INFORM month ----------------
+attention_all <- read_csv("data/attention_monthly.csv", show_col_types = FALSE)
+if (!"iso3" %in% names(attention_all)) {             # old 5-country test file
+  attention_all <- attention_all |>
+    mutate(iso3 = recode(country, Sudan = "SDN", DRC = "COD", Haiti = "HTI",
+                         Myanmar = "MMR", Ukraine = "UKR"))
+}
+if (!ref_month %in% attention_all$month) {
+  stop("GDELT has no data for ", ref_label, ", the INFORM month. ",
+       "Re-run the scripts so both sources cover the same month.")
+}
+attention <- attention_all |>
+  filter(month == ref_month) |>
+  select(iso3, attention = share_per_10k)
+
+# ---- Funding (OCHA FTS): year-to-date ----------------------------------
+funding_raw  <- read_csv("data/funding.csv", show_col_types = FALSE)
+funding_date <- if ("as_of" %in% names(funding_raw)) max(funding_raw$as_of) else
+                  as.Date(file.info("data/funding.csv")$mtime)
+funding <- select(funding_raw, iso3, funded_pct)
+
+# ---- Combine -----------------------------------------------------------
+neglect <- severity |>
+  select(iso3, country, severity, top_crisis, crises) |>
+  left_join(attention, by = "iso3") |>
+  left_join(funding,   by = "iso3")
+
+scatter_data <- neglect |>
+  filter(!is.na(attention)) |>
+  mutate(gap   = severity - log1p(attention),
+         label = ifelse(rank(-severity, ties.method = "first") <= 8, country, ""),
+         dot   = ifelse(label != "", gold_pale, gold))
+
+top <- scatter_data |> arrange(desc(gap))
+
+trend_iso <- neglect |> filter(!is.na(attention)) |>
+  arrange(desc(severity)) |> slice_head(n = 8) |> pull(iso3)
+trend_data <- attention_all |>
+  filter(iso3 %in% trend_iso, month <= ref_month) |>
+  select(iso3, month, share_per_10k) |>
+  left_join(select(neglect, iso3, name = country), by = "iso3") |>
+  arrange(month) |>
+  mutate(month_lab = paste0(month.abb[as.integer(substr(month, 6, 7))], "-", substr(month, 3, 4)),
+         month_lab = factor(month_lab, levels = unique(month_lab)))
+
+value_style <- "font-family: Syne, sans-serif; font-weight: 700; font-size: 1.7rem;"
+```
+
+## Row {height=170px}
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Countries in crisis", style = paste0("color:", gold, "; font-weight: 500;")),
+  value    = htmltools::tags$span(nrow(neglect), style = value_style),
+  showcase = bsicons::bs_icon("globe", color = gold, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = card_grey, fg = text_light)
+)
+```
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Most neglected", style = paste0("color:", anthracite, "; font-weight: 500;")),
+  value    = htmltools::tags$span(top$country[1], style = value_style),
+  showcase = bsicons::bs_icon("exclamation-triangle", color = anthracite, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = gold, fg = anthracite)
+)
+```
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Reference month", style = paste0("color:", gold, "; font-weight: 500;")),
+  value    = htmltools::tags$span(ref_label, style = value_style),
+  showcase = bsicons::bs_icon("calendar3", color = gold, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = card_grey, fg = text_light)
+)
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Crisis severity map"
+plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
+        text = ~paste0(country, "<br>", top_crisis),
+        hovertemplate = "<b>%{text}</b><br>Severity: %{z:.1f}<extra></extra>",
+        colorscale = list(c(0, "#6B5520"), c(0.35, gold), c(0.7, "#E0BE62"), c(1, "#FFF1C4")),
+        colorbar = list(title = list(text = "Crisis<br>Severity<br>Score", side = "top", font = chart_font),
+                        tickfont = chart_font, outlinewidth = 0,
+                        x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle",
+                        len = 0.6, thickness = 20),
+        marker = list(line = list(color = anthracite, width = 0.5))) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", font = chart_font,
+         geo = list(bgcolor = "rgba(0,0,0,0)", showframe = FALSE,
+                    projection = list(type = "orthographic",
+                                      rotation = list(lon = 20, lat = 10)),
+                    showocean = TRUE, oceancolor = "#1A1A1C",
+                    showland = TRUE, landcolor = "#3E3E44",
+                    showcountries = TRUE, countrycolor = "#55555B",
+                    showcoastlines = FALSE,
+                    lonaxis = list(showgrid = TRUE, gridcolor = "#2A2A2E"),
+                    lataxis = list(showgrid = TRUE, gridcolor = "#2A2A2E")),
+         margin = list(l = 0, r = 0, t = 0, b = 0)) |>
+   htmlwidgets::onRender("
+    function(el) {
+      var lon = 20, paused = false, mode = 'globe';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Pause while the mouse is over the map (or briefly after a tap)
+      el.addEventListener('mouseenter', function() { paused = true; });
+      el.addEventListener('mouseleave', function() { paused = false; });
+      el.addEventListener('touchstart', function() {
+        paused = true;
+        setTimeout(function() { paused = false; }, 6000);
+      });
+
+      function showFlat() {
+        mode = 'flat';
+        Plotly.relayout(el, {
+          'geo.projection.type': 'natural earth',
+          'geo.projection.rotation.lon': 0,
+          'geo.projection.rotation.lat': 0,
+          'geo.showocean': false,
+          'geo.lonaxis.showgrid': false,
+          'geo.lataxis.showgrid': false
+        });
+      }
+
+      function showGlobe() {
+        mode = 'globe';
+        Plotly.relayout(el, {
+          'geo.projection.type': 'orthographic',
+          'geo.projection.rotation.lon': lon,
+          'geo.projection.rotation.lat': 10,
+          'geo.showocean': true,
+          'geo.lonaxis.showgrid': true,
+          'geo.lataxis.showgrid': true
+        });
+      }
+
+      // Expanded = the map fills most of the screen in both width and height
+      function checkSize() {
+        var expanded = el.clientWidth  > window.innerWidth  * 0.7 &&
+                       el.clientHeight > window.innerHeight * 0.7;
+        if (expanded && mode === 'globe') showFlat();
+        if (!expanded && mode === 'flat') showGlobe();
+      }
+
+      var resizeTimer = null;
+      new ResizeObserver(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(checkSize, 150);
+      }).observe(el);
+
+      // Slow turning, only in globe mode
+      function spin() {
+        if (mode === 'globe' && !paused && !reduceMotion &&
+            document.visibilityState === 'visible') {
+          lon = lon - 0.5;
+          if (lon < -180) lon += 360;
+          Plotly.relayout(el, {'geo.projection.rotation.lon': lon});
+        }
+        setTimeout(spin, 60);
+      }
+      spin();
+    }
+  ")
+```
+
+```{r}
+#| title: "Crisis Severity vs. Media Attention"
+plot_ly(scatter_data, x = ~attention, y = ~severity,
+        text = ~label, customdata = ~country,
+        type = "scatter", mode = "markers+text", textposition = "top center",
+        hovertemplate = "<b>%{customdata}</b><br>Severity: %{y:.1f}<br>News share: %{x:.0f}<extra></extra>",
+        marker = list(color = scatter_data$dot, size = 11, opacity = 0.9,
+                      line = list(color = gold_pale, width = 1)),
+        textfont = list(color = text_light, size = 11, family = "DM Sans, sans-serif")) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
+         font  = chart_font,
+         xaxis = c(dark_axis, list(title = "News share (per 10k articles, log scale)", type = "log",
+                                   tickvals = c(0.1, 1, 10, 100, 1000),
+                                   ticktext = c("0.1", "1", "10", "100", "1,000"))),
+         yaxis = c(dark_axis, list(title = "Crisis Severity Score")))
+```
+
+## Row {height=440px}
+
+```{r}
+#| title: "News attention: 8 most severe crises"
+plot_ly(trend_data, x = ~month_lab, y = ~share_per_10k, color = ~name,
+        colors = trend_colours, linetype = ~name, linetypes = trend_dashes,
+        type = "scatter", mode = "lines+markers",
+        hovertemplate = "<b>%{fullData.name}</b><br>%{x}: %{y:.0f} per 10k articles<extra></extra>",
+        line = list(width = 3), marker = list(size = 8)) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
+         font   = chart_font,
+         legend = list(orientation = "h", y = -0.2, font = chart_font),
+         xaxis  = c(dark_axis, list(title = "")),
+         yaxis  = c(dark_axis, list(title = "Share per 10k articles", tickformat = ".0f")))
+```
+
+```{r}
+#| title: "All countries"
+reactable(neglect,
+          searchable = TRUE, highlight = TRUE, compact = TRUE,
+          defaultSorted = "severity", defaultSortOrder = "desc",
+          columns = list(
+            iso3       = colDef(show = FALSE),
+            country    = colDef(name = "Country", minWidth = 110),
+            severity   = colDef(name = "Severity", format = colFormat(digits = 1)),
+            top_crisis = colDef(name = "Main crisis", minWidth = 160),
+            crises     = colDef(name = "Crises"),
+            attention  = colDef(name = "News share", format = colFormat(digits = 0)),
+            funded_pct = colDef(name = "Funded", format = colFormat(suffix = "%"))
+          ),
+          theme = reactableTheme(
+            color = text_light, backgroundColor = card_grey,
+            borderColor = line_grey, highlightColor = line_grey,
+            style = list(fontFamily = "DM Sans, sans-serif"),
+            headerStyle = list(background = deep_grey, color = gold,
+                               textTransform = "uppercase", letterSpacing = "0.1em",
+                               fontSize = "0.72rem", fontWeight = 500),
+            searchInputStyle = list(backgroundColor = deep_grey, color = text_light,
+                                    borderColor = line_grey)
+          ))
+```
+
+## Row
+
+::: {.card title="About this data"}
+::: {.about-text}
+**Severity:** ACAPS INFORM Severity Index, `r ref_label`. Where a country has several crises, the most severe is shown.
+**Media attention:** each country's share of global online news coverage, GDELT Project, `r ref_label`.
+**Funding:** OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, year-to-date as of `r date_label(funding_date)`.
+**Coverage:** countries with at least one crisis scored by INFORM in the reference month. © `r format(Sys.Date(), "%Y")` SA Analytical.
+:::
+:::
