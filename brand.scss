@@ -111,3 +111,23 @@ body {
   text-transform: uppercase;
   color: $text-muted;
 }
+
+/* ---------- Phones and small tablets ---------- */
+@media (max-width: 768px) {
+
+  /* Title bar: smaller logo and title, hide the subtitle */
+  .navbar-logo, .navbar-brand img { max-height: 28px; }
+  .navbar-title { font-size: 1.05rem; }
+  .navbar-subtitle { display: none; }
+
+  /* Value boxes: smaller numbers so country names fit */
+  .bslib-value-box span[style*="Syne"] { font-size: 1.25rem !important; }
+  .bslib-value-box .value-box-showcase svg { width: 1.8rem; height: 1.8rem; }
+
+  /* Charts and table: give each card a comfortable height once stacked */
+  .card:has(.plotly), .card:has(.reactable) { min-height: 420px; }
+
+  /* Smaller card titles and About text */
+  .card-header { font-size: .62rem; letter-spacing: .16em; }
+  .about-text { font-size: .78rem; }
+}

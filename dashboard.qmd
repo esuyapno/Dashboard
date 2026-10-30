@@ -276,9 +276,11 @@ reactable(neglect,
 
 ::: {.card title="About this data"}
 ::: {.about-text}
-**Severity:** ACAPS INFORM Severity Index, `r ref_label`. Where a country has several crises, the most severe is shown.
-**Media attention:** each country's share of global online news coverage, GDELT Project, `r ref_label`.
-**Funding:** OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, year-to-date as of `r date_label(funding_date)`.
-**Coverage:** countries with at least one crisis scored by INFORM in the reference month. © `r format(Sys.Date(), "%Y")` SA Analytical.
+**Crisis Severity Score:** ACAPS INFORM Severity (o-10 scale), country level score, `r ref_label`.<br>
+**Media attention:** each country's share of global online news coverage, GDELT Project, `r ref_label`.<br>
+**Funding:** OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, year-to-date as of `r date_label(funding_date)`.<br>
+**Coverage:** the `r nrow(neglect)` countries ACAPS reports in crisis in `r ref_label`.<br>
+**Disclaimer:** ACAPS, the GDELT Project and OCHA are independent data providers. They are not affiliated with SA Analytical and do not endorse this dashboard. The analysis are SA Analytical's own.<br>
+© `r format(Sys.Date(), "%Y")` SA Analytical. All rights reserved. Dashboard design and analysis by SA Analytical; underlying data remain the property of their respective providers.
 :::
 :::

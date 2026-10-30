@@ -1,13 +1,18 @@
-   .Renviron
-   .Rhistory
-   .RData
-   .Rproj.user/
-   /index.html
-   *_files/
-.Rproj.user
+# R and RStudio
+.Renviron
 .Rhistory
 .RData
+.Rproj.user/
 .httr-oauth
+
+# Quarto output (the published copy lives in docs/)
+/index.html
+*_files/
+.quarto/
+
+# Data that stays on this computer only
+data/gdelt_cache/
+
+# System and Office temporary files
 .DS_Store
-.quarto
 ~$*
