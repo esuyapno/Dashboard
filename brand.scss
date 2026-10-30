@@ -48,6 +48,33 @@ body {
   width: auto;
 }
 
+/* Stack the subtitle under the title, with the logo on the left */
+.navbar-brand-container {
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  column-gap: .9rem;
+  row-gap: .1rem;
+  align-items: center;
+}
+.navbar-brand-container .navbar-brand {
+  grid-row: 1 / span 2;          /* logo spans both lines */
+}
+.navbar-brand-container .navbar-title {
+  grid-column: 2;
+  grid-row: 1;
+  line-height: 1.1;
+}
+.navbar-brand-container .navbar-subtitle {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: .68rem;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: $text-muted;
+}
+
 /* Cards: rounded like the website */
 .card {
   border-radius: 14px;
@@ -85,32 +112,6 @@ body {
   color: $text-light;
   font-weight: 500;
 }
-/* Stack the subtitle under the title, with the logo on the left */
-.navbar-brand-container {
-  display: grid !important;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
-  column-gap: .9rem;
-  row-gap: .1rem;
-  align-items: center;
-}
-.navbar-brand-container .navbar-brand {
-  grid-row: 1 / span 2;          /* logo spans both lines */
-}
-.navbar-brand-container .navbar-title {
-  grid-column: 2;
-  grid-row: 1;
-  line-height: 1.1;
-}
-.navbar-brand-container .navbar-subtitle {
-  grid-column: 2;
-  grid-row: 2;
-  font-size: .68rem;
-  font-weight: 400;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: $text-muted;
-}
 
 /* ---------- Phones and small tablets ---------- */
 @media (max-width: 768px) {
@@ -124,8 +125,20 @@ body {
   .bslib-value-box span[style*="Syne"] { font-size: 1.25rem !important; }
   .bslib-value-box .value-box-showcase svg { width: 1.8rem; height: 1.8rem; }
 
-  /* Charts and table: give each card a comfortable height once stacked */
-  .card:has(.plotly), .card:has(.reactable) { min-height: 420px; }
+  /* Let stacked rows grow instead of squeezing two cards into one fixed height */
+  .dashboard-row, .quarto-dashboard-content > div[style*="height"] {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  /* Charts and table: a comfortable fixed height once stacked */
+  .card:has(.plotly), .card:has(.reactable) {
+    min-height: 420px !important;
+    height: 420px !important;
+  }
+  .card .plotly.html-widget {
+    height: 360px !important;
+  }
 
   /* Smaller card titles and About text */
   .card-header { font-size: .62rem; letter-spacing: .16em; }

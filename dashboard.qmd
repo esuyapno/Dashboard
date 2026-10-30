@@ -183,7 +183,13 @@ plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
           'geo.lataxis.showgrid': true
         });
       }
-
+      
+      // Phones and tablets: a still, flat map (no spinning, no switching)
+      if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) {
+        showFlat();
+        return;
+      }
+      
       // Expanded = the map fills most of the screen in both width and height
       function checkSize() {
         var expanded = el.clientWidth  > window.innerWidth  * 0.7 &&
@@ -225,9 +231,11 @@ plot_ly(scatter_data, x = ~attention, y = ~severity,
   layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
          font  = chart_font,
          xaxis = c(dark_axis, list(title = "News share (per 10k articles, log scale)", type = "log",
-                                   tickvals = c(0.1, 1, 10, 100, 1000),
-                                   ticktext = c("0.1", "1", "10", "100", "1,000"))),
-         yaxis = c(dark_axis, list(title = "Crisis Severity Score")))
+                    tickvals = c(0.1, 1, 10, 100, 1000),
+                    ticktext = c("0.1", "1", "10", "100", "1,000"))),
+         yaxis = c(dark_axis, list(title = "Crisis Severity Score"))) |>
+  layout(dragmode = FALSE) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE)
 ```
 
 ## Row {height=440px}
@@ -243,7 +251,8 @@ plot_ly(trend_data, x = ~month_lab, y = ~share_per_10k, color = ~name,
          font   = chart_font,
          legend = list(orientation = "h", y = -0.2, font = chart_font),
          xaxis  = c(dark_axis, list(title = "")),
-         yaxis  = c(dark_axis, list(title = "Share per 10k articles", tickformat = ".0f")))
+         yaxis  = c(dark_axis, list(title = "Share per 10k articles", tickformat = ".0f")))|> layout(dragmode = FALSE) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE)
 ```
 
 ```{r}
