@@ -157,3 +157,36 @@ body {
   margin-left: .6rem;
   white-space: nowrap;
 }
+/* ---------- Tab bar: keep all 11 tabs on one line ---------- */
+/* Each tab name stays on one line (no "Food / security" stacking) */
+.navbar .nav-link {
+  white-space: nowrap;
+  padding-left: .6rem !important;
+  padding-right: .6rem !important;
+}
+/* The title stays on one line; the subtitle wraps under it (max. 2 lines) */
+.navbar-brand-container { flex-shrink: 0; }
+.navbar-brand-container .navbar-title { white-space: nowrap; }
+.navbar-brand-container .navbar-subtitle { max-width: 26rem; white-space: normal; }
+
+/* Laptops and most desktop screens: hide the subtitle and tighten the tabs so they fit */
+@media (max-width: 1900px) {
+  .navbar-brand-container .navbar-subtitle { display: none; }
+  .navbar .nav-link {
+    font-size: .85rem;
+    padding-left: .45rem !important;
+    padding-right: .45rem !important;
+  }
+}
+
+/* Safety net on every screen wider than a phone: if the tabs still
+   don't fit, the tab row scrolls sideways instead of wrapping or stacking */
+@media (min-width: 768px) {
+  #dashboard-collapse { overflow-x: auto; scrollbar-width: thin; }
+  #dashboard-collapse .navbar-nav { flex-wrap: nowrap; }
+}
+
+/* Tablets and small laptops: logo only, so the tabs have the room */
+@media (min-width: 768px) and (max-width: 1240px) {
+  .navbar-brand-container .navbar-title { display: none !important; }
+}

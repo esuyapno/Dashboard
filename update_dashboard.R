@@ -46,10 +46,6 @@ dir.create("docs", showWarnings = FALSE)
 ok <- file.copy("index.html", "docs/index.html", overwrite = TRUE)
 if (!ok) stop("Could not copy index.html into docs/. Did the render work?")
 
-# GitHub Pages settings: only needed if the dashboard is published with GitHub Pages
-writeLines("dashboard.sa-analytical.com", "docs/CNAME")
-file.create("docs/.nojekyll")
-
 # 4. Send everything to GitHub
 gert::git_add(".")
 if (nrow(subset(gert::git_status(), staged)) > 0) {

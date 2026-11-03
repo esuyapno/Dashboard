@@ -1,6 +1,5 @@
 ---
-title: "Severe Crises. Silent Headlines. [Beta version]{.beta-tag}"
-pagetitle: "Severe Crises. Silent Headlines. (Beta version)"
+title: "Severe Crises. Silent Headlines."
 subtitle: Tracking where suffering is high and global attention is low
 description: "A monthly SA Analytical dashboard showing humanitarian and development indicators side by side for each sector, using established international classifications, with climate vulnerability, media attention and funding."
 format:
@@ -410,7 +409,7 @@ pct_map(pin_of("wash"), "People in need (WASH)", "PEOPLE IN NEED<br>(% OF POPULA
 ```
 
 ```{r}
-#| title: "Development: at least basic drinking water"
+#| title: "Development: Percentage of the Population with Basic Drinking Water"
 pct_map(ind("SH.H2O.BASW.ZS"), "At least basic drinking water", "BASIC WATER<br>(% OF POPULATION)", "No data",
         "WHO/UNICEF JMP service ladder (via World Bank). Lower coverage is shown darker.", reverse = TRUE)
 ```
@@ -549,7 +548,7 @@ side_table(`Climate vulnerability (0-10)` = clim_part("vulnerability"),
            `Habitat (sector, 0-10)` = clim_part("vuln_habitat"))
 ```
 
-# Funding
+# Funding (beta)
 
 ## Row {height=170px}
 
@@ -678,7 +677,7 @@ plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
 ```
 
 ```{r}
-#| title: "Crisis Severity vs. Media Attention"
+#| title: "Crisis Severity vs. Media Attention (Beta Version)"
 plot_ly(scatter_data, x = ~attention, y = ~severity,
         text = ~label, customdata = ~country,
         type = "scatter", mode = "markers+text", textposition = "top center",
@@ -735,7 +734,9 @@ reactable(neglect,
 
 ::: {.card title="About this data"}
 ::: {.about-text}
-**Beta version.** This dashboard is in development and its methodology is under review; indicators and presentation may change. It is a starting point for questions about where support may be needed, not a ranking of where funding should go. Last updated: `r date_label(Sys.Date())`.
+**What this dashboard shows.** The maps present published data from established international sources, as published, without SA Analytical scoring. They are a starting point for questions about where support may be needed, not a ranking of where funding should go. Last updated: `r date_label(Sys.Date())`.
+
+**Funding (beta).** The Funding tab is a beta version: its media-attention comparison is SA Analytical's own analysis, is under methodological review, and may change.
 
 **How the sector tabs work:** each tab shows a humanitarian (acute) indicator on the left and a development (structural) indicator on the right, using the sector's own established classification or measure. SA Analytical does not create its own scores for the sectors.
 
