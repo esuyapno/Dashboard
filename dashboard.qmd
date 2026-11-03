@@ -1,6 +1,8 @@
 ---
-title: "Severe Crises. Silent Headlines."
+title: "Severe Crises. Silent Headlines. [Beta version]{.beta-tag}"
+pagetitle: "Severe Crises. Silent Headlines. (Beta version)"
 subtitle: Tracking where suffering is high and global attention is low
+description: "A monthly SA Analytical dashboard showing humanitarian and development indicators side by side for each sector, using established international classifications, with climate vulnerability, media attention and funding."
 format:
   dashboard:
     orientation: rows
@@ -14,11 +16,12 @@ output-file: index.html
 ```{r}
 #| include: false
 library(dplyr)
+library(tidyr)
 library(plotly)
 library(reactable)
 library(readr)
 
-# ---- Brand -------------------------------------------------------------
+# ---- Brand ---------------------------------------------------------------
 anthracite <- "#2B2B2E"
 card_grey  <- "#36363A"
 deep_grey  <- "#1F1F21"
@@ -34,10 +37,78 @@ chart_font <- list(color = text_light, family = "DM Sans, sans-serif")
 dark_axis  <- list(gridcolor = line_grey, zerolinecolor = line_grey,
                    linecolor = line_grey, tickfont = chart_font)
 
+# ---- Map colours -----------------------------------------------------------
+# Vulnerability / severity: 10 bands, green (0, no vulnerability) -> dark red (10, highest)
+sev_colours <- c("#E8F5DF", "#D2EDBC", "#C5E4A0", "#D6DC84", "#E6CC66",
+                 "#E6AE48", "#E08A2E", "#C9581F", "#A02C16", "#6E0B0B")
+sev_scale <- do.call(c, lapply(seq_along(sev_colours), function(i)
+  list(c((i - 1) / 10, sev_colours[i]), c(i / 10, sev_colours[i]))))
+ocean_blue  <- "#00022E"   
+grid_blue   <- "#3A6A94"
+nodata_grey <- "#8A8A8F"
+
+flat_geo <- list(bgcolor = "rgba(0,0,0,0)", showframe = FALSE,
+                 showcoastlines = TRUE, coastlinecolor = "#FFFFFF" , coastlinewidth = 1,
+                 showocean = TRUE, oceancolor = ocean_blue,
+                 showlakes = TRUE, lakecolor = ocean_blue,
+                 showland = TRUE, landcolor = nodata_grey,
+                 showcountries = TRUE, countrycolor = "#FFFFFF",
+                 projection = list(type = "natural earth"))
+
+cbar <- function(title) {
+  list(title = list(text = title, side = "top", font = chart_font),
+       tickfont = chart_font, outlinewidth = 0, thickness = 20, len = 0.6, dtick = 1,
+       x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle")
+}
+
+# Grey "no data" key, placed just below the colour bar
+nodata_key <- function(text = "No data", font = list(color = text_light, size = 11, family = "DM Sans, sans-serif")) {
+  list(text = paste0("<span style='color:", nodata_grey, "'>\u25A0</span> ", text),
+       x = 0.97, y = 0.15, xref = "paper", yref = "paper",
+       xanchor = "left", yanchor = "top", showarrow = FALSE, align = "left",
+       font = font)
+}
+
+# ---- SA Analytical brand style for the global vulnerability map -------------
+brand_gold       <- "#b5943f"   # accent: menu, labels, lines
+brand_gold_light <- "#c9aa58"   # accent hover
+brand_charcoal   <- "#2b2b2e"   # dark band
+brand_text       <- "#e7dfd2"   # text on dark bands
+brand_text_soft  <- "#f5efe6"   # light text on dark (hover boxes)
+brand_on_gold    <- "#1a1a1b"   # text on gold
+
+brand_font_small <- list(color = brand_text, family = "DM Sans, sans-serif", size = 11)
+brand_hover <- list(bgcolor = brand_charcoal, bordercolor = brand_gold,
+                    font = list(color = brand_text_soft, family = "DM Sans, sans-serif", size = 12))
+
+# Colour bar: title as a gold eyebrow label (DM Sans, uppercase), ticks in brand text colour
+cbar_brand <- function(title) {
+  list(title = list(text = title, side = "top",
+                    font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 10)),
+       tickfont = brand_font_small, outlinewidth = 0, thickness = 20, len = 0.6, dtick = 1,
+       x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle")
+}
+
+sa_table_theme <- reactableTheme(
+  color = text_light, backgroundColor = card_grey,
+  borderColor = line_grey, highlightColor = line_grey,
+  style = list(fontFamily = "DM Sans, sans-serif"),
+  headerStyle = list(background = deep_grey, color = gold, textTransform = "uppercase",
+                     letterSpacing = "0.1em", fontSize = "0.72rem", fontWeight = 500),
+  searchInputStyle = list(backgroundColor = deep_grey, color = text_light, borderColor = line_grey)
+)
+
+value_style <- "font-family: Syne, sans-serif; font-weight: 700; font-size: 1.7rem;"
+
 # Dates written in English whatever the computer's language
 month_label <- function(ym) paste(month.name[as.integer(substr(ym, 6, 7))], substr(ym, 1, 4))
 date_label  <- function(d) paste(as.integer(format(d, "%d")),
                                  month.abb[as.integer(format(d, "%m"))], format(d, "%Y"))
+this_year <- as.numeric(format(Sys.Date(), "%Y"))
+
+# ===========================================================================
+# ATTENTION & FUNDING (neglect tracker)
+# ===========================================================================
 
 # ---- Severity (ACAPS INFORM): decides the countries AND the month ------
 severity <- read_csv("data/severity.csv", show_col_types = FALSE)
@@ -48,11 +119,6 @@ ref_label <- month_label(ref_month)
 
 # ---- News attention (GDELT): locked to the INFORM month ----------------
 attention_all <- read_csv("data/attention_monthly.csv", show_col_types = FALSE)
-if (!"iso3" %in% names(attention_all)) {             # old 5-country test file
-  attention_all <- attention_all |>
-    mutate(iso3 = recode(country, Sudan = "SDN", DRC = "COD", Haiti = "HTI",
-                         Myanmar = "MMR", Ukraine = "UKR"))
-}
 if (!ref_month %in% attention_all$month) {
   stop("GDELT has no data for ", ref_label, ", the INFORM month. ",
        "Re-run the scripts so both sources cover the same month.")
@@ -91,8 +157,410 @@ trend_data <- attention_all |>
   mutate(month_lab = paste0(month.abb[as.integer(substr(month, 6, 7))], "-", substr(month, 3, 4)),
          month_lab = factor(month_lab, levels = unique(month_lab)))
 
-value_style <- "font-family: Syne, sans-serif; font-weight: 700; font-size: 1.7rem;"
+# ===========================================================================
+# SECTOR DATA: established indicators only (no SA Analytical scoring)
+# ===========================================================================
+
+read_opt <- function(f, empty) if (file.exists(f)) read_csv(f, show_col_types = FALSE) else empty
+
+structural <- read_csv("data/structural.csv", show_col_types = FALSE)
+ind <- function(cd) structural |> filter(code == cd) |> select(iso3, value, year)
+
+ipc   <- read_opt("data/ipc.csv",   tibble(iso3 = character(), ipc3_pct = numeric(),
+                                           ipc3_people = numeric(), ipc_to = as.Date(character())))
+needs <- read_opt("data/needs.csv", tibble(iso3 = character(), sector = character(),
+                                           ref_end = as.Date(character()), pin = numeric()))
+climate_detail <- read_opt("data/climate_detail.csv",
+                           tibble(iso3 = character(), measure = character(), score = numeric(), year = integer()))
+
+pop <- ind("SP.POP.TOTL") |> select(iso3, pop = value)
+
+country_names <- bind_rows(distinct(structural, iso3, country),
+                           select(severity, iso3, country)) |>
+  distinct(iso3, .keep_all = TRUE)
+
+# People in need as a share of the population (from humanitarian needs overviews)
+pin_of <- function(sec) {
+  needs |>
+    filter(sector == sec) |>
+    left_join(pop, by = "iso3") |>
+    filter(!is.na(pop), pop > 0) |>
+    transmute(iso3, value = pmin(100, 100 * pin / pop), pin, year = as.integer(format(ref_end, "%Y")))
+}
+
+ipc_d <- ipc |> transmute(iso3, value = ipc3_pct, people = ipc3_people,
+                          year = as.integer(format(as.Date(ipc_to), "%Y")))
+
+# WHO/UNICEF prevalence thresholds (de Onis et al., 2019)
+who_labels    <- c("Very low", "Low", "Medium", "High", "Very high")
+stunting_cuts <- c(2.5, 10, 20, 30)   # % of children under 5
+wasting_cuts  <- c(2.5, 5, 10, 15)
+who_class <- function(x, cuts) findInterval(x, cuts) + 1   # 1 = very low ... 5 = very high
+
+# ---- Map helpers --------------------------------------------------------------
+smooth_scale <- lapply(seq_along(sev_colours), function(i)
+  c((i - 1) / (length(sev_colours) - 1), sev_colours[i]))
+class_cols  <- sev_colours[c(1, 3, 5, 8, 10)]
+class_scale <- do.call(c, lapply(1:5, function(i)
+  list(c((i - 1) / 5, class_cols[i]), c(i / 5, class_cols[i]))))
+
+map_layout <- function(p, key_text, caption) {
+  p |>
+    layout(paper_bgcolor = "rgba(0,0,0,0)", dragmode = FALSE,
+           font = list(color = brand_text, family = "DM Sans, sans-serif"),
+           hoverlabel = brand_hover, geo = flat_geo,
+           margin = list(l = 0, r = 0, t = 0, b = 30),
+           annotations = list(
+             nodata_key(key_text, font = brand_font_small),
+             list(text = caption, x = 0.01, y = 0, xref = "paper", yref = "paper",
+                  xanchor = "left", yanchor = "top", showarrow = FALSE, align = "left",
+                  font = list(color = "#8a8278", family = "DM Sans, sans-serif", size = 10)))) |>
+    config(displayModeBar = FALSE, scrollZoom = FALSE)
+}
+
+add_names <- function(d) d |> left_join(country_names, by = "iso3") |> filter(!is.na(country))
+
+# Continuous map of a percentage. reverse = TRUE when higher values are better.
+pct_map <- function(d, label, bar_title, key_text, caption, zmax = 100, reverse = FALSE) {
+  d <- add_names(d) |>
+    mutate(hover = paste0("<b>", country, "</b><br>", label, ": ",
+                          sprintf("%.1f", value), "%", " (", year, ")"))
+  plot_ly(d, type = "choropleth", locations = ~iso3, z = ~value, zmin = 0, zmax = zmax,
+          colorscale = smooth_scale, reversescale = reverse, text = ~hover,
+          hovertemplate = "%{text}<extra></extra>",
+          colorbar = list(title = list(text = bar_title, side = "top",
+                                       font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 10)),
+                          tickfont = brand_font_small, ticksuffix = "%", outlinewidth = 0,
+                          thickness = 20, len = 0.6, x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle"),
+          marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+    map_layout(key_text, caption)
+}
+
+# Map of an established five-class classification (e.g. WHO prevalence thresholds)
+class_map <- function(d, cuts, label, bar_title, key_text, caption) {
+  d <- add_names(d) |>
+    mutate(cls = who_class(value, cuts),
+           hover = paste0("<b>", country, "</b><br>", label, ": ", sprintf("%.1f", value), "%",
+                          " (", year, ")<br>Classification: ", who_labels[cls]))
+  plot_ly(d, type = "choropleth", locations = ~iso3, z = ~cls, zmin = 0.5, zmax = 5.5,
+          colorscale = class_scale, text = ~hover, hovertemplate = "%{text}<extra></extra>",
+          colorbar = list(title = list(text = bar_title, side = "top",
+                                       font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 10)),
+                          tickvals = 1:5, ticktext = who_labels, tickfont = brand_font_small,
+                          outlinewidth = 0, thickness = 20, len = 0.6,
+                          x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle"),
+          marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+    map_layout(key_text, caption)
+}
+
+# Table with the humanitarian and development values side by side
+side_table <- function(...) {
+  parts <- list(...)
+  out <- country_names
+  for (nm in names(parts)) {
+    p <- parts[[nm]] |> select(iso3, value, year)
+    names(p) <- c("iso3", nm, paste(nm, "(year)"))
+    out <- left_join(out, p, by = "iso3")
+  }
+  out <- out |>
+    filter(if_any(all_of(names(parts)), ~ !is.na(.x))) |>
+    mutate(`In crisis` = ifelse(iso3 %in% severity$iso3, "Yes", "")) |>
+    select(-iso3) |>
+    rename(Country = country) |>
+    arrange(desc(.data[[names(parts)[1]]]))
+  cols <- list(Country = colDef(minWidth = 140))
+  for (nm in names(parts)) {
+    cols[[nm]] <- colDef(format = colFormat(digits = 1), minWidth = 130)
+    cols[[paste(nm, "(year)")]] <- colDef(format = colFormat(digits = 0), minWidth = 70)
+  }
+  reactable(out, searchable = TRUE, compact = TRUE, highlight = TRUE,
+            defaultColDef = colDef(na = "–", minWidth = 90),
+            columns = cols, theme = sa_table_theme)
+}
+
+# ---- Global tab: development thresholds count --------------------------------
+# Counts development indicators beyond an internationally recognised threshold:
+#   stunting 20% or more (WHO/UNICEF "high" or "very high")
+#   DTP3 vaccination below 90% (Immunization Agenda 2030 national target)
+dev_flags <- full_join(ind("SH.STA.STNT.ME.ZS") |> select(iso3, stunting = value),
+                       ind("SH.IMM.IDPT")       |> select(iso3, dtp3 = value), by = "iso3") |>
+  mutate(n_avail = (!is.na(stunting)) + (!is.na(dtp3)),
+         count   = coalesce(as.integer(stunting >= 20), 0L) + coalesce(as.integer(dtp3 < 90), 0L),
+         detail  = paste0(ifelse(is.na(stunting), "Stunting: no data",
+                                 paste0("Stunting: ", sprintf("%.1f", stunting), "%",
+                                        ifelse(stunting >= 20, " (high or very high)", ""))),
+                          "<br>",
+                          ifelse(is.na(dtp3), "DTP3: no data",
+                                 paste0("DTP3: ", sprintf("%.0f", dtp3), "%",
+                                        ifelse(dtp3 < 90, " (below 90% target)", ""))))) |>
+  filter(n_avail > 0) |>
+  add_names()
+
+hum_global <- severity |>
+  transmute(iso3, country, value = severity, top_crisis,
+            hover = paste0("<b>", country, "</b><br>Crisis severity: ", sprintf("%.1f", severity),
+                           "<br>", top_crisis))
 ```
+
+# Global vulnerability map
+
+## Row {height=600px}
+
+```{r}
+#| title: "Humanitarian: crisis severity"
+plot_ly(hum_global, type = "choropleth", locations = ~iso3, z = ~value, zmin = 0, zmax = 10,
+        colorscale = sev_scale, text = ~hover, hovertemplate = "%{text}<extra></extra>",
+        colorbar = cbar_brand("CRISIS<br>SEVERITY"),
+        marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+  map_layout("Not assessed",
+             paste0("ACAPS INFORM Severity Index (0-10), ", ref_label, ". Grey: no crisis assessed by ACAPS."))
+```
+
+```{r}
+#| title: "Development: indicators beyond international thresholds"
+plot_ly(dev_flags, type = "choropleth", locations = ~iso3, z = ~count, zmin = -0.5, zmax = 2.5,
+        colorscale = list(c(0, class_cols[1]), c(1/3, class_cols[1]), c(1/3, class_cols[3]),
+                          c(2/3, class_cols[3]), c(2/3, class_cols[5]), c(1, class_cols[5])),
+        text = ~paste0("<b>", country, "</b><br>", count, " of ", n_avail,
+                       " indicators beyond threshold<br>", detail),
+        hovertemplate = "%{text}<extra></extra>",
+        colorbar = list(title = list(text = "INDICATORS<br>BEYOND<br>THRESHOLD", side = "top",
+                                     font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 10)),
+                        tickvals = 0:2, ticktext = c("0", "1", "2"), tickfont = brand_font_small,
+                        outlinewidth = 0, thickness = 20, len = 0.6,
+                        x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle"),
+        marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+  map_layout("No data",
+             "Stunting 20% or more (WHO/UNICEF 'high') and DTP3 vaccination below 90% (Immunization Agenda 2030 target).")
+```
+
+## Row {height=520px}
+
+```{r}
+#| title: "All countries"
+country_names |>
+  left_join(select(severity, iso3, `Crisis severity` = severity), by = "iso3") |>
+  left_join(ipc_d |> select(iso3, `IPC Phase 3+ (%)` = value), by = "iso3") |>
+  left_join(pin_of("intersectoral") |> select(iso3, `People in need, all sectors (%)` = value), by = "iso3") |>
+  left_join(dev_flags |> select(iso3, Stunting = stunting, `DTP3 (%)` = dtp3,
+                                `Indicators beyond threshold` = count), by = "iso3") |>
+  mutate(Stunting = ifelse(is.na(Stunting), NA_character_,
+                           paste0(sprintf("%.1f", Stunting), "% (",
+                                  who_labels[who_class(Stunting, stunting_cuts)], ")"))) |>
+  filter(!is.na(`Crisis severity`) | !is.na(`Indicators beyond threshold`)) |>
+  select(-iso3) |>
+  rename(Country = country) |>
+  arrange(desc(`Crisis severity`)) |>
+  reactable(searchable = TRUE, compact = TRUE, highlight = TRUE,
+            defaultColDef = colDef(na = "–", minWidth = 110, format = colFormat(digits = 1)),
+            columns = list(Country = colDef(minWidth = 140),
+                           `Crisis severity` = colDef(format = colFormat(digits = 1), na = "not assessed"),
+                           `IPC Phase 3+ (%)` = colDef(format = colFormat(digits = 1), na = "not analysed"),
+                           `People in need, all sectors (%)` = colDef(format = colFormat(digits = 1), na = "not analysed", minWidth = 150),
+                           `DTP3 (%)` = colDef(format = colFormat(digits = 0)),
+                           `Indicators beyond threshold` = colDef(format = colFormat(digits = 0), minWidth = 150)),
+            theme = sa_table_theme)
+```
+
+# Food security
+
+## Row {height=560px}
+
+```{r}
+#| title: "Humanitarian: IPC acute food insecurity, Phase 3 or above"
+pct_map(ipc_d, "Population in IPC Phase 3+", "PHASE 3+<br>(% OF ANALYSED<br>POPULATION)", "Not analysed",
+        "IPC current analysis (via HDX HAPI), last two years. 50% or more shown in the darkest colour.", zmax = 50)
+```
+
+```{r}
+#| title: "Development: prevalence of undernourishment"
+pct_map(ind("SN.ITK.DEFC.ZS"), "Prevalence of undernourishment", "UNDER-<br>NOURISHMENT", "No data",
+        "FAO, SDG 2.1.1 (via World Bank), latest within 10 years. 50% or more shown in the darkest colour.", zmax = 50)
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`IPC Phase 3+ (%)` = ipc_d,
+           `Undernourishment (%)` = ind("SN.ITK.DEFC.ZS"))
+```
+
+# Nutrition
+
+## Row {height=560px}
+
+```{r}
+#| title: "Humanitarian: wasting (acute malnutrition), children under 5"
+class_map(ind("SH.STA.WAST.ZS"), wasting_cuts, "Wasting", "WASTING<br>(WHO/UNICEF)", "No data",
+          "WHO/UNICEF prevalence thresholds. Survey-based; check the year, as wasting changes quickly.")
+```
+
+```{r}
+#| title: "Development: stunting (chronic malnutrition), children under 5"
+class_map(ind("SH.STA.STNT.ME.ZS"), stunting_cuts, "Stunting", "STUNTING<br>(WHO/UNICEF)", "No data",
+          "WHO/UNICEF prevalence thresholds. Joint Malnutrition Estimates (modelled), latest within 10 years.")
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`Wasting (%)` = ind("SH.STA.WAST.ZS"),
+           `Stunting (%)` = ind("SH.STA.STNT.ME.ZS"))
+```
+
+# WASH
+
+## Row {height=560px}
+
+```{r}
+#| title: "Humanitarian: people in need of WASH assistance"
+pct_map(pin_of("wash"), "People in need (WASH)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+```
+
+```{r}
+#| title: "Development: at least basic drinking water"
+pct_map(ind("SH.H2O.BASW.ZS"), "At least basic drinking water", "BASIC WATER<br>(% OF POPULATION)", "No data",
+        "WHO/UNICEF JMP service ladder (via World Bank). Lower coverage is shown darker.", reverse = TRUE)
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`People in need, WASH (%)` = pin_of("wash"),
+           `Basic drinking water (%)` = ind("SH.H2O.BASW.ZS"),
+           `Basic sanitation (%)` = ind("SH.STA.BASS.ZS"))
+```
+
+# Shelter
+
+## Row {height=560px}
+
+```{r}
+#| title: "Humanitarian: people in need of shelter assistance"
+pct_map(pin_of("shelter"), "People in need (shelter)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+```
+
+```{r}
+#| title: "Development: urban population living in slums (urban areas only)"
+pct_map(ind("EN.POP.SLUM.UR.ZS"), "Urban population in slums", "SLUMS<br>(% OF URBAN<br>POPULATION)", "No data",
+        "UN-Habitat, SDG 11.1.1 (via World Bank). Covers urban areas only; data are irregular.")
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`People in need, shelter (%)` = pin_of("shelter"),
+           `Urban slum population (%)` = ind("EN.POP.SLUM.UR.ZS"))
+```
+
+# Health
+
+## Row {height=560px}
+
+```{r}
+#| title: "Humanitarian: people in need of health assistance"
+pct_map(pin_of("health"), "People in need (health)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+```
+
+```{r}
+#| title: "Development: DTP3 vaccination coverage"
+pct_map(ind("SH.IMM.IDPT"), "DTP3 coverage", "DTP3<br>COVERAGE", "No data",
+        "WHO/UNICEF immunisation estimates (via World Bank). Global target: 90% nationally. Lower coverage shown darker.",
+        reverse = TRUE)
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`People in need, health (%)` = pin_of("health"),
+           `DTP3 coverage (%)` = ind("SH.IMM.IDPT"),
+           `UHC service coverage index` = ind("SH.UHC.SRVS.CV.XD"))
+```
+
+# Education
+
+## Row {height=560px}
+
+```{r}
+#| title: "Humanitarian: people in need of education assistance"
+pct_map(pin_of("education"), "People in need (education)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+```
+
+```{r}
+#| title: "Development: primary-age children out of school"
+pct_map(ind("SE.PRM.UNER.ZS"), "Out of school, primary age", "OUT OF<br>SCHOOL", "No data",
+        "UNESCO Institute for Statistics, SDG 4 (via World Bank). 60% or more shown darkest.", zmax = 60)
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`People in need, education (%)` = pin_of("education"),
+           `Out of school, primary (%)` = ind("SE.PRM.UNER.ZS"))
+```
+
+# Protection
+
+## Row {height=600px}
+
+```{r}
+#| title: "Humanitarian: people in need of protection assistance"
+pct_map(pin_of("protection"), "People in need (protection)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. There is no established development benchmark for protection.",
+        zmax = 60)
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+side_table(`People in need, protection (%)` = pin_of("protection"))
+```
+
+# Climate
+
+## Row {height=600px}
+
+```{r}
+#| title: "Climate vulnerability (ND-GAIN)"
+clim_v <- climate_detail |> filter(measure == "vulnerability") |>
+  transmute(iso3, value = score, year) |> add_names() |>
+  left_join(climate_detail |> filter(measure == "readiness") |> select(iso3, lack_ready = score), by = "iso3") |>
+  mutate(hover = paste0("<b>", country, "</b><br>Climate vulnerability: ", sprintf("%.1f", value),
+                        ifelse(is.na(lack_ready), "",
+                               paste0("<br>Lack of readiness to adapt: ", sprintf("%.1f", lack_ready))),
+                        "<br>ND-GAIN data year: ", year))
+plot_ly(clim_v, type = "choropleth", locations = ~iso3, z = ~value, zmin = 0, zmax = 10,
+        colorscale = sev_scale, text = ~hover, hovertemplate = "%{text}<extra></extra>",
+        colorbar = cbar_brand("CLIMATE<br>VULNERABILITY"),
+        marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+  map_layout("No data", "ND-GAIN vulnerability (0-1, shown x10): exposure, sensitivity and adaptive capacity.")
+```
+
+## Row {height=460px}
+
+```{r}
+#| title: "Countries"
+clim_part <- function(m) climate_detail |> filter(measure == m) |> transmute(iso3, value = score, year)
+side_table(`Climate vulnerability (0-10)` = clim_part("vulnerability"),
+           `Lack of readiness (0-10)` = clim_part("readiness"),
+           `Food (sector, 0-10)` = clim_part("vuln_food"),
+           `Water (sector, 0-10)` = clim_part("vuln_water"),
+           `Health (sector, 0-10)` = clim_part("vuln_health"),
+           `Habitat (sector, 0-10)` = clim_part("vuln_habitat"))
+```
+
+# Funding
 
 ## Row {height=170px}
 
@@ -107,7 +575,7 @@ bslib::value_box(
 
 ```{r}
 bslib::value_box(
-  title    = htmltools::tags$span("Most neglected", style = paste0("color:", anthracite, "; font-weight: 500;")),
+  title    = htmltools::tags$span("Lowest media visibility vs. severity (exploratory)", style = paste0("color:", anthracite, "; font-weight: 500;")),
   value    = htmltools::tags$span(top$country[1], style = value_style),
   showcase = bsicons::bs_icon("exclamation-triangle", color = anthracite, size = "2.4rem"),
   theme    = bslib::value_box_theme(bg = gold, fg = anthracite)
@@ -128,26 +596,27 @@ bslib::value_box(
 ```{r}
 #| title: "Crisis severity map"
 plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
+        zmin = 0, zmax = 10, colorscale = sev_scale,
         text = ~paste0(country, "<br>", top_crisis),
-        hovertemplate = "<b>%{text}</b><br>Severity: %{z:.1f}<extra></extra>",
-        colorscale = list(c(0, "#6B5520"), c(0.35, gold), c(0.7, "#E0BE62"), c(1, "#FFF1C4")),
-        colorbar = list(title = list(text = "Crisis<br>Severity<br>Score", side = "top", font = chart_font),
-                        tickfont = chart_font, outlinewidth = 0,
-                        x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle",
-                        len = 0.6, thickness = 20),
-        marker = list(line = list(color = anthracite, width = 0.5))) |>
-  layout(paper_bgcolor = "rgba(0,0,0,0)", font = chart_font,
+        hovertemplate = "<b>%{text}</b><br>Crisis Severity Score: %{z:.1f}<extra></extra>",
+        colorbar = cbar("Crisis<br>Severity<br>Score"),
+        marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", font = chart_font, dragmode = FALSE,
          geo = list(bgcolor = "rgba(0,0,0,0)", showframe = FALSE,
                     projection = list(type = "orthographic",
                                       rotation = list(lon = 20, lat = 10)),
-                    showocean = TRUE, oceancolor = "#1A1A1C",
-                    showland = TRUE, landcolor = "#3E3E44",
-                    showcountries = TRUE, countrycolor = "#55555B",
-                    showcoastlines = FALSE,
-                    lonaxis = list(showgrid = TRUE, gridcolor = "#2A2A2E"),
-                    lataxis = list(showgrid = TRUE, gridcolor = "#2A2A2E")),
-         margin = list(l = 0, r = 0, t = 0, b = 0)) |>
-   htmlwidgets::onRender("
+                    showocean = TRUE, oceancolor = ocean_blue,
+                    showlakes = TRUE, lakecolor = ocean_blue,
+                    showrivers = TRUE, rivercolor = ocean_blue, riverwidth = 0.5,
+                    showland = TRUE, landcolor = nodata_grey,
+                    showcountries = TRUE, countrycolor = "#FFFFFF",
+                    showcoastlines = TRUE, coastlinecolor = "#FFFFFF", coastlinewidth = 1,
+                    lonaxis = list(showgrid = TRUE, gridcolor = grid_blue),
+                    lataxis = list(showgrid = TRUE, gridcolor = grid_blue)),
+         margin = list(l = 0, r = 0, t = 0, b = 0),
+         annotations = list(nodata_key("No crisis recorded"))) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE) |>
+  htmlwidgets::onRender("
     function(el) {
       var lon = 20, paused = false, mode = 'globe';
       var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -166,7 +635,7 @@ plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
           'geo.projection.type': 'natural earth',
           'geo.projection.rotation.lon': 0,
           'geo.projection.rotation.lat': 0,
-          'geo.showocean': false,
+          'geo.showocean': true,
           'geo.lonaxis.showgrid': false,
           'geo.lataxis.showgrid': false
         });
@@ -183,13 +652,13 @@ plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
           'geo.lataxis.showgrid': true
         });
       }
-      
+
       // Phones and tablets: a still, flat map (no spinning, no switching)
       if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) {
         showFlat();
         return;
       }
-      
+
       // Expanded = the map fills most of the screen in both width and height
       function checkSize() {
         var expanded = el.clientWidth  > window.innerWidth  * 0.7 &&
@@ -224,17 +693,16 @@ plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
 plot_ly(scatter_data, x = ~attention, y = ~severity,
         text = ~label, customdata = ~country,
         type = "scatter", mode = "markers+text", textposition = "top center",
-        hovertemplate = "<b>%{customdata}</b><br>Severity: %{y:.1f}<br>News share: %{x:.0f}<extra></extra>",
+        hovertemplate = "<b>%{customdata}</b><br>Crisis Severity Score: %{y:.1f}<br>News share: %{x:.0f}<extra></extra>",
         marker = list(color = scatter_data$dot, size = 11, opacity = 0.9,
                       line = list(color = gold_pale, width = 1)),
         textfont = list(color = text_light, size = 11, family = "DM Sans, sans-serif")) |>
   layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
-         font  = chart_font,
+         font  = chart_font, dragmode = FALSE,
          xaxis = c(dark_axis, list(title = "News share (per 10k articles, log scale)", type = "log",
-                    tickvals = c(0.1, 1, 10, 100, 1000),
-                    ticktext = c("0.1", "1", "10", "100", "1,000"))),
+                                   tickvals = c(0.1, 1, 10, 100, 1000),
+                                   ticktext = c("0.1", "1", "10", "100", "1,000"))),
          yaxis = c(dark_axis, list(title = "Crisis Severity Score"))) |>
-  layout(dragmode = FALSE) |>
   config(displayModeBar = FALSE, scrollZoom = FALSE)
 ```
 
@@ -248,48 +716,52 @@ plot_ly(trend_data, x = ~month_lab, y = ~share_per_10k, color = ~name,
         hovertemplate = "<b>%{fullData.name}</b><br>%{x}: %{y:.0f} per 10k articles<extra></extra>",
         line = list(width = 3), marker = list(size = 8)) |>
   layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
-         font   = chart_font,
+         font   = chart_font, dragmode = FALSE,
          legend = list(orientation = "h", y = -0.2, font = chart_font),
          xaxis  = c(dark_axis, list(title = "")),
-         yaxis  = c(dark_axis, list(title = "Share per 10k articles", tickformat = ".0f")))|> layout(dragmode = FALSE) |>
+         yaxis  = c(dark_axis, list(title = "Share per 10k articles", tickformat = ".0f"))) |>
   config(displayModeBar = FALSE, scrollZoom = FALSE)
 ```
 
 ```{r}
-#| title: "All countries"
+#| title: "Countries in crisis"
 reactable(neglect,
           searchable = TRUE, highlight = TRUE, compact = TRUE,
           defaultSorted = "severity", defaultSortOrder = "desc",
           columns = list(
             iso3       = colDef(show = FALSE),
             country    = colDef(name = "Country", minWidth = 110),
-            severity   = colDef(name = "Severity", format = colFormat(digits = 1)),
-            top_crisis = colDef(name = "Main crisis", minWidth = 160),
+            severity   = colDef(name = "Crisis Severity Score", format = colFormat(digits = 1)),
+            top_crisis = colDef(name = "Crisis", minWidth = 160),
             crises     = colDef(name = "Crises"),
             attention  = colDef(name = "News share", format = colFormat(digits = 0)),
-            funded_pct = colDef(name = "Funded", format = colFormat(suffix = "%"))
+            funded_pct = colDef(name = "Appeal funding coverage", format = colFormat(suffix = "%"), minWidth = 120)
           ),
-          theme = reactableTheme(
-            color = text_light, backgroundColor = card_grey,
-            borderColor = line_grey, highlightColor = line_grey,
-            style = list(fontFamily = "DM Sans, sans-serif"),
-            headerStyle = list(background = deep_grey, color = gold,
-                               textTransform = "uppercase", letterSpacing = "0.1em",
-                               fontSize = "0.72rem", fontWeight = 500),
-            searchInputStyle = list(backgroundColor = deep_grey, color = text_light,
-                                    borderColor = line_grey)
-          ))
+          theme = sa_table_theme)
 ```
+
+# About
 
 ## Row
 
 ::: {.card title="About this data"}
 ::: {.about-text}
-**Crisis Severity Score:** ACAPS INFORM Severity (o-10 scale), country level score, `r ref_label`.<br>
-**Media attention:** each country's share of global online news coverage, GDELT Project, `r ref_label`.<br>
-**Funding:** OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, year-to-date as of `r date_label(funding_date)`.<br>
-**Coverage:** the `r nrow(neglect)` countries ACAPS reports in crisis in `r ref_label`.<br>
-**Disclaimer:** ACAPS, the GDELT Project and OCHA are independent data providers. They are not affiliated with SA Analytical and do not endorse this dashboard. The analysis are SA Analytical's own.<br>
+**Beta version.** This dashboard is in development and its methodology is under review; indicators and presentation may change. Last updated: `r date_label(Sys.Date())`.
+
+**How the sector tabs work:** each tab shows a humanitarian (acute) indicator on the left and a development (structural) indicator on the right, using the sector's own established classification or measure. SA Analytical does not create its own scores for the sectors.
+
+**Humanitarian maps:** IPC acute food insecurity (share of the analysed population in Phase 3 or above) and people in need by sector from humanitarian needs overviews (JIAF), both via the HDX Humanitarian API, using analyses published in the last two years; wasting uses WHO/UNICEF prevalence thresholds. These analyses exist only where a humanitarian assessment has been carried out, so other countries are shown in grey as "not analysed", which does not mean there are no needs. People in need are shown as a share of the total population (World Bank).
+
+**Development maps:** prevalence of undernourishment (FAO, SDG 2.1.1); stunting (UNICEF/WHO/World Bank Joint Malnutrition Estimates, classified with WHO/UNICEF prevalence thresholds); at least basic drinking water and sanitation (WHO/UNICEF JMP); DTP3 vaccination (WHO/UNICEF estimates, against the 90% global target) and the UHC service coverage index; primary out-of-school rate (UNESCO Institute for Statistics); urban slum population (UN-Habitat, urban areas only). All via the World Bank, using the latest value within 10 years; each value's year is shown. There is no established development benchmark for protection.
+
+**Global vulnerability map:** the left map shows ACAPS's INFORM Severity Index (0–10) for `r ref_label`. The right map counts development indicators beyond an internationally recognised threshold: stunting of 20% or more (WHO/UNICEF "high") and DTP3 coverage below 90% (Immunization Agenda 2030 target). Other sectors have no recognised "high" threshold and are not counted.
+
+**Climate:** ND-GAIN Country Index (University of Notre Dame). The map shows climate vulnerability; readiness to adapt and ND-GAIN's sector vulnerability scores are in the table.
+
+**Funding tab:** media visibility is each country's share of global online news coverage (GDELT Project, `r ref_label`), counting all coverage of the country. "Lowest media visibility vs. severity" is exploratory, not a measure of neglect. Appeal funding coverage is reported humanitarian funding as a share of appeal requirements (OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, as of `r date_label(funding_date)`).
+
+**Disclaimer:** ACAPS, the IPC, OCHA and HDX, the GDELT Project, the World Bank, FAO, WHO, UNICEF, UNESCO, UN-Habitat and the University of Notre Dame (ND-GAIN) are independent data providers. They are not affiliated with SA Analytical and do not endorse this dashboard. The analysis and any errors are SA Analytical's own.
+
 © `r format(Sys.Date(), "%Y")` SA Analytical. All rights reserved. Dashboard design and analysis by SA Analytical; underlying data remain the property of their respective providers.
 :::
 :::

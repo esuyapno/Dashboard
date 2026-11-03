@@ -6,6 +6,8 @@
 #  - Close Excel
 #  - Download a fresh "fts_requirements_funding_global.csv" from HDX
 #    and save it in the data folder, replacing the old one
+#  - Once a year: download the latest ND-GAIN country index and
+#    unzip it into data/ndgain/, replacing the old files
 # ---------------------------------------------------------------
 
 # 0. Check the FTS file is fresh BEFORE the long GDELT step
@@ -19,7 +21,12 @@ if (fts_age > 7) {
 # 1a. Severity scores + list of crisis countries (must be first)
 source("scripts/03_inform.R")
 
-# 1b. News attention (slow, about 30-40 minutes)
+# 1b. Sector indicators (World Bank), climate (ND-GAIN) and humanitarian sector data (HDX HAPI) - quick
+source("scripts/04_structural.R")
+source("scripts/05_climate.R")
+source("scripts/06_hapi.R")
+
+# 1c. News attention (slow, about 30-40 minutes)
 source("scripts/01_gdelt.R")
 if (length(gdelt_missing) > 0) {
   stop("GDELT is still missing ", length(gdelt_missing), " countries. ",
@@ -27,10 +34,10 @@ if (length(gdelt_missing) > 0) {
        "it will only fetch the missing ones.")
 }
 
-# 1c. Funding
+# 1d. Funding
 source("scripts/02_fts.R")
 
-# 2. Bake the dashboard (needs embed-resources: true in dashboard.qmd)
+# 2. Bake the dashboard into index.html
 quarto::quarto_render("dashboard.qmd")
 
 # 3. Put it in the shop window

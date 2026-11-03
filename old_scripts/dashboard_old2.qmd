@@ -1,0 +1,766 @@
+---
+title: "Severe Crises. Silent Headlines."
+subtitle: Tracking where suffering is high and global attention is low
+description: "A monthly SA Analytical dashboard mapping global vulnerability by sector and climate risk, and comparing humanitarian crisis severity with news attention and funding."
+format:
+  dashboard:
+    orientation: rows
+    scrolling: true
+    theme: [darkly, brand.scss]
+    logo: logo.png
+    embed-resources: true
+output-file: index.html
+---
+
+```{r}
+#| include: false
+library(dplyr)
+library(tidyr)
+library(plotly)
+library(reactable)
+library(readr)
+
+# ---- Brand ---------------------------------------------------------------
+anthracite <- "#2B2B2E"
+card_grey  <- "#36363A"
+deep_grey  <- "#1F1F21"
+line_grey  <- "#45454A"
+gold       <- "#AF8B2F"   # GOLD: website uses #B5943F
+gold_light <- "#C9AA58"
+gold_pale  <- "#F0D48A"
+text_light <- "#E8E6E1"
+trend_colours <- c("#FFF1C4", gold, text_light, "#E0BE62", "#8C8C92", gold_light, "#B8B0A4", "#7A6328")
+trend_dashes  <- c("solid", "solid", "dash", "dash", "dot", "dot", "dashdot", "dashdot")
+
+chart_font <- list(color = text_light, family = "DM Sans, sans-serif")
+dark_axis  <- list(gridcolor = line_grey, zerolinecolor = line_grey,
+                   linecolor = line_grey, tickfont = chart_font)
+
+# ---- Map colours -----------------------------------------------------------
+# Vulnerability / severity: 10 bands, green (0, no vulnerability) -> dark red (10, highest)
+sev_colours <- c("#E8F5DF", "#D2EDBC", "#C5E4A0", "#D6DC84", "#E6CC66",
+                 "#E6AE48", "#E08A2E", "#C9581F", "#A02C16", "#6E0B0B")
+sev_scale <- do.call(c, lapply(seq_along(sev_colours), function(i)
+  list(c((i - 1) / 10, sev_colours[i]), c(i / 10, sev_colours[i]))))
+# Climate risk: pale lavender (low) -> deep violet (high)
+clim_scale <- list(c(0, "#F1ECF7"), c(0.25, "#D4C4EA"), c(0.5, "#A98BD3"),
+                   c(0.75, "#7552AE"), c(1, "#3E2470"))
+ocean_blue  <- "#00022E"   
+grid_blue   <- "#3A6A94"
+nodata_grey <- "#8A8A8F"
+both_high_col <- "#7A0F0F"
+not_both_col  <- "#E8E2D6"
+
+flat_geo <- list(bgcolor = "rgba(0,0,0,0)", showframe = FALSE,
+                 showcoastlines = TRUE, coastlinecolor = "#FFFFFF" , coastlinewidth = 1,
+                 showocean = TRUE, oceancolor = ocean_blue,
+                 showlakes = TRUE, lakecolor = ocean_blue,
+                 showland = TRUE, landcolor = nodata_grey,
+                 showcountries = TRUE, countrycolor = "#FFFFFF",
+                 projection = list(type = "natural earth"))
+
+cbar <- function(title) {
+  list(title = list(text = title, side = "top", font = chart_font),
+       tickfont = chart_font, outlinewidth = 0, thickness = 20, len = 0.6, dtick = 1,
+       x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle")
+}
+
+# Grey "no data" key, placed just below the colour bar
+nodata_key <- function(text = "No data", font = list(color = text_light, size = 11, family = "DM Sans, sans-serif")) {
+  list(text = paste0("<span style='color:", nodata_grey, "'>\u25A0</span> ", text),
+       x = 0.97, y = 0.15, xref = "paper", yref = "paper",
+       xanchor = "left", yanchor = "top", showarrow = FALSE, align = "left",
+       font = font)
+}
+
+# ---- SA Analytical brand style for the global vulnerability map -------------
+brand_gold       <- "#b5943f"   # accent: menu, labels, lines
+brand_gold_light <- "#c9aa58"   # accent hover
+brand_charcoal   <- "#2b2b2e"   # dark band
+brand_text       <- "#e7dfd2"   # text on dark bands
+brand_text_soft  <- "#f5efe6"   # light text on dark (hover boxes)
+brand_on_gold    <- "#1a1a1b"   # text on gold
+
+brand_font_small <- list(color = brand_text, family = "DM Sans, sans-serif", size = 11)
+brand_hover <- list(bgcolor = brand_charcoal, bordercolor = brand_gold,
+                    font = list(color = brand_text_soft, family = "DM Sans, sans-serif", size = 12))
+
+# Colour bar: title as a gold eyebrow label (DM Sans, uppercase), ticks in brand text colour
+cbar_brand <- function(title) {
+  list(title = list(text = title, side = "top",
+                    font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 10)),
+       tickfont = brand_font_small, outlinewidth = 0, thickness = 20, len = 0.6, dtick = 1,
+       x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle")
+}
+
+sa_table_theme <- reactableTheme(
+  color = text_light, backgroundColor = card_grey,
+  borderColor = line_grey, highlightColor = line_grey,
+  style = list(fontFamily = "DM Sans, sans-serif"),
+  headerStyle = list(background = deep_grey, color = gold, textTransform = "uppercase",
+                     letterSpacing = "0.1em", fontSize = "0.72rem", fontWeight = 500),
+  searchInputStyle = list(backgroundColor = deep_grey, color = text_light, borderColor = line_grey)
+)
+
+value_style <- "font-family: Syne, sans-serif; font-weight: 700; font-size: 1.7rem;"
+
+# Dates written in English whatever the computer's language
+month_label <- function(ym) paste(month.name[as.integer(substr(ym, 6, 7))], substr(ym, 1, 4))
+date_label  <- function(d) paste(as.integer(format(d, "%d")),
+                                 month.abb[as.integer(format(d, "%m"))], format(d, "%Y"))
+this_year <- as.numeric(format(Sys.Date(), "%Y"))
+
+# ===========================================================================
+# ATTENTION & FUNDING (neglect tracker)
+# ===========================================================================
+
+# ---- Severity (ACAPS INFORM): decides the countries AND the month ------
+severity <- read_csv("data/severity.csv", show_col_types = FALSE)
+im <- unique(severity$inform_month)
+if (length(im) != 1) stop("severity.csv contains more than one INFORM month. Re-run 03_inform.R.")
+ref_month <- sprintf("%s-%02d", substr(im, 4, 7), match(substr(im, 1, 3), month.abb))
+ref_label <- month_label(ref_month)
+
+# ---- News attention (GDELT): locked to the INFORM month ----------------
+attention_all <- read_csv("data/attention_monthly.csv", show_col_types = FALSE)
+if (!ref_month %in% attention_all$month) {
+  stop("GDELT has no data for ", ref_label, ", the INFORM month. ",
+       "Re-run the scripts so both sources cover the same month.")
+}
+attention <- attention_all |>
+  filter(month == ref_month) |>
+  select(iso3, attention = share_per_10k)
+
+# ---- Funding (OCHA FTS): year-to-date ----------------------------------
+funding_raw  <- read_csv("data/funding.csv", show_col_types = FALSE)
+funding_date <- if ("as_of" %in% names(funding_raw)) max(funding_raw$as_of) else
+                  as.Date(file.info("data/funding.csv")$mtime)
+funding <- select(funding_raw, iso3, funded_pct)
+
+# ---- Combine -----------------------------------------------------------
+neglect <- severity |>
+  select(iso3, country, severity, top_crisis, crises) |>
+  left_join(attention, by = "iso3") |>
+  left_join(funding,   by = "iso3")
+
+scatter_data <- neglect |>
+  filter(!is.na(attention)) |>
+  mutate(gap   = severity - log1p(attention),
+         label = ifelse(rank(-severity, ties.method = "first") <= 8, country, ""),
+         dot   = ifelse(label != "", gold_pale, gold))
+
+top <- scatter_data |> arrange(desc(gap))
+
+trend_iso <- neglect |> filter(!is.na(attention)) |>
+  arrange(desc(severity)) |> slice_head(n = 8) |> pull(iso3)
+trend_data <- attention_all |>
+  filter(iso3 %in% trend_iso, month <= ref_month) |>
+  select(iso3, month, share_per_10k) |>
+  left_join(select(neglect, iso3, name = country), by = "iso3") |>
+  arrange(month) |>
+  mutate(month_lab = paste0(month.abb[as.integer(substr(month, 6, 7))], "-", substr(month, 3, 4)),
+         month_lab = factor(month_lab, levels = unique(month_lab)))
+
+# ===========================================================================
+# GLOBAL VULNERABILITY (structural, by sector) + CLIMATE
+# ===========================================================================
+
+groups <- tribble(
+  ~sector,      ~group,
+  "food",       "Food & Nutrition",
+  "nutrition",  "Food & Nutrition",
+  "wash",       "WASH",
+  "health",     "Health",
+  "protection", "Protection",
+  "education",  "Education",
+  "shelter",    "Shelter"
+)
+# ND-GAIN climate sub-score that matches each sector tab (NA = none)
+clim_match <- c("Food & Nutrition" = "vuln_food", "WASH" = "vuln_water",
+                "Health" = "vuln_health", "Protection" = NA,
+                "Education" = NA, "Shelter" = "vuln_habitat")
+
+structural <- read_csv("data/structural.csv", show_col_types = FALSE) |>
+  left_join(groups, by = "sector") |>
+  mutate(weight = case_when(data_age <= 3 ~ 1, data_age <= 5 ~ 0.5, data_age <= 10 ~ 0.25, TRUE ~ 0))
+n_ind <- n_distinct(structural$code)
+
+climate        <- read_csv("data/climate.csv", show_col_types = FALSE)
+climate_detail <- read_csv("data/climate_detail.csv", show_col_types = FALSE)
+
+# Sector score = mean of that sector's indicator scores
+group_scores <- structural |>
+  group_by(iso3, group) |>
+  summarise(score = mean(score), oldest = min(year), .groups = "drop")
+
+# Overall vulnerability = mean of the two worst sectors (needs at least 3 sectors)
+vuln <- group_scores |>
+  group_by(iso3) |>
+  summarise(n_groups   = n(),
+            vuln_score = if (n() >= 3) mean(sort(score, decreasing = TRUE)[1:2]) else NA_real_,
+            top_group  = group[which.max(score)],
+            oldest     = min(oldest),
+            .groups = "drop")
+
+# Reliability: data within 3 years counts fully, 4-5 years half, 6-10 years a quarter
+reliab <- structural |>
+  group_by(iso3) |>
+  summarise(rel = sum(weight) / n_ind, .groups = "drop") |>
+  mutate(reliability = case_when(rel >= 0.75 ~ "High", rel >= 0.5 ~ "Medium", TRUE ~ "Low"))
+
+breakdown <- group_scores |>
+  arrange(desc(score)) |>
+  mutate(txt = paste0(group, ": ", sprintf("%.1f", score))) |>
+  group_by(iso3) |>
+  summarise(breakdown = paste(txt, collapse = "<br>"), .groups = "drop")
+
+global <- structural |>
+  distinct(iso3, country) |>
+  full_join(climate, by = "iso3") |>
+  mutate(country = coalesce(country,
+                            countrycode::countrycode(iso3, "iso3c", "country.name", warn = FALSE))) |>
+  filter(!is.na(country)) |>
+  left_join(vuln,      by = "iso3") |>
+  left_join(reliab,    by = "iso3") |>
+  left_join(breakdown, by = "iso3") |>
+  left_join(select(severity, iso3, hum_score = severity), by = "iso3") |>
+  mutate(in_crisis = iso3 %in% severity$iso3,
+         both_high = !is.na(vuln_score) & !is.na(climate_score) &
+                     vuln_score >= 5 & climate_score >= 5,
+         # Funding type: humanitarian need (INFORM Severity) x structural vulnerability.
+         # Countries without an INFORM crisis count as low humanitarian need.
+         hum_high  = !is.na(hum_score) & hum_score >= 5,
+         str_high  = !is.na(vuln_score) & vuln_score >= 5,
+         quadrant  = case_when(is.na(vuln_score)      ~ NA_character_,
+                               hum_high & str_high    ~ "Protracted crisis",
+                               hum_high & !str_high   ~ "Shock",
+                               !hum_high & str_high   ~ "Chronic deficit",
+                               TRUE                   ~ "Stable / watch"),
+         quadrant_n = match(quadrant, c("Stable / watch", "Chronic deficit", "Shock", "Protracted crisis")) - 1,
+         old_flag  = in_crisis & !is.na(oldest) & (this_year - oldest) > 3,
+         hover = paste0("<b>", country, "</b>", ifelse(in_crisis, " (in crisis)", ""),
+                        "<br>Humanitarian need: ",
+                        ifelse(is.na(hum_score), "no crisis recorded", sprintf("%.1f", hum_score)),
+                        "<br>Structural vulnerability: ",
+                        ifelse(is.na(vuln_score), "insufficient data", sprintf("%.1f", vuln_score)),
+                        "<br>Climate risk: ",
+                        ifelse(is.na(climate_score), "no data", sprintf("%.1f", climate_score)),
+                        ifelse(is.na(quadrant), "", paste0("<br>Funding type: ", quadrant)),
+                        ifelse(is.na(reliability), "", paste0("<br>Reliability: ", reliability)),
+                        ifelse(old_flag, "<br><i>Some data predates the current crisis</i>", ""),
+                        ifelse(is.na(breakdown), "", paste0("<br><br>", breakdown))))
+
+# ---- Sector helpers ---------------------------------------------------------
+sector_data <- function(grp) {
+  details <- structural |>
+    filter(group == grp) |>
+    mutate(txt = paste0(label, ": ", round(value), " (", year, ")")) |>
+    group_by(iso3) |>
+    summarise(details = paste(txt, collapse = "<br>"), .groups = "drop")
+
+  cm <- clim_match[[grp]]
+  cl <- if (!is.na(cm)) {
+    climate_detail |> filter(measure == cm) |> select(iso3, clim_sens = score)
+  } else {
+    tibble(iso3 = character(), clim_sens = numeric())
+  }
+
+  group_scores |>
+    filter(group == grp) |>
+    left_join(distinct(structural, iso3, country), by = "iso3") |>
+    left_join(details, by = "iso3") |>
+    left_join(cl, by = "iso3") |>
+    mutate(in_crisis = iso3 %in% severity$iso3,
+           hover = paste0("<b>", country, "</b>", ifelse(in_crisis, " (in crisis)", ""),
+                          "<br>", grp, " score: ", sprintf("%.1f", score),
+                          ifelse(is.na(clim_sens), "",
+                                 paste0("<br>Climate sensitivity: ", sprintf("%.1f", clim_sens))),
+                          "<br><br>", details))
+}
+
+sector_map <- function(grp) {
+  d <- sector_data(grp)
+  plot_ly(d, type = "choropleth", locations = ~iso3, z = ~score, zmin = 0, zmax = 10,
+          colorscale = sev_scale, text = ~hover,
+          hovertemplate = "%{text}<extra></extra>",
+          colorbar = cbar("Sector<br>score"),
+          marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+    layout(paper_bgcolor = "rgba(0,0,0,0)", font = chart_font, dragmode = FALSE,
+           geo = flat_geo, margin = list(l = 0, r = 0, t = 0, b = 0),
+           annotations = list(nodata_key())) |>
+    config(displayModeBar = FALSE, scrollZoom = FALSE)
+}
+
+sector_table <- function(grp) {
+  d <- sector_data(grp)
+  wide <- structural |>
+    filter(group == grp) |>
+    select(iso3, label, value) |>
+    pivot_wider(names_from = label, values_from = value)
+  out <- d |>
+    transmute(iso3, Country = country, Score = score,
+              `Climate sensitivity` = clim_sens,
+              `In crisis` = ifelse(in_crisis, "Yes", "")) |>
+    left_join(wide, by = "iso3") |>
+    select(-iso3) |>
+    arrange(desc(Score))
+  if (all(is.na(out$`Climate sensitivity`))) out$`Climate sensitivity` <- NULL
+
+  cols <- list(Country = colDef(minWidth = 140),
+               Score   = colDef(format = colFormat(digits = 1)))
+  if ("Climate sensitivity" %in% names(out)) {
+    cols[["Climate sensitivity"]] <- colDef(format = colFormat(digits = 1))
+  }
+  reactable(out, searchable = TRUE, compact = TRUE, highlight = TRUE,
+            defaultColDef = colDef(format = colFormat(digits = 0), minWidth = 100),
+            columns = cols, theme = sa_table_theme)
+}
+```
+
+# Global vulnerability
+
+## Row {height=150px}
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Countries scored", style = paste0("color:", gold, "; font-weight: 500;")),
+  value    = htmltools::tags$span(sum(!is.na(global$vuln_score)), style = value_style),
+  showcase = bsicons::bs_icon("globe", color = gold, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = card_grey, fg = text_light)
+)
+```
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("High structural vulnerability (5+)", style = paste0("color:", gold, "; font-weight: 500;")),
+  value    = htmltools::tags$span(sum(global$vuln_score >= 5, na.rm = TRUE), style = value_style),
+  showcase = bsicons::bs_icon("exclamation-triangle", color = gold, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = card_grey, fg = text_light)
+)
+```
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("High vulnerability + high climate risk", style = paste0("color:", anthracite, "; font-weight: 500;")),
+  value    = htmltools::tags$span(sum(global$both_high), style = value_style),
+  showcase = bsicons::bs_icon("cloud-lightning-rain", color = anthracite, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = gold, fg = anthracite)
+)
+```
+
+## Row {height=580px}
+
+```{r}
+#| title: "Global vulnerability: choose a view above the map"
+v_today <- filter(global, !is.na(vuln_score))
+v_hum   <- filter(global, !is.na(hum_score))
+v_clim  <- filter(global, !is.na(climate_score))
+v_both  <- filter(global, !is.na(vuln_score), !is.na(climate_score))
+v_quad  <- filter(global, !is.na(quadrant))
+
+quad_cols <- c("#F5EEDC", "#AF8B2F", "#D9822B", "#7A0F0F")   # stable, chronic, shock, protracted
+quad_legend <- paste0(
+  "<span style='color:#7A0F0F'>■</span> Protracted crisis: nexus funding   ",
+  "<span style='color:#D9822B'>■</span> Shock: humanitarian response<br>",
+  "<span style='color:#AF8B2F'>■</span> Chronic deficit: development investment   ",
+  "<span style='color:#F5EEDC'>■</span> Stable / watch: monitoring, anticipatory action")
+
+# Which traces and notes each view shows (traces: structural, humanitarian, climate, combined, funding type)
+view <- function(i, note_combined = FALSE, note_quad = FALSE) {
+  vis <- as.list(seq_len(5) == i)
+  list(list(visible = vis),
+       list(`annotations[0].visible` = note_combined, `annotations[1].visible` = note_quad))
+}
+
+plot_ly() |>
+  add_trace(data = v_today, type = "choropleth", locations = ~iso3, z = ~vuln_score,
+            zmin = 0, zmax = 10, colorscale = sev_scale, text = ~hover,
+            hovertemplate = "%{text}<extra></extra>",
+            colorbar = cbar_brand("STRUCTURAL<br>VULNERABILITY"),
+            marker = list(line = list(color = "#FFFFFF", width = 0.4)), visible = TRUE) |>
+  add_trace(data = v_hum, type = "choropleth", locations = ~iso3, z = ~hum_score,
+            zmin = 0, zmax = 10, colorscale = sev_scale, text = ~hover,
+            hovertemplate = "%{text}<extra></extra>",
+            colorbar = cbar_brand("HUMANITARIAN<br>NEED"),
+            marker = list(line = list(color = "#FFFFFF", width = 0.4)), visible = FALSE) |>
+  add_trace(data = v_clim, type = "choropleth", locations = ~iso3, z = ~climate_score,
+            zmin = 0, zmax = 10, colorscale = clim_scale, text = ~hover,
+            hovertemplate = "%{text}<extra></extra>",
+            colorbar = cbar_brand("CLIMATE<br>RISK"),
+            marker = list(line = list(color = "#FFFFFF", width = 0.4)), visible = FALSE) |>
+  add_trace(data = v_both, type = "choropleth", locations = ~iso3, z = ~as.numeric(both_high),
+            zmin = 0, zmax = 1, showscale = FALSE, text = ~hover,
+            hovertemplate = "%{text}<extra></extra>",
+            colorscale = list(c(0, not_both_col), c(0.5, not_both_col),
+                              c(0.5, both_high_col), c(1, both_high_col)),
+            marker = list(line = list(color = "#FFFFFF", width = 0.4)), visible = FALSE) |>
+  add_trace(data = v_quad, type = "choropleth", locations = ~iso3, z = ~quadrant_n,
+            zmin = -0.5, zmax = 3.5, showscale = FALSE, text = ~hover,
+            hovertemplate = "%{text}<extra></extra>",
+            colorscale = list(c(0,    quad_cols[1]), c(0.25, quad_cols[1]),
+                              c(0.25, quad_cols[2]), c(0.5,  quad_cols[2]),
+                              c(0.5,  quad_cols[3]), c(0.75, quad_cols[3]),
+                              c(0.75, quad_cols[4]), c(1,    quad_cols[4])),
+            marker = list(line = list(color = "#FFFFFF", width = 0.4)), visible = FALSE) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", dragmode = FALSE,
+         font = list(color = brand_text, family = "DM Sans, sans-serif"),
+         hoverlabel = brand_hover,
+         geo = flat_geo, margin = list(l = 0, r = 0, t = 50, b = 45),
+         annotations = list(
+           list(text = "Dark red = high structural vulnerability AND high climate risk (both 5 or more)",
+                x = 0.01, y = 0, xref = "paper", yref = "paper", xanchor = "left", yanchor = "top",
+                showarrow = FALSE, visible = FALSE, align = "left",
+                font = brand_font_small),
+           list(text = quad_legend,
+                x = 0.01, y = 0, xref = "paper", yref = "paper", xanchor = "left", yanchor = "top",
+                showarrow = FALSE, visible = FALSE, align = "left",
+                font = brand_font_small),
+           nodata_key("No data<br>(humanitarian view:<br>no crisis recorded)", font = brand_font_small)),
+         updatemenus = list(list(
+           type = "dropdown", direction = "down", showactive = TRUE, active = 0,
+           x = 0.01, xanchor = "left", y = 1.02, yanchor = "bottom",
+           bgcolor = brand_gold, bordercolor = brand_gold, borderwidth = 1,
+           pad = list(t = 4, b = 4, l = 6, r = 6),
+           font = list(color = brand_on_gold, family = "DM Sans, sans-serif", size = 11),
+           buttons = list(
+             list(label = "STRUCTURAL VULNERABILITY",        method = "update", args = view(1)),
+             list(label = "HUMANITARIAN NEED",               method = "update", args = view(2)),
+             list(label = "CLIMATE RISK",                    method = "update", args = view(3)),
+             list(label = "STRUCTURAL + CLIMATE",            method = "update", args = view(4, note_combined = TRUE)),
+             list(label = "FUNDING TYPE (HUMANITARIAN × STRUCTURAL)", method = "update",
+                  args = view(5, note_quad = TRUE)))))) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE)
+```
+
+## Row {height=520px}
+
+```{r}
+#| title: "All countries"
+global |>
+  filter(!is.na(vuln_score)) |>
+  transmute(Country = country,
+            `Humanitarian need` = hum_score,
+            `Structural vulnerability` = vuln_score,
+            `Main driver` = top_group,
+            `Funding type` = quadrant,
+            `Climate risk` = climate_score,
+            `Structural + climate high` = ifelse(both_high, "Yes", ""),
+            Reliability = reliability,
+            `Oldest data` = as.character(oldest)) |>
+  reactable(searchable = TRUE, compact = TRUE, highlight = TRUE,
+            defaultSorted = "Structural vulnerability", defaultSortOrder = "desc",
+            defaultColDef = colDef(minWidth = 100),
+            columns = list(Country = colDef(minWidth = 140),
+                           `Humanitarian need` = colDef(format = colFormat(digits = 1), na = "–"),
+                           `Structural vulnerability` = colDef(format = colFormat(digits = 1)),
+                           `Climate risk` = colDef(format = colFormat(digits = 1)),
+                           `Main driver` = colDef(minWidth = 140),
+                           `Funding type` = colDef(minWidth = 140)),
+            theme = sa_table_theme)
+```
+
+# Food & Nutrition
+
+## Row {height=540px}
+
+```{r}
+#| title: "Food security & nutrition: structural deficit (0 = none, 10 = severe)"
+sector_map("Food & Nutrition")
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Countries"
+sector_table("Food & Nutrition")
+```
+
+# WASH
+
+## Row {height=540px}
+
+```{r}
+#| title: "Water, sanitation & hygiene: structural deficit (0 = none, 10 = severe)"
+sector_map("WASH")
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Countries"
+sector_table("WASH")
+```
+
+# Health
+
+## Row {height=540px}
+
+```{r}
+#| title: "Health: structural deficit (0 = none, 10 = severe)"
+sector_map("Health")
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Countries"
+sector_table("Health")
+```
+
+# Protection
+
+## Row {height=540px}
+
+```{r}
+#| title: "Protection: structural deficit (0 = none, 10 = severe)"
+sector_map("Protection")
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Countries"
+sector_table("Protection")
+```
+
+# Education
+
+## Row {height=540px}
+
+```{r}
+#| title: "Education: structural deficit (0 = none, 10 = severe)"
+sector_map("Education")
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Countries"
+sector_table("Education")
+```
+
+# Shelter
+
+## Row {height=540px}
+
+```{r}
+#| title: "Shelter: structural deficit (0 = none, 10 = severe)"
+sector_map("Shelter")
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Countries"
+sector_table("Shelter")
+```
+
+# Attention & funding
+
+## Row {height=170px}
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Countries in crisis", style = paste0("color:", gold, "; font-weight: 500;")),
+  value    = htmltools::tags$span(nrow(neglect), style = value_style),
+  showcase = bsicons::bs_icon("globe", color = gold, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = card_grey, fg = text_light)
+)
+```
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Most neglected", style = paste0("color:", anthracite, "; font-weight: 500;")),
+  value    = htmltools::tags$span(top$country[1], style = value_style),
+  showcase = bsicons::bs_icon("exclamation-triangle", color = anthracite, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = gold, fg = anthracite)
+)
+```
+
+```{r}
+bslib::value_box(
+  title    = htmltools::tags$span("Reference month", style = paste0("color:", gold, "; font-weight: 500;")),
+  value    = htmltools::tags$span(ref_label, style = value_style),
+  showcase = bsicons::bs_icon("calendar3", color = gold, size = "2.4rem"),
+  theme    = bslib::value_box_theme(bg = card_grey, fg = text_light)
+)
+```
+
+## Row {height=480px}
+
+```{r}
+#| title: "Crisis severity map"
+plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
+        zmin = 0, zmax = 10, colorscale = sev_scale,
+        text = ~paste0(country, "<br>", top_crisis),
+        hovertemplate = "<b>%{text}</b><br>Crisis Severity Score: %{z:.1f}<extra></extra>",
+        colorbar = cbar("Crisis<br>Severity<br>Score"),
+        marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", font = chart_font, dragmode = FALSE,
+         geo = list(bgcolor = "rgba(0,0,0,0)", showframe = FALSE,
+                    projection = list(type = "orthographic",
+                                      rotation = list(lon = 20, lat = 10)),
+                    showocean = TRUE, oceancolor = ocean_blue,
+                    showlakes = TRUE, lakecolor = ocean_blue,
+                    showrivers = TRUE, rivercolor = ocean_blue, riverwidth = 0.5,
+                    showland = TRUE, landcolor = nodata_grey,
+                    showcountries = TRUE, countrycolor = "#FFFFFF",
+                    showcoastlines = TRUE, coastlinecolor = "#FFFFFF", coastlinewidth = 1,
+                    lonaxis = list(showgrid = TRUE, gridcolor = grid_blue),
+                    lataxis = list(showgrid = TRUE, gridcolor = grid_blue)),
+         margin = list(l = 0, r = 0, t = 0, b = 0),
+         annotations = list(nodata_key("No crisis recorded"))) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE) |>
+  htmlwidgets::onRender("
+    function(el) {
+      var lon = 20, paused = false, mode = 'globe';
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Pause while the mouse is over the map (or briefly after a tap)
+      el.addEventListener('mouseenter', function() { paused = true; });
+      el.addEventListener('mouseleave', function() { paused = false; });
+      el.addEventListener('touchstart', function() {
+        paused = true;
+        setTimeout(function() { paused = false; }, 6000);
+      });
+
+      function showFlat() {
+        mode = 'flat';
+        Plotly.relayout(el, {
+          'geo.projection.type': 'natural earth',
+          'geo.projection.rotation.lon': 0,
+          'geo.projection.rotation.lat': 0,
+          'geo.showocean': true,
+          'geo.lonaxis.showgrid': false,
+          'geo.lataxis.showgrid': false
+        });
+      }
+
+      function showGlobe() {
+        mode = 'globe';
+        Plotly.relayout(el, {
+          'geo.projection.type': 'orthographic',
+          'geo.projection.rotation.lon': lon,
+          'geo.projection.rotation.lat': 10,
+          'geo.showocean': true,
+          'geo.lonaxis.showgrid': true,
+          'geo.lataxis.showgrid': true
+        });
+      }
+
+      // Phones and tablets: a still, flat map (no spinning, no switching)
+      if (window.matchMedia('(max-width: 768px), (pointer: coarse)').matches) {
+        showFlat();
+        return;
+      }
+
+      // Expanded = the map fills most of the screen in both width and height
+      function checkSize() {
+        var expanded = el.clientWidth  > window.innerWidth  * 0.7 &&
+                       el.clientHeight > window.innerHeight * 0.7;
+        if (expanded && mode === 'globe') showFlat();
+        if (!expanded && mode === 'flat') showGlobe();
+      }
+
+      var resizeTimer = null;
+      new ResizeObserver(function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(checkSize, 150);
+      }).observe(el);
+
+      // Slow turning, only in globe mode
+      function spin() {
+        if (mode === 'globe' && !paused && !reduceMotion &&
+            document.visibilityState === 'visible') {
+          lon = lon - 0.5;
+          if (lon < -180) lon += 360;
+          Plotly.relayout(el, {'geo.projection.rotation.lon': lon});
+        }
+        setTimeout(spin, 60);
+      }
+      spin();
+    }
+  ")
+```
+
+```{r}
+#| title: "Crisis Severity vs. Media Attention"
+plot_ly(scatter_data, x = ~attention, y = ~severity,
+        text = ~label, customdata = ~country,
+        type = "scatter", mode = "markers+text", textposition = "top center",
+        hovertemplate = "<b>%{customdata}</b><br>Crisis Severity Score: %{y:.1f}<br>News share: %{x:.0f}<extra></extra>",
+        marker = list(color = scatter_data$dot, size = 11, opacity = 0.9,
+                      line = list(color = gold_pale, width = 1)),
+        textfont = list(color = text_light, size = 11, family = "DM Sans, sans-serif")) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
+         font  = chart_font, dragmode = FALSE,
+         xaxis = c(dark_axis, list(title = "News share (per 10k articles, log scale)", type = "log",
+                                   tickvals = c(0.1, 1, 10, 100, 1000),
+                                   ticktext = c("0.1", "1", "10", "100", "1,000"))),
+         yaxis = c(dark_axis, list(title = "Crisis Severity Score"))) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE)
+```
+
+## Row {height=440px}
+
+```{r}
+#| title: "News attention: 8 most severe crises"
+plot_ly(trend_data, x = ~month_lab, y = ~share_per_10k, color = ~name,
+        colors = trend_colours, linetype = ~name, linetypes = trend_dashes,
+        type = "scatter", mode = "lines+markers",
+        hovertemplate = "<b>%{fullData.name}</b><br>%{x}: %{y:.0f} per 10k articles<extra></extra>",
+        line = list(width = 3), marker = list(size = 8)) |>
+  layout(paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
+         font   = chart_font, dragmode = FALSE,
+         legend = list(orientation = "h", y = -0.2, font = chart_font),
+         xaxis  = c(dark_axis, list(title = "")),
+         yaxis  = c(dark_axis, list(title = "Share per 10k articles", tickformat = ".0f"))) |>
+  config(displayModeBar = FALSE, scrollZoom = FALSE)
+```
+
+```{r}
+#| title: "Countries in crisis"
+reactable(neglect,
+          searchable = TRUE, highlight = TRUE, compact = TRUE,
+          defaultSorted = "severity", defaultSortOrder = "desc",
+          columns = list(
+            iso3       = colDef(show = FALSE),
+            country    = colDef(name = "Country", minWidth = 110),
+            severity   = colDef(name = "Crisis Severity Score", format = colFormat(digits = 1)),
+            top_crisis = colDef(name = "Crisis", minWidth = 160),
+            crises     = colDef(name = "Crises"),
+            attention  = colDef(name = "News share", format = colFormat(digits = 0)),
+            funded_pct = colDef(name = "Funded", format = colFormat(suffix = "%"))
+          ),
+          theme = sa_table_theme)
+```
+
+# About
+
+## Row
+
+::: {.card title="About this data"}
+::: {.about-text}
+**Global vulnerability:** each country is scored 0–10 (10 = most vulnerable) in six sectors: food & nutrition, WASH, health, protection, education and shelter. Indicator values are converted to 0–10 between fixed reference points. A sector's score is the average of its indicators; the overall score is the average of the two worst sectors, and needs data for at least three sectors. Sources: World Bank World Development Indicators, drawing on WHO/UNICEF JMP (water and sanitation), WHO/UNICEF immunisation estimates, the UNICEF/WHO/World Bank Joint Malnutrition Estimates, UNESCO Institute for Statistics and UN-Habitat.
+
+**Humanitarian need:** for now, the country-level ACAPS INFORM Severity score (0–10) for countries in crisis in `r ref_label`; countries without a recorded crisis are treated as low humanitarian need. Sector-level humanitarian scores (people in need, IPC phases) will be added in a later phase.
+
+**Funding type:** combines humanitarian need and structural vulnerability (each "high" at 5 or more): protracted crisis (both high: nexus funding), shock (humanitarian high: humanitarian response), chronic deficit (structural high: development investment), stable / watch (both low: monitoring and anticipatory action).
+
+**Data age:** development and climate indicators use the latest data from the last 10 years. Data within 3 years counts fully towards the reliability rating, 4–5 years counts half and 6–10 years a quarter. Each value's year is shown in the map tooltips. In countries affected by recent crises, structural data may predate the crisis and understate current vulnerability; these countries are flagged.
+
+**Climate risk:** ND-GAIN Country Index (University of Notre Dame), combining climate vulnerability and lack of readiness to adapt, on a 0–10 scale. Climate risk is shown beside vulnerability, not added into it. The combined view highlights countries where both scores are 5 or more.
+
+**Crisis Severity Score:** ACAPS INFORM Severity Index (0–10 scale), country-level score, `r ref_label`.
+
+**Media attention:** each country's share of global online news coverage, GDELT Project, `r ref_label`. Search phrases are adapted per country to avoid name confusion.
+
+**Funding:** OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, year-to-date as of `r date_label(funding_date)`.
+
+**Coverage:** the attention and funding tab covers the `r nrow(neglect)` countries ACAPS reports in crisis in `r ref_label`. The vulnerability tabs cover all countries with sufficient recent data.
+
+**Disclaimer:** ACAPS, the GDELT Project, OCHA, the World Bank, the University of Notre Dame (ND-GAIN) and the agencies whose data they publish are independent data providers. They are not affiliated with SA Analytical and do not endorse this dashboard. The analysis and any errors are SA Analytical's own.
+
+© `r format(Sys.Date(), "%Y")` SA Analytical. All rights reserved. Dashboard design and analysis by SA Analytical; underlying data remain the property of their respective providers.
+:::
+:::

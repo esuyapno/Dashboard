@@ -144,3 +144,16 @@ body {
   .card-header { font-size: .62rem; letter-spacing: .16em; }
   .about-text { font-size: .78rem; }
 }
+
+/* "Beta version" in the title, styled like the card titles above each map */
+.beta-tag {
+  font-family: $font-family-sans-serif;   // DM Sans
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: $gold;
+  vertical-align: middle;
+  margin-left: .6rem;
+  white-space: nowrap;
+}

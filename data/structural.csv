@@ -1,0 +1,1673 @@
+iso3,country,sector,side,code,label,value,year,data_age
+ABW,Aruba,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+ABW,Aruba,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.7397757541097,2016,10
+ABW,Aruba,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.8400017151311,2024,2
+ABW,Aruba,population,denominator,SP.POP.TOTL,Total population,108785,2025,1
+AFG,Afghanistan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),71.58904,2022,4
+AFG,Afghanistan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),80.8324374493852,2024,2
+AFG,Afghanistan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),59,2024,2
+AFG,Afghanistan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),54.4957993646086,2024,2
+AFG,Afghanistan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",42,2024,2
+AFG,Afghanistan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.6,2022,4
+AFG,Afghanistan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),27.8,2024,2
+AFG,Afghanistan,population,denominator,SP.POP.TOTL,Total population,43844111,2025,1
+AGO,Angola,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),62.7,2022,4
+AGO,Angola,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),36.7621509877511,2023,3
+AGO,Angola,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),67.9607422242112,2024,2
+AGO,Angola,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),64,2024,2
+AGO,Angola,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),50.2951359158799,2022,4
+AGO,Angola,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",47.7,2024,2
+AGO,Angola,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),17.4,2024,2
+AGO,Angola,population,denominator,SP.POP.TOTL,Total population,39040039,2025,1
+ALB,Albania,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.7,2022,4
+ALB,Albania,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.487619996070862,2024,2
+ALB,Albania,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.1194270680062,2024,2
+ALB,Albania,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+ALB,Albania,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.2997151439025,2024,2
+ALB,Albania,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.4,2024,2
+ALB,Albania,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.6,2017,9
+ALB,Albania,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.6,2024,2
+ALB,Albania,population,denominator,SP.POP.TOTL,Total population,2349580,2025,1
+AND,Andorra,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+AND,Andorra,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.41476988792419,2024,2
+AND,Andorra,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+AND,Andorra,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+AND,Andorra,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+AND,Andorra,population,denominator,SP.POP.TOTL,Total population,82904,2025,1
+ARE,United Arab Emirates,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.11325,2022,4
+ARE,United Arab Emirates,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.0038698924709,2024,2
+ARE,United Arab Emirates,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+ARE,United Arab Emirates,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+ARE,United Arab Emirates,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.0868783474854,2024,2
+ARE,United Arab Emirates,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ARE,United Arab Emirates,population,denominator,SP.POP.TOTL,Total population,11513149,2025,1
+ARG,Argentina,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),14.5,2022,4
+ARG,Argentina,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.734622127960727,2023,3
+ARG,Argentina,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.0413738458383,2016,10
+ARG,Argentina,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),75,2024,2
+ARG,Argentina,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),94.8209557204549,2016,10
+ARG,Argentina,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10.7,2024,2
+ARG,Argentina,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.7,2018,8
+ARG,Argentina,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.8,2024,2
+ARG,Argentina,population,denominator,SP.POP.TOTL,Total population,45851378,2025,1
+ARM,Armenia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),8.39472,2022,4
+ARM,Armenia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.08414540949338,2024,2
+ARM,Armenia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9315721509168,2024,2
+ARM,Armenia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+ARM,Armenia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),93.6649426520095,2024,2
+ARM,Armenia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.2,2024,2
+ARM,Armenia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.4,2016,10
+ARM,Armenia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ARM,Armenia,population,denominator,SP.POP.TOTL,Total population,3086700,2025,1
+ASM,American Samoa,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+ASM,American Samoa,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),62.119697982607,2024,2
+ASM,American Samoa,population,denominator,SP.POP.TOTL,Total population,46029,2025,1
+ATG,Antigua and Barbuda,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.64634,2022,4
+ATG,Antigua and Barbuda,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.71101264042263,2023,3
+ATG,Antigua and Barbuda,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.9227269324043,2024,2
+ATG,Antigua and Barbuda,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+ATG,Antigua and Barbuda,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.6057190215246,2024,2
+ATG,Antigua and Barbuda,population,denominator,SP.POP.TOTL,Total population,94209,2025,1
+AUS,Australia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.035,2022,4
+AUS,Australia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.124310001730919,2024,2
+AUS,Australia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9696359649334,2024,2
+AUS,Australia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),93,2024,2
+AUS,Australia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+AUS,Australia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.1,2024,2
+AUS,Australia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+AUS,Australia,population,denominator,SP.POP.TOTL,Total population,27614411,2025,1
+AUT,Austria,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.04663,2022,4
+AUT,Austria,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.42958998680115,2024,2
+AUT,Austria,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999971947745,2024,2
+AUT,Austria,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),85,2024,2
+AUT,Austria,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.9721024074429,2024,2
+AUT,Austria,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+AUT,Austria,population,denominator,SP.POP.TOTL,Total population,9208163,2025,1
+AZE,Azerbaijan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.026582628252437,2024,2
+AZE,Azerbaijan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.6880841665339,2024,2
+AZE,Azerbaijan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),51,2024,2
+AZE,Azerbaijan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.9785069136854,2024,2
+AZE,Azerbaijan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.8,2024,2
+AZE,Azerbaijan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.5,2023,3
+AZE,Azerbaijan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+AZE,Azerbaijan,population,denominator,SP.POP.TOTL,Total population,10246996,2025,1
+BDI,Burundi,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),36.75168,2022,4
+BDI,Burundi,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),26.4652690887451,2025,1
+BDI,Burundi,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),65.9191041847553,2024,2
+BDI,Burundi,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2024,2
+BDI,Burundi,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),44.6339890793582,2024,2
+BDI,Burundi,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",55.3,2024,2
+BDI,Burundi,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.8,2024,2
+BDI,Burundi,population,denominator,SP.POP.TOTL,Total population,14390003,2025,1
+BEL,Belgium,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+BEL,Belgium,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.65828001499176,2023,3
+BEL,Belgium,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+BEL,Belgium,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+BEL,Belgium,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.486220664134,2024,2
+BEL,Belgium,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2.6,2024,2
+BEL,Belgium,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.8,2023,3
+BEL,Belgium,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+BEL,Belgium,population,denominator,SP.POP.TOTL,Total population,11941781,2025,1
+BEN,Benin,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),64.01064,2022,4
+BEN,Benin,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),9.61021041870117,2022,4
+BEN,Benin,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),69.5868397867067,2024,2
+BEN,Benin,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),63,2024,2
+BEN,Benin,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),22.248968702791,2024,2
+BEN,Benin,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",33.2,2024,2
+BEN,Benin,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",8.3,2021,5
+BEN,Benin,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),11.1,2024,2
+BEN,Benin,population,denominator,SP.POP.TOTL,Total population,14814460,2025,1
+BFA,Burkina Faso,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),87.88175,2022,4
+BFA,Burkina Faso,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),34.2876639696398,2024,2
+BFA,Burkina Faso,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),49.9986600107497,2024,2
+BFA,Burkina Faso,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+BFA,Burkina Faso,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),31.7963485938203,2024,2
+BFA,Burkina Faso,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",19.5,2024,2
+BFA,Burkina Faso,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",9.3,2021,5
+BFA,Burkina Faso,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),11.7,2024,2
+BFA,Burkina Faso,population,denominator,SP.POP.TOTL,Total population,24074580,2025,1
+BGD,Bangladesh,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),51.50833,2022,4
+BGD,Bangladesh,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),5.86219598592343,2024,2
+BGD,Bangladesh,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.7825421934741,2024,2
+BGD,Bangladesh,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+BGD,Bangladesh,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),67.6171751221237,2024,2
+BGD,Bangladesh,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",25.1,2024,2
+BGD,Bangladesh,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",10.7,2022,4
+BGD,Bangladesh,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),8.2,2024,2
+BGD,Bangladesh,population,denominator,SP.POP.TOTL,Total population,175686899,2025,1
+BGR,Bulgaria,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.19661,2022,4
+BGR,Bulgaria,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),5.9025502204895,2024,2
+BGR,Bulgaria,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.1852515713458,2024,2
+BGR,Bulgaria,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+BGR,Bulgaria,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),86.0765607063355,2024,2
+BGR,Bulgaria,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.5,2024,2
+BGR,Bulgaria,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+BGR,Bulgaria,population,denominator,SP.POP.TOTL,Total population,6433302,2025,1
+BHR,Bahrain,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2018,8
+BHR,Bahrain,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.74693069306931,2024,2
+BHR,Bahrain,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9198990209829,2024,2
+BHR,Bahrain,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+BHR,Bahrain,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+BHR,Bahrain,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.6,2024,2
+BHR,Bahrain,population,denominator,SP.POP.TOTL,Total population,1600366,2025,1
+BHS,"Bahamas, The",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),15.8760387811634,2024,2
+BHS,"Bahamas, The",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.9452612148878,2019,7
+BHS,"Bahamas, The",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),90,2024,2
+BHS,"Bahamas, The",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),93.7100445402837,2019,7
+BHS,"Bahamas, The",population,denominator,SP.POP.TOTL,Total population,403033,2025,1
+BIH,Bosnia and Herzegovina,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.3128,2022,4
+BIH,Bosnia and Herzegovina,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.0972900390625,2023,3
+BIH,Bosnia and Herzegovina,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.0873127231219,2024,2
+BIH,Bosnia and Herzegovina,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),79,2024,2
+BIH,Bosnia and Herzegovina,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.3850620124746,2018,8
+BIH,Bosnia and Herzegovina,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.9,2024,2
+BIH,Bosnia and Herzegovina,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+BIH,Bosnia and Herzegovina,population,denominator,SP.POP.TOTL,Total population,3140095,2025,1
+BLR,Belarus,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.004,2019,7
+BLR,Belarus,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.49176546006799,2024,2
+BLR,Belarus,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.8924920429612,2024,2
+BLR,Belarus,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+BLR,Belarus,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.7473526999237,2024,2
+BLR,Belarus,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.1,2024,2
+BLR,Belarus,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.3,2023,3
+BLR,Belarus,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+BLR,Belarus,population,denominator,SP.POP.TOTL,Total population,9085991,2025,1
+BLZ,Belize,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),15.72533,2022,4
+BLZ,Belize,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),10.6771001746104,2024,2
+BLZ,Belize,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),94.8473253067341,2024,2
+BLZ,Belize,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),88,2024,2
+BLZ,Belize,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),84.3017658171591,2024,2
+BLZ,Belize,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",11.7,2024,2
+BLZ,Belize,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.4,2024,2
+BLZ,Belize,population,denominator,SP.POP.TOTL,Total population,422924,2025,1
+BMU,Bermuda,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.07761,2022,4
+BMU,Bermuda,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+BMU,Bermuda,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.9416526015971,2024,2
+BMU,Bermuda,population,denominator,SP.POP.TOTL,Total population,64555,2025,1
+BOL,Bolivia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),46.62568,2022,4
+BOL,Bolivia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),9.25127029418945,2024,2
+BOL,Bolivia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),93.3877494672031,2024,2
+BOL,Bolivia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),59,2024,2
+BOL,Bolivia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),71.5839204142996,2024,2
+BOL,Bolivia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10.7,2024,2
+BOL,Bolivia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2,2016,10
+BOL,Bolivia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),19.5,2024,2
+BOL,Bolivia,population,denominator,SP.POP.TOTL,Total population,12581843,2025,1
+BRA,Brazil,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),14.8971,2022,4
+BRA,Brazil,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.18720006942749,2024,2
+BRA,Brazil,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999987323028,2024,2
+BRA,Brazil,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+BRA,Brazil,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),92.4012701604853,2024,2
+BRA,Brazil,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8.9,2024,2
+BRA,Brazil,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.4,2019,7
+BRA,Brazil,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+BRA,Brazil,population,denominator,SP.POP.TOTL,Total population,212812405,2025,1
+BRB,Barbados,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),17.5962132125952,2024,2
+BRB,Barbados,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.1626347450814,2024,2
+BRB,Barbados,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+BRB,Barbados,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.0924623115578,2024,2
+BRB,Barbados,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.8,2024,2
+BRB,Barbados,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5,2024,2
+BRB,Barbados,population,denominator,SP.POP.TOTL,Total population,282623,2025,1
+BRN,Brunei Darussalam,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),21.59688,2022,4
+BRN,Brunei Darussalam,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.61188556501645,2024,2
+BRN,Brunei Darussalam,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+BRN,Brunei Darussalam,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+BRN,Brunei Darussalam,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+BRN,Brunei Darussalam,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",9.9,2024,2
+BRN,Brunei Darussalam,population,denominator,SP.POP.TOTL,Total population,466330,2025,1
+BTN,Bhutan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),44.6899,2022,4
+BTN,Bhutan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),10.4979156031962,2024,2
+BTN,Bhutan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.5465791835972,2024,2
+BTN,Bhutan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+BTN,Bhutan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),86.8421082075035,2024,2
+BTN,Bhutan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.9,2024,2
+BTN,Bhutan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.1,2023,3
+BTN,Bhutan,population,denominator,SP.POP.TOTL,Total population,796682,2025,1
+BWA,Botswana,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),39.6,2022,4
+BWA,Botswana,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.535068806191338,2022,4
+BWA,Botswana,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),91.7713640807246,2024,2
+BWA,Botswana,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+BWA,Botswana,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),72.115456599001,2024,2
+BWA,Botswana,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",21,2024,2
+BWA,Botswana,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),18.2,2024,2
+BWA,Botswana,population,denominator,SP.POP.TOTL,Total population,2562122,2025,1
+CAF,Central African Republic,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),68.9131,2022,4
+CAF,Central African Republic,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),36.5040268237207,2024,2
+CAF,Central African Republic,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),42,2024,2
+CAF,Central African Republic,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),14.0362838980325,2024,2
+CAF,Central African Republic,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",38.9,2024,2
+CAF,Central African Republic,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.2,2022,4
+CAF,Central African Republic,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),29.8,2024,2
+CAF,Central African Republic,population,denominator,SP.POP.TOTL,Total population,5513282,2025,1
+CAN,Canada,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.09583,2022,4
+CAN,Canada,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.98995018005371,2023,3
+CAN,Canada,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.2902608624259,2024,2
+CAN,Canada,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+CAN,Canada,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.5878834990178,2024,2
+CAN,Canada,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CAN,Canada,population,denominator,SP.POP.TOTL,Total population,41651653,2025,1
+CHE,Switzerland,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+CHE,Switzerland,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.143020004034042,2024,2
+CHE,Switzerland,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999967819997,2024,2
+CHE,Switzerland,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+CHE,Switzerland,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.8998709349206,2024,2
+CHE,Switzerland,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CHE,Switzerland,population,denominator,SP.POP.TOTL,Total population,9092436,2025,1
+CHI,Channel Islands,population,denominator,SP.POP.TOTL,Total population,168466,2025,1
+CHL,Chile,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),7.324,2022,4
+CHL,Chile,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.12127995491028,2024,2
+CHL,Chile,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.0811612150969,2024,2
+CHL,Chile,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+CHL,Chile,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.9999955987514,2024,2
+CHL,Chile,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.7,2024,2
+CHL,Chile,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CHL,Chile,population,denominator,SP.POP.TOTL,Total population,19859921,2025,1
+CHN,China,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),26.32091,2022,4
+CHN,China,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.1224151867516,2024,2
+CHN,China,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+CHN,China,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.2718787578263,2024,2
+CHN,China,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.5,2024,2
+CHN,China,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.9,2017,9
+CHN,China,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CHN,China,population,denominator,SP.POP.TOTL,Total population,1406585000,2025,1
+CIV,Cote d'Ivoire,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.26127,2022,4
+CIV,Cote d'Ivoire,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),12.6030704782369,2024,2
+CIV,Cote d'Ivoire,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),77.2470593822361,2024,2
+CIV,Cote d'Ivoire,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),77,2024,2
+CIV,Cote d'Ivoire,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),40.4070687976128,2024,2
+CIV,Cote d'Ivoire,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",20.3,2024,2
+CIV,Cote d'Ivoire,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",8.1,2021,5
+CIV,Cote d'Ivoire,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),11.4,2024,2
+CIV,Cote d'Ivoire,population,denominator,SP.POP.TOTL,Total population,32711547,2025,1
+CMR,Cameroon,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),32.67179,2022,4
+CMR,Cameroon,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.76170992851257,2024,2
+CMR,Cameroon,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),71.410178711283,2024,2
+CMR,Cameroon,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),77,2024,2
+CMR,Cameroon,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),47.0729484414837,2024,2
+CMR,Cameroon,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",27.2,2024,2
+CMR,Cameroon,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.3,2018,8
+CMR,Cameroon,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.9,2024,2
+CMR,Cameroon,population,denominator,SP.POP.TOTL,Total population,29879337,2025,1
+COD,"Congo, Dem. Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),78.36226,2022,4
+COD,"Congo, Dem. Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),35.6813611952254,2024,2
+COD,"Congo, Dem. Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),65,2024,2
+COD,"Congo, Dem. Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),16.3033122368932,2024,2
+COD,"Congo, Dem. Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",44.1,2024,2
+COD,"Congo, Dem. Rep.",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.2,2023,3
+COD,"Congo, Dem. Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),39.5,2024,2
+COD,"Congo, Dem. Rep.",population,denominator,SP.POP.TOTL,Total population,112832473,2025,1
+COG,"Congo, Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),75.34233,2022,4
+COG,"Congo, Rep.",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),17.0770797729492,2023,3
+COG,"Congo, Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),73.4884211673414,2021,5
+COG,"Congo, Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),78,2024,2
+COG,"Congo, Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),20.5548099594917,2021,5
+COG,"Congo, Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",16.3,2024,2
+COG,"Congo, Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),25,2024,2
+COG,"Congo, Rep.",population,denominator,SP.POP.TOTL,Total population,6484437,2025,1
+COL,Colombia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),9.7,2022,4
+COL,Colombia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),7.32453012466431,2022,4
+COL,Colombia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.0965711084738,2024,2
+COL,Colombia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2024,2
+COL,Colombia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),96.5820151977995,2024,2
+COL,Colombia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",11.6,2024,2
+COL,Colombia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.6,2016,10
+COL,Colombia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.1,2024,2
+COL,Colombia,population,denominator,SP.POP.TOTL,Total population,53425635,2025,1
+COM,Comoros,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.50155,2022,4
+COM,Comoros,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),20.6474464892789,2024,2
+COM,Comoros,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),85.0539278589302,2024,2
+COM,Comoros,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),75,2024,2
+COM,Comoros,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),57.2230888156822,2024,2
+COM,Comoros,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.4,2024,2
+COM,Comoros,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.1,2022,4
+COM,Comoros,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),16.5,2024,2
+COM,Comoros,population,denominator,SP.POP.TOTL,Total population,882847,2025,1
+CPV,Cabo Verde,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),46.41147,2022,4
+CPV,Cabo Verde,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),41.8359960270029,2022,4
+CPV,Cabo Verde,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.2800892661912,2024,2
+CPV,Cabo Verde,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),93,2024,2
+CPV,Cabo Verde,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),83.1279216157097,2024,2
+CPV,Cabo Verde,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.3,2024,2
+CPV,Cabo Verde,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.4,2018,8
+CPV,Cabo Verde,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),8.1,2024,2
+CPV,Cabo Verde,population,denominator,SP.POP.TOTL,Total population,527326,2025,1
+CRI,Costa Rica,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),3.54573,2022,4
+CRI,Costa Rica,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.48607015609741,2024,2
+CRI,Costa Rica,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.8154123406248,2024,2
+CRI,Costa Rica,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+CRI,Costa Rica,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.7888406524124,2024,2
+CRI,Costa Rica,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10.6,2024,2
+CRI,Costa Rica,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.8,2018,8
+CRI,Costa Rica,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CRI,Costa Rica,population,denominator,SP.POP.TOTL,Total population,5152950,2025,1
+CUB,Cuba,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),11.04101,2022,4
+CUB,Cuba,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.6841554170385296,2024,2
+CUB,Cuba,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.1464064347704,2024,2
+CUB,Cuba,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+CUB,Cuba,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),94.7703506688301,2024,2
+CUB,Cuba,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.3,2024,2
+CUB,Cuba,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2,2019,7
+CUB,Cuba,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),3.5,2024,2
+CUB,Cuba,population,denominator,SP.POP.TOTL,Total population,10937203,2025,1
+CUW,Curacao,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),27.8896102905273,2024,2
+CUW,Curacao,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+CUW,Curacao,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.1690721651989,2017,9
+CUW,Curacao,population,denominator,SP.POP.TOTL,Total population,156263,2025,1
+CYM,Cayman Islands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),5.47921,2022,4
+CYM,Cayman Islands,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),5.16898608349901,2024,2
+CYM,Cayman Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.4601226993865,2024,2
+CYM,Cayman Islands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),83.2442168711656,2024,2
+CYM,Cayman Islands,population,denominator,SP.POP.TOTL,Total population,75844,2025,1
+CYP,Cyprus,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.27235,2022,4
+CYP,Cyprus,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.425049990415573,2023,3
+CYP,Cyprus,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.7211088299984,2024,2
+CYP,Cyprus,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+CYP,Cyprus,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.477676242612,2024,2
+CYP,Cyprus,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CYP,Cyprus,population,denominator,SP.POP.TOTL,Total population,1370754,2025,1
+CZE,Czechia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.02735,2022,4
+CZE,Czechia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.809080004692078,2023,3
+CZE,Czechia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.7341483522106,2024,2
+CZE,Czechia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+CZE,Czechia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.0700543925256,2024,2
+CZE,Czechia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2.4,2024,2
+CZE,Czechia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+CZE,Czechia,population,denominator,SP.POP.TOTL,Total population,10886878,2025,1
+DEU,Germany,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+DEU,Germany,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.273900002241135,2024,2
+DEU,Germany,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+DEU,Germany,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2024,2
+DEU,Germany,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.2269528917777,2024,2
+DEU,Germany,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2.2,2024,2
+DEU,Germany,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.5,2016,10
+DEU,Germany,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+DEU,Germany,population,denominator,SP.POP.TOTL,Total population,83491249,2025,1
+DJI,Djibouti,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.68591,2022,4
+DJI,Djibouti,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),79.661532568521,2024,2
+DJI,Djibouti,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),77,2024,2
+DJI,Djibouti,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),67.0234840121481,2023,3
+DJI,Djibouti,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",20.9,2024,2
+DJI,Djibouti,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",12.1,2023,3
+DJI,Djibouti,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),14.7,2024,2
+DJI,Djibouti,population,denominator,SP.POP.TOTL,Total population,1184076,2025,1
+DMA,Dominica,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.95188999176025,2023,3
+DMA,Dominica,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.9953113262366,2024,2
+DMA,Dominica,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),90,2024,2
+DMA,Dominica,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),80.3664248800941,2017,9
+DMA,Dominica,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),3,2024,2
+DMA,Dominica,population,denominator,SP.POP.TOTL,Total population,65871,2025,1
+DNK,Denmark,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+DNK,Denmark,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.892870008945465,2024,2
+DNK,Denmark,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999997876119,2024,2
+DNK,Denmark,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+DNK,Denmark,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.5972261435858,2024,2
+DNK,Denmark,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+DNK,Denmark,population,denominator,SP.POP.TOTL,Total population,6009169,2025,1
+DOM,Dominican Republic,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),11.24888,2022,4
+DOM,Dominican Republic,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.92766046780147,2024,2
+DOM,Dominican Republic,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.4571299883182,2024,2
+DOM,Dominican Republic,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),87,2024,2
+DOM,Dominican Republic,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),90.1198237574984,2024,2
+DOM,Dominican Republic,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.6,2024,2
+DOM,Dominican Republic,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.2,2019,7
+DOM,Dominican Republic,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+DOM,Dominican Republic,population,denominator,SP.POP.TOTL,Total population,11520487,2025,1
+DZA,Algeria,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),13.246,2022,4
+DZA,Algeria,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.56709141965647,2025,1
+DZA,Algeria,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.4200285933986,2024,2
+DZA,Algeria,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+DZA,Algeria,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),85.9064861325463,2024,2
+DZA,Algeria,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8.9,2024,2
+DZA,Algeria,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.7,2019,7
+DZA,Algeria,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+DZA,Algeria,population,denominator,SP.POP.TOTL,Total population,47435312,2025,1
+ECU,Ecuador,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),57.8,2022,4
+ECU,Ecuador,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.72380630473681,2023,3
+ECU,Ecuador,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.0708709697554,2024,2
+ECU,Ecuador,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),70,2024,2
+ECU,Ecuador,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),91.204340143216,2024,2
+ECU,Ecuador,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.7,2024,2
+ECU,Ecuador,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.7,2024,2
+ECU,Ecuador,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),10.8,2024,2
+ECU,Ecuador,population,denominator,SP.POP.TOTL,Total population,18289896,2025,1
+EGY,"Egypt, Arab Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),3.83938,2022,4
+EGY,"Egypt, Arab Rep.",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.51438630490104,2024,2
+EGY,"Egypt, Arab Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.2982426280194,2024,2
+EGY,"Egypt, Arab Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+EGY,"Egypt, Arab Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.086129419198,2024,2
+EGY,"Egypt, Arab Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",12.9,2024,2
+EGY,"Egypt, Arab Rep.",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.3,2021,5
+EGY,"Egypt, Arab Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),8.4,2024,2
+EGY,"Egypt, Arab Rep.",population,denominator,SP.POP.TOTL,Total population,118365995,2025,1
+ERI,Eritrea,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.68591,2022,4
+ERI,Eritrea,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),40.3848114013672,2022,4
+ERI,Eritrea,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),51.8497177620962,2016,10
+ERI,Eritrea,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+ERI,Eritrea,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),11.9399660140866,2016,10
+ERI,Eritrea,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",48,2024,2
+ERI,Eritrea,population,denominator,SP.POP.TOTL,Total population,3607003,2025,1
+ESP,Spain,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.04603,2022,4
+ESP,Spain,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.23740005493164,2024,2
+ESP,Spain,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9247001396709,2024,2
+ESP,Spain,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+ESP,Spain,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.9181189186239,2024,2
+ESP,Spain,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ESP,Spain,population,denominator,SP.POP.TOTL,Total population,49355143,2025,1
+EST,Estonia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.34543,2022,4
+EST,Estonia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.38803005218506,2024,2
+EST,Estonia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999970212441,2024,2
+EST,Estonia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),81,2024,2
+EST,Estonia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.0214935273124,2024,2
+EST,Estonia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.3,2024,2
+EST,Estonia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+EST,Estonia,population,denominator,SP.POP.TOTL,Total population,1366475,2025,1
+ETH,Ethiopia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),64.31438,2022,4
+ETH,Ethiopia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),22.4551082752842,2024,2
+ETH,Ethiopia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),55.5960696159493,2024,2
+ETH,Ethiopia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),73,2024,2
+ETH,Ethiopia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),10.3577188356734,2024,2
+ETH,Ethiopia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",35.5,2024,2
+ETH,Ethiopia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",6.8,2019,7
+ETH,Ethiopia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),19.9,2024,2
+ETH,Ethiopia,population,denominator,SP.POP.TOTL,Total population,135472051,2025,1
+FIN,Finland,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+FIN,Finland,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.76610004901886,2024,2
+FIN,Finland,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999966968731,2024,2
+FIN,Finland,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+FIN,Finland,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.4479455340914,2024,2
+FIN,Finland,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.7,2024,2
+FIN,Finland,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.6,2023,3
+FIN,Finland,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+FIN,Finland,population,denominator,SP.POP.TOTL,Total population,5646436,2025,1
+FJI,Fiji,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),9.4,2022,4
+FJI,Fiji,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.3933629762562,2024,2
+FJI,Fiji,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.5603898762947,2024,2
+FJI,Fiji,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+FJI,Fiji,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),92.7542897592228,2024,2
+FJI,Fiji,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.2,2024,2
+FJI,Fiji,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.6,2021,5
+FJI,Fiji,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),7.2,2024,2
+FJI,Fiji,population,denominator,SP.POP.TOTL,Total population,933154,2025,1
+FRA,France,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+FRA,France,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.204429998993874,2024,2
+FRA,France,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999974759961,2024,2
+FRA,France,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+FRA,France,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.6443761623837,2024,2
+FRA,France,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+FRA,France,population,denominator,SP.POP.TOTL,Total population,68720337,2025,1
+FRO,Faroe Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+FRO,Faroe Islands,population,denominator,SP.POP.TOTL,Total population,54900,2025,1
+FSM,"Micronesia, Fed. Sts.",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),23.0581179917808,2024,2
+FSM,"Micronesia, Fed. Sts.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),89.8819541513315,2020,6
+FSM,"Micronesia, Fed. Sts.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),76,2024,2
+FSM,"Micronesia, Fed. Sts.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),90.4539007167041,2020,6
+FSM,"Micronesia, Fed. Sts.",population,denominator,SP.POP.TOTL,Total population,113683,2025,1
+GAB,Gabon,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),38.77297,2022,4
+GAB,Gabon,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),28.7633020707587,2019,7
+GAB,Gabon,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),88.5995009085574,2024,2
+GAB,Gabon,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),61,2024,2
+GAB,Gabon,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),57.4015026293834,2024,2
+GAB,Gabon,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",13.7,2024,2
+GAB,Gabon,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.4,2020,6
+GAB,Gabon,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),23.3,2024,2
+GAB,Gabon,population,denominator,SP.POP.TOTL,Total population,2593130,2025,1
+GBR,United Kingdom,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.1625,2022,4
+GBR,United Kingdom,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.0698399990797043,2023,3
+GBR,United Kingdom,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999991412127,2024,2
+GBR,United Kingdom,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+GBR,United Kingdom,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.1026610062551,2024,2
+GBR,United Kingdom,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.5,2024,2
+GBR,United Kingdom,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.4,2019,7
+GBR,United Kingdom,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+GBR,United Kingdom,population,denominator,SP.POP.TOTL,Total population,69487000,2025,1
+GEO,Georgia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),7.07908,2022,4
+GEO,Georgia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.1671617003609,2024,2
+GEO,Georgia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.2900166595814,2024,2
+GEO,Georgia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+GEO,Georgia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),90.6806864880112,2024,2
+GEO,Georgia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.7,2024,2
+GEO,Georgia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.6,2018,8
+GEO,Georgia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+GEO,Georgia,population,denominator,SP.POP.TOTL,Total population,3935766,2025,1
+GHA,Ghana,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),33.48685,2022,4
+GHA,Ghana,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.76691007614136,2024,2
+GHA,Ghana,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),89.9220116872755,2024,2
+GHA,Ghana,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+GHA,Ghana,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),31.5789404731982,2024,2
+GHA,Ghana,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",15.6,2024,2
+GHA,Ghana,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.8,2022,4
+GHA,Ghana,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),6.4,2024,2
+GHA,Ghana,population,denominator,SP.POP.TOTL,Total population,35064272,2025,1
+GIB,Gibraltar,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.57990111317979,2024,2
+GIB,Gibraltar,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+GIB,Gibraltar,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+GIB,Gibraltar,population,denominator,SP.POP.TOTL,Total population,40126,2025,1
+GIN,Guinea,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),43.95734,2022,4
+GIN,Guinea,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),14.727840423584,2020,6
+GIN,Guinea,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),74.1924841600776,2024,2
+GIN,Guinea,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),63,2024,2
+GIN,Guinea,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),32.6496371481415,2024,2
+GIN,Guinea,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",26.6,2024,2
+GIN,Guinea,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",6.4,2022,4
+GIN,Guinea,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),8.7,2024,2
+GIN,Guinea,population,denominator,SP.POP.TOTL,Total population,15099727,2025,1
+GMB,"Gambia, The",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),37.08102,2022,4
+GMB,"Gambia, The",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),16.9105392406958,2025,1
+GMB,"Gambia, The",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),87.1034800376148,2024,2
+GMB,"Gambia, The",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),80,2024,2
+GMB,"Gambia, The",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),48.1711442175538,2024,2
+GMB,"Gambia, The",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",14,2024,2
+GMB,"Gambia, The",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.1,2020,6
+GMB,"Gambia, The",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),17.5,2024,2
+GMB,"Gambia, The",population,denominator,SP.POP.TOTL,Total population,2822093,2025,1
+GNB,Guinea-Bissau,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),59,2022,4
+GNB,Guinea-Bissau,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),61.8077030171668,2024,2
+GNB,Guinea-Bissau,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),68,2024,2
+GNB,Guinea-Bissau,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),28.9416006403664,2024,2
+GNB,Guinea-Bissau,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",28.3,2024,2
+GNB,Guinea-Bissau,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.8,2019,7
+GNB,Guinea-Bissau,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),20,2024,2
+GNB,Guinea-Bissau,population,denominator,SP.POP.TOTL,Total population,2249515,2025,1
+GNQ,Equatorial Guinea,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),64.68739,2022,4
+GNQ,Equatorial Guinea,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),64.6658128879178,2017,9
+GNQ,Equatorial Guinea,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),68,2024,2
+GNQ,Equatorial Guinea,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),66.3127866671561,2017,9
+GNQ,Equatorial Guinea,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.1,2024,2
+GNQ,Equatorial Guinea,population,denominator,SP.POP.TOTL,Total population,1938431,2025,1
+GRC,Greece,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.109679996967316,2023,3
+GRC,Greece,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+GRC,Greece,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+GRC,Greece,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.0072631280035,2024,2
+GRC,Greece,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2,2024,2
+GRC,Greece,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+GRC,Greece,population,denominator,SP.POP.TOTL,Total population,10413962,2025,1
+GRD,Grenada,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.94078894748629,2024,2
+GRD,Grenada,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.6286504435547,2017,9
+GRD,Grenada,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),93,2024,2
+GRD,Grenada,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),92.6192396904393,2024,2
+GRD,Grenada,population,denominator,SP.POP.TOTL,Total population,117303,2025,1
+GRL,Greenland,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+GRL,Greenland,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),62.5,2022,4
+GRL,Greenland,population,denominator,SP.POP.TOTL,Total population,56831,2025,1
+GTM,Guatemala,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),37.6,2022,4
+GTM,Guatemala,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),8.43218740092781,2024,2
+GTM,Guatemala,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),93.1845373918033,2024,2
+GTM,Guatemala,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),81,2024,2
+GTM,Guatemala,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),71.1696950985045,2024,2
+GTM,Guatemala,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",44.6,2024,2
+GTM,Guatemala,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.8,2021,5
+GTM,Guatemala,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),12.7,2024,2
+GTM,Guatemala,population,denominator,SP.POP.TOTL,Total population,18687881,2025,1
+GUM,Guam,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.5524,2022,4
+GUM,Guam,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.5293013959399,2024,2
+GUM,Guam,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),90.3765791487569,2024,2
+GUM,Guam,population,denominator,SP.POP.TOTL,Total population,168999,2025,1
+GUY,Guyana,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),11.30361,2022,4
+GUY,Guyana,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),17.9801578260599,2023,3
+GUY,Guyana,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.6442641595321,2024,2
+GUY,Guyana,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+GUY,Guyana,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),91.3087218189458,2024,2
+GUY,Guyana,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.1,2024,2
+GUY,Guyana,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",6.5,2019,7
+GUY,Guyana,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+GUY,Guyana,population,denominator,SP.POP.TOTL,Total population,835986,2025,1
+HKG,"Hong Kong SAR, China",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.40461574139064,2024,2
+HKG,"Hong Kong SAR, China",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+HKG,"Hong Kong SAR, China",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),94.834373461349,2024,2
+HKG,"Hong Kong SAR, China",population,denominator,SP.POP.TOTL,Total population,7498900,2025,1
+HND,Honduras,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),31.5,2018,8
+HND,Honduras,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),26.6201549791965,2024,2
+HND,Honduras,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.7293716551666,2024,2
+HND,Honduras,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),75,2024,2
+HND,Honduras,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),87.6717912057898,2024,2
+HND,Honduras,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.9,2024,2
+HND,Honduras,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.9,2019,7
+HND,Honduras,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),14.3,2024,2
+HND,Honduras,population,denominator,SP.POP.TOTL,Total population,11005850,2025,1
+HRV,Croatia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.52712,2022,4
+HRV,Croatia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.81183004379273,2023,3
+HRV,Croatia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.903181204483,2024,2
+HRV,Croatia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+HRV,Croatia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.7936994032533,2021,5
+HRV,Croatia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+HRV,Croatia,population,denominator,SP.POP.TOTL,Total population,3876200,2025,1
+HTI,Haiti,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),51.05915,2022,4
+HTI,Haiti,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),73.3157500565915,2024,2
+HTI,Haiti,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),60,2024,2
+HTI,Haiti,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),29.1081189443114,2024,2
+HTI,Haiti,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",21.6,2024,2
+HTI,Haiti,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5,2023,3
+HTI,Haiti,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),51.4,2024,2
+HTI,Haiti,population,denominator,SP.POP.TOTL,Total population,11906095,2025,1
+HUN,Hungary,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),7.2,2016,10
+HUN,Hungary,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.8082799911499,2024,2
+HUN,Hungary,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+HUN,Hungary,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+HUN,Hungary,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.9736275561386,2024,2
+HUN,Hungary,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+HUN,Hungary,population,denominator,SP.POP.TOTL,Total population,9514251,2025,1
+IDN,Indonesia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),19.41083,2022,4
+IDN,Indonesia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.87680291868608,2025,1
+IDN,Indonesia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),89.008759557411,2024,2
+IDN,Indonesia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),78,2024,2
+IDN,Indonesia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),88.2031685658499,2024,2
+IDN,Indonesia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",22.6,2024,2
+IDN,Indonesia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",8.4,2023,3
+IDN,Indonesia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),6.3,2024,2
+IDN,Indonesia,population,denominator,SP.POP.TOTL,Total population,285721236,2025,1
+IMN,Isle of Man,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+IMN,Isle of Man,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+IMN,Isle of Man,population,denominator,SP.POP.TOTL,Total population,84118,2025,1
+IND,India,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),5.41,2019,7
+IND,India,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.118825289035449,2025,1
+IND,India,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.7247373523918,2024,2
+IND,India,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+IND,India,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),83.380872478201,2024,2
+IND,India,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",32.9,2024,2
+IND,India,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",18.7,2020,6
+IND,India,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),9.8,2024,2
+IND,India,population,denominator,SP.POP.TOTL,Total population,1463865525,2025,1
+IRL,Ireland,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),8.5,2022,4
+IRL,Ireland,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.81272995471954,2022,4
+IRL,Ireland,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.0980337007013,2024,2
+IRL,Ireland,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+IRL,Ireland,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),89.7256064199387,2024,2
+IRL,Ireland,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2.2,2024,2
+IRL,Ireland,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+IRL,Ireland,population,denominator,SP.POP.TOTL,Total population,5484367,2025,1
+IRN,"Iran, Islamic Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),44.6899,2022,4
+IRN,"Iran, Islamic Rep.",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.10283999890089,2023,3
+IRN,"Iran, Islamic Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.8520635920898,2024,2
+IRN,"Iran, Islamic Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+IRN,"Iran, Islamic Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),90.458288016159,2024,2
+IRN,"Iran, Islamic Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.8,2024,2
+IRN,"Iran, Islamic Rep.",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.3,2017,9
+IRN,"Iran, Islamic Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),6.7,2024,2
+IRN,"Iran, Islamic Rep.",population,denominator,SP.POP.TOTL,Total population,92417681,2025,1
+IRQ,Iraq,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),49.33894,2022,4
+IRQ,Iraq,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.4076938287767,2024,2
+IRQ,Iraq,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),90,2024,2
+IRQ,Iraq,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.5047513855653,2024,2
+IRQ,Iraq,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",9.4,2024,2
+IRQ,Iraq,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3,2018,8
+IRQ,Iraq,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),13.4,2024,2
+IRQ,Iraq,population,denominator,SP.POP.TOTL,Total population,47020774,2025,1
+ISL,Iceland,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+ISL,Iceland,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.82071995735169,2023,3
+ISL,Iceland,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+ISL,Iceland,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+ISL,Iceland,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.7780018629454,2024,2
+ISL,Iceland,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ISL,Iceland,population,denominator,SP.POP.TOTL,Total population,392404,2025,1
+ISR,Israel,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.66266989707947,2024,2
+ISR,Israel,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999993081787,2024,2
+ISR,Israel,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+ISR,Israel,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.9200782006513,2024,2
+ISR,Israel,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ISR,Israel,population,denominator,SP.POP.TOTL,Total population,10122800,2025,1
+ITA,Italy,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.02,2022,4
+ITA,Italy,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.05615997314453,2023,3
+ITA,Italy,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9170340740928,2024,2
+ITA,Italy,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+ITA,Italy,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.8849043408577,2024,2
+ITA,Italy,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ITA,Italy,population,denominator,SP.POP.TOTL,Total population,58915656,2025,1
+JAM,Jamaica,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.8835,2022,4
+JAM,Jamaica,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.34133005142212,2024,2
+JAM,Jamaica,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),87.5562621347732,2024,2
+JAM,Jamaica,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+JAM,Jamaica,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),91.6264600288818,2024,2
+JAM,Jamaica,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.9,2024,2
+JAM,Jamaica,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.2,2018,8
+JAM,Jamaica,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),8,2024,2
+JAM,Jamaica,population,denominator,SP.POP.TOTL,Total population,2837077,2025,1
+JOR,Jordan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),23.4,2016,10
+JOR,Jordan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.88620072476187,2024,2
+JOR,Jordan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.2861089236717,2024,2
+JOR,Jordan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+JOR,Jordan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),96.4147907489487,2024,2
+JOR,Jordan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.7,2024,2
+JOR,Jordan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.3,2023,3
+JOR,Jordan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),12.2,2024,2
+JOR,Jordan,population,denominator,SP.POP.TOTL,Total population,11520684,2025,1
+JPN,Japan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2,2022,4
+JPN,Japan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.068400003015995,2023,3
+JPN,Japan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.1831679675454,2024,2
+JPN,Japan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+JPN,Japan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.9433104207437,2024,2
+JPN,Japan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.2,2024,2
+JPN,Japan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+JPN,Japan,population,denominator,SP.POP.TOTL,Total population,123366734,2025,1
+KAZ,Kazakhstan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.79376,2022,4
+KAZ,Kazakhstan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),7.91164247068207,2025,1
+KAZ,Kazakhstan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.8336528246685,2024,2
+KAZ,Kazakhstan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+KAZ,Kazakhstan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.9447423331533,2024,2
+KAZ,Kazakhstan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.4,2024,2
+KAZ,Kazakhstan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+KAZ,Kazakhstan,population,denominator,SP.POP.TOTL,Total population,20843754,2025,1
+KEN,Kenya,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),40.49575,2022,4
+KEN,Kenya,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),32.8982475979253,2022,4
+KEN,Kenya,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),65.5965968528709,2024,2
+KEN,Kenya,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+KEN,Kenya,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),40.8849654611543,2024,2
+KEN,Kenya,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.9,2024,2
+KEN,Kenya,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.5,2022,4
+KEN,Kenya,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),34.9,2024,2
+KEN,Kenya,population,denominator,SP.POP.TOTL,Total population,57532493,2025,1
+KGZ,Kyrgyz Republic,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.43932,2022,4
+KGZ,Kyrgyz Republic,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.9593377512549,2025,1
+KGZ,Kyrgyz Republic,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),94.9430591604871,2024,2
+KGZ,Kyrgyz Republic,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),85,2024,2
+KGZ,Kyrgyz Republic,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.5398995968815,2024,2
+KGZ,Kyrgyz Republic,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",11,2024,2
+KGZ,Kyrgyz Republic,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3,2023,3
+KGZ,Kyrgyz Republic,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.8,2024,2
+KGZ,Kyrgyz Republic,population,denominator,SP.POP.TOTL,Total population,7343064,2025,1
+KHM,Cambodia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),42.26983,2022,4
+KHM,Cambodia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.69075438538324,2024,2
+KHM,Cambodia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),82.8497572939701,2024,2
+KHM,Cambodia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),83,2024,2
+KHM,Cambodia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),83.3359328714314,2024,2
+KHM,Cambodia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",22,2024,2
+KHM,Cambodia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",9.6,2021,5
+KHM,Cambodia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.7,2024,2
+KHM,Cambodia,population,denominator,SP.POP.TOTL,Total population,17847982,2025,1
+KIR,Kiribati,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),5.93438,2022,4
+KIR,Kiribati,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),8.70988867059594,2024,2
+KIR,Kiribati,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),79.0683447485722,2024,2
+KIR,Kiribati,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+KIR,Kiribati,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),45.1735078207297,2024,2
+KIR,Kiribati,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",14.7,2024,2
+KIR,Kiribati,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.5,2018,8
+KIR,Kiribati,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),3.8,2024,2
+KIR,Kiribati,population,denominator,SP.POP.TOTL,Total population,136488,2025,1
+KNA,St. Kitts and Nevis,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.6118541324065,2017,9
+KNA,St. Kitts and Nevis,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+KNA,St. Kitts and Nevis,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),94.9535945166888,2017,9
+KNA,St. Kitts and Nevis,population,denominator,SP.POP.TOTL,Total population,46922,2025,1
+KOR,"Korea, Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),4.5,2022,4
+KOR,"Korea, Rep.",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.0556599982082844,2024,2
+KOR,"Korea, Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+KOR,"Korea, Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+KOR,"Korea, Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.7293536055989,2024,2
+KOR,"Korea, Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.8,2024,2
+KOR,"Korea, Rep.",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.2,2020,6
+KOR,"Korea, Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+KOR,"Korea, Rep.",population,denominator,SP.POP.TOTL,Total population,51684564,2025,1
+KWT,Kuwait,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+KWT,Kuwait,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),7.46558493279106,2016,10
+KWT,Kuwait,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+KWT,Kuwait,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+KWT,Kuwait,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+KWT,Kuwait,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.5,2024,2
+KWT,Kuwait,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.5,2023,3
+KWT,Kuwait,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+KWT,Kuwait,population,denominator,SP.POP.TOTL,Total population,4865298,2025,1
+LAO,Lao PDR,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),54.83946,2022,4
+LAO,Lao PDR,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),10.3619170925725,2025,1
+LAO,Lao PDR,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.8635794968398,2024,2
+LAO,Lao PDR,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),67,2024,2
+LAO,Lao PDR,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),88.7314131605599,2024,2
+LAO,Lao PDR,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",29.9,2024,2
+LAO,Lao PDR,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",10.7,2023,3
+LAO,Lao PDR,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),10,2024,2
+LAO,Lao PDR,population,denominator,SP.POP.TOTL,Total population,7873046,2025,1
+LBN,Lebanon,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),4.53099,2022,4
+LBN,Lebanon,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),22.5125209192838,2024,2
+LBN,Lebanon,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.6,2024,2
+LBN,Lebanon,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),49,2024,2
+LBN,Lebanon,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.2,2024,2
+LBN,Lebanon,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10.1,2024,2
+LBN,Lebanon,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.3,2023,3
+LBN,Lebanon,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),11.1,2024,2
+LBN,Lebanon,population,denominator,SP.POP.TOTL,Total population,5849421,2025,1
+LBR,Liberia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),60.47684,2022,4
+LBR,Liberia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),38.2539784581758,2022,4
+LBR,Liberia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),78.8278345445612,2024,2
+LBR,Liberia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),83,2024,2
+LBR,Liberia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),23.3351954904068,2024,2
+LBR,Liberia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",26.9,2024,2
+LBR,Liberia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.4,2019,7
+LBR,Liberia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),37.3,2024,2
+LBR,Liberia,population,denominator,SP.POP.TOTL,Total population,5731206,2025,1
+LBY,Libya,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),16.58153,2022,4
+LBY,Libya,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.3545440861619,2024,2
+LBY,Libya,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+LBY,Libya,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),88.4991460432787,2024,2
+LBY,Libya,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",9.2,2024,2
+LBY,Libya,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.5,2022,4
+LBY,Libya,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),18.7,2024,2
+LBY,Libya,population,denominator,SP.POP.TOTL,Total population,7458555,2025,1
+LCA,St. Lucia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.44067,2022,4
+LCA,St. Lucia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),7.01242278188853,2024,2
+LCA,St. Lucia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.0956816576068,2024,2
+LCA,St. Lucia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+LCA,St. Lucia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),83.3579905079804,2022,4
+LCA,St. Lucia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2.8,2024,2
+LCA,St. Lucia,population,denominator,SP.POP.TOTL,Total population,180149,2025,1
+LIE,Liechtenstein,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.824760019779205,2021,5
+LIE,Liechtenstein,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+LIE,Liechtenstein,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.95,2024,2
+LIE,Liechtenstein,population,denominator,SP.POP.TOTL,Total population,41024,2025,1
+LKA,Sri Lanka,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),44.6899,2022,4
+LKA,Sri Lanka,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),9.1371972433271509,2023,3
+LKA,Sri Lanka,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),90.2138440260395,2024,2
+LKA,Sri Lanka,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+LKA,Sri Lanka,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.3530207374149,2024,2
+LKA,Sri Lanka,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10.1,2024,2
+LKA,Sri Lanka,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",9.3,2024,2
+LKA,Sri Lanka,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.9,2024,2
+LKA,Sri Lanka,population,denominator,SP.POP.TOTL,Total population,21756000,2025,1
+LSO,Lesotho,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),25.55318,2022,4
+LSO,Lesotho,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),32.172439612713,2024,2
+LSO,Lesotho,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),78.0789963759688,2024,2
+LSO,Lesotho,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+LSO,Lesotho,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),47.8913481422717,2024,2
+LSO,Lesotho,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",35,2024,2
+LSO,Lesotho,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.6,2024,2
+LSO,Lesotho,population,denominator,SP.POP.TOTL,Total population,2363325,2025,1
+LTU,Lithuania,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.50861,2022,4
+LTU,Lithuania,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.129700005054474,2024,2
+LTU,Lithuania,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9182026791093,2024,2
+LTU,Lithuania,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2024,2
+LTU,Lithuania,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),96.3965645962382,2024,2
+LTU,Lithuania,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.6,2024,2
+LTU,Lithuania,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.9,2021,5
+LTU,Lithuania,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+LTU,Lithuania,population,denominator,SP.POP.TOTL,Total population,2888774,2025,1
+LUX,Luxembourg,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.01733,2022,4
+LUX,Luxembourg,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.256379991769791,2024,2
+LUX,Luxembourg,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+LUX,Luxembourg,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+LUX,Luxembourg,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.6011739095936,2024,2
+LUX,Luxembourg,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+LUX,Luxembourg,population,denominator,SP.POP.TOTL,Total population,686970,2025,1
+LVA,Latvia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.59304,2022,4
+LVA,Latvia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.74000000953674,2024,2
+LVA,Latvia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.7726032777308,2024,2
+LVA,Latvia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+LVA,Latvia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),92.5346142806387,2024,2
+LVA,Latvia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.7,2024,2
+LVA,Latvia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.7,2021,5
+LVA,Latvia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+LVA,Latvia,population,denominator,SP.POP.TOTL,Total population,1847785,2025,1
+MAC,"Macao SAR, China",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),10.791569086651,2024,2
+MAC,"Macao SAR, China",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+MAC,"Macao SAR, China",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+MAC,"Macao SAR, China",population,denominator,SP.POP.TOTL,Total population,685900,2025,1
+MAF,St. Martin (French part),wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9229384324588,2024,2
+MAF,St. Martin (French part),wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+MAF,St. Martin (French part),population,denominator,SP.POP.TOTL,Total population,24941,2025,1
+MAR,Morocco,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),10.85088,2022,4
+MAR,Morocco,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.471040654666576,2021,5
+MAR,Morocco,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.2120267209653,2024,2
+MAR,Morocco,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+MAR,Morocco,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),87.7780205460508,2024,2
+MAR,Morocco,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",13.7,2024,2
+MAR,Morocco,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.4,2019,7
+MAR,Morocco,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),6.5,2024,2
+MAR,Morocco,population,denominator,SP.POP.TOTL,Total population,38430770,2025,1
+MCO,Monaco,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+MCO,Monaco,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+MCO,Monaco,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+MCO,Monaco,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+MCO,Monaco,population,denominator,SP.POP.TOTL,Total population,38341,2025,1
+MDA,Moldova,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),6.5,2018,8
+MDA,Moldova,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.462864098290279,2024,2
+MDA,Moldova,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.7079162757946,2024,2
+MDA,Moldova,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+MDA,Moldova,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),86.8828564200079,2024,2
+MDA,Moldova,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.2,2024,2
+MDA,Moldova,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+MDA,Moldova,population,denominator,SP.POP.TOTL,Total population,2360527,2025,1
+MDG,Madagascar,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),65.71715,2022,4
+MDG,Madagascar,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.40053925974688,2024,2
+MDG,Madagascar,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),55.3389608321256,2024,2
+MDG,Madagascar,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),60,2024,2
+MDG,Madagascar,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),15.3671469967754,2024,2
+MDG,Madagascar,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",38.4,2024,2
+MDG,Madagascar,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.2,2021,5
+MDG,Madagascar,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),41.8,2024,2
+MDG,Madagascar,population,denominator,SP.POP.TOTL,Total population,32740678,2025,1
+MDV,Maldives,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),34.845,2022,4
+MDV,Maldives,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.946476596321109,2024,2
+MDV,Maldives,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.7584782998402,2024,2
+MDV,Maldives,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+MDV,Maldives,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.7013015304493,2024,2
+MDV,Maldives,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",14.2,2024,2
+MDV,Maldives,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",9.1,2017,9
+MDV,Maldives,population,denominator,SP.POP.TOTL,Total population,529676,2025,1
+MEX,Mexico,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),17.6,2022,4
+MEX,Mexico,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.363240003585815,2024,2
+MEX,Mexico,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.5413676283293,2024,2
+MEX,Mexico,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),78,2024,2
+MEX,Mexico,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),92.9912822357176,2024,2
+MEX,Mexico,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",13.1,2024,2
+MEX,Mexico,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1,2022,4
+MEX,Mexico,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),3.1,2024,2
+MEX,Mexico,population,denominator,SP.POP.TOTL,Total population,131946900,2025,1
+MHL,Marshall Islands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.37518,2022,4
+MHL,Marshall Islands,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.47596135447218,2024,2
+MHL,Marshall Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),87.4448539274847,2024,2
+MHL,Marshall Islands,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),85,2024,2
+MHL,Marshall Islands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),78.9585640543577,2024,2
+MHL,Marshall Islands,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",30,2024,2
+MHL,Marshall Islands,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.5,2017,9
+MHL,Marshall Islands,population,denominator,SP.POP.TOTL,Total population,36282,2025,1
+MKD,North Macedonia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.27796,2022,4
+MKD,North Macedonia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.79094004631042,2023,3
+MKD,North Macedonia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.1873314046173,2024,2
+MKD,North Macedonia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2024,2
+MKD,North Macedonia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.9975865642367,2024,2
+MKD,North Macedonia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.8,2024,2
+MKD,North Macedonia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.4,2019,7
+MKD,North Macedonia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+MKD,North Macedonia,population,denominator,SP.POP.TOTL,Total population,1820909,2025,1
+MLI,Mali,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),92.49697,2022,4
+MLI,Mali,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),34.0078201293945,2023,3
+MLI,Mali,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),86.3633567815443,2024,2
+MLI,Mali,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),82,2024,2
+MLI,Mali,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),47.7561676952566,2024,2
+MLI,Mali,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",23.2,2024,2
+MLI,Mali,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.4,2024,2
+MLI,Mali,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),12.1,2024,2
+MLI,Mali,population,denominator,SP.POP.TOTL,Total population,25198821,2025,1
+MLT,Malta,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.0375,2022,4
+MLT,Malta,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.6377899646759,2023,3
+MLT,Malta,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+MLT,Malta,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+MLT,Malta,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+MLT,Malta,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.5,2024,2
+MLT,Malta,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.4,2022,4
+MLT,Malta,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+MLT,Malta,population,denominator,SP.POP.TOTL,Total population,579704,2025,1
+MMR,Myanmar,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),58.28105,2022,4
+MMR,Myanmar,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),85.6871417640541,2024,2
+MMR,Myanmar,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),71,2024,2
+MMR,Myanmar,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),74.1835210114319,2024,2
+MMR,Myanmar,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",24.5,2024,2
+MMR,Myanmar,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.4,2018,8
+MMR,Myanmar,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.6,2024,2
+MMR,Myanmar,population,denominator,SP.POP.TOTL,Total population,54850648,2025,1
+MNE,Montenegro,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),8.76922,2022,4
+MNE,Montenegro,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.21832999587059,2023,3
+MNE,Montenegro,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.2801382117873,2024,2
+MNE,Montenegro,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),81,2024,2
+MNE,Montenegro,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.8491274525811,2024,2
+MNE,Montenegro,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8,2024,2
+MNE,Montenegro,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.2,2018,8
+MNE,Montenegro,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+MNE,Montenegro,population,denominator,SP.POP.TOTL,Total population,623129,2025,1
+MNG,Mongolia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),17.87869,2022,4
+MNG,Mongolia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),8.56374943861396,2024,2
+MNG,Mongolia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),86.092655324442,2024,2
+MNG,Mongolia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+MNG,Mongolia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),74.2806502878222,2024,2
+MNG,Mongolia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.1,2024,2
+MNG,Mongolia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.7,2023,3
+MNG,Mongolia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+MNG,Mongolia,population,denominator,SP.POP.TOTL,Total population,3568978,2025,1
+MNP,Northern Mariana Islands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.2,2022,4
+MNP,Northern Mariana Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+MNP,Northern Mariana Islands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.7585788850266,2024,2
+MNP,Northern Mariana Islands,population,denominator,SP.POP.TOTL,Total population,43541,2025,1
+MOZ,Mozambique,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),54.95891,2022,4
+MOZ,Mozambique,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.999974790698898,2022,4
+MOZ,Mozambique,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),66.6252441342671,2024,2
+MOZ,Mozambique,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),70,2024,2
+MOZ,Mozambique,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),38.5900804802051,2024,2
+MOZ,Mozambique,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",37,2024,2
+MOZ,Mozambique,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.8,2022,4
+MOZ,Mozambique,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),22.3,2024,2
+MOZ,Mozambique,population,denominator,SP.POP.TOTL,Total population,35631653,2025,1
+MRT,Mauritania,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),58.56017,2022,4
+MRT,Mauritania,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),11.2562378007474,2024,2
+MRT,Mauritania,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),77.2846491375388,2024,2
+MRT,Mauritania,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+MRT,Mauritania,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),58.676920295931,2024,2
+MRT,Mauritania,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",21.5,2024,2
+MRT,Mauritania,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",13.6,2022,4
+MRT,Mauritania,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),11,2024,2
+MRT,Mauritania,population,denominator,SP.POP.TOTL,Total population,5315065,2025,1
+MUS,Mauritius,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.68591,2022,4
+MUS,Mauritius,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.78536806902022,2024,2
+MUS,Mauritius,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9265458263134,2024,2
+MUS,Mauritius,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),93,2024,2
+MUS,Mauritius,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.3737391141644,2024,2
+MUS,Mauritius,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.8,2024,2
+MUS,Mauritius,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.9,2024,2
+MUS,Mauritius,population,denominator,SP.POP.TOTL,Total population,1243741,2025,1
+MWI,Malawi,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),37.97408,2022,4
+MWI,Malawi,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.08900513013386,2022,4
+MWI,Malawi,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),73.0535741738591,2024,2
+MWI,Malawi,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+MWI,Malawi,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),49.2322090448262,2024,2
+MWI,Malawi,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",33.2,2024,2
+MWI,Malawi,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.6,2020,6
+MWI,Malawi,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),24.5,2024,2
+MWI,Malawi,population,denominator,SP.POP.TOTL,Total population,22216120,2025,1
+MYS,Malaysia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.2,2020,6
+MYS,Malaysia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),11.9696349522189,2024,2
+MYS,Malaysia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.9424657751403,2024,2
+MYS,Malaysia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),93,2024,2
+MYS,Malaysia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),96.019999368878,2024,2
+MYS,Malaysia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",24.3,2024,2
+MYS,Malaysia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",11,2022,4
+MYS,Malaysia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+MYS,Malaysia,population,denominator,SP.POP.TOTL,Total population,35977838,2025,1
+NAM,Namibia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),41.4,2022,4
+NAM,Namibia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.865496521831131,2024,2
+NAM,Namibia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),86.5087378352127,2024,2
+NAM,Namibia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),74,2024,2
+NAM,Namibia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),38.7229020528394,2024,2
+NAM,Namibia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",16.4,2024,2
+NAM,Namibia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),20.1,2024,2
+NAM,Namibia,population,denominator,SP.POP.TOTL,Total population,3092816,2025,1
+NCL,New Caledonia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.25,2022,4
+NCL,New Caledonia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.5386729881695,2024,2
+NCL,New Caledonia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+NCL,New Caledonia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.1,2024,2
+NCL,New Caledonia,population,denominator,SP.POP.TOTL,Total population,295333,2025,1
+NER,Niger,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),70.44397,2022,4
+NER,Niger,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),40.4124014576017,2024,2
+NER,Niger,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),53.4274656286176,2024,2
+NER,Niger,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),86,2024,2
+NER,Niger,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),16.336047650863,2024,2
+NER,Niger,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",48.3,2024,2
+NER,Niger,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",10.9,2022,4
+NER,Niger,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),12.9,2024,2
+NER,Niger,population,denominator,SP.POP.TOTL,Total population,27917831,2025,1
+NGA,Nigeria,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.49726,2022,4
+NGA,Nigeria,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),24.3187007904053,2023,3
+NGA,Nigeria,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),82.2488935172216,2024,2
+NGA,Nigeria,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),67,2024,2
+NGA,Nigeria,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),47.9019370619136,2024,2
+NGA,Nigeria,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",33.8,2024,2
+NGA,Nigeria,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",11.6,2021,5
+NGA,Nigeria,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),22.2,2024,2
+NGA,Nigeria,population,denominator,SP.POP.TOTL,Total population,237527782,2025,1
+NIC,Nicaragua,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),5.5185,2020,6
+NIC,Nicaragua,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.6563401222229,2023,3
+NIC,Nicaragua,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2023,3
+NIC,Nicaragua,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),17.3,2022,4
+NIC,Nicaragua,population,denominator,SP.POP.TOTL,Total population,7007502,2025,1
+NLD,Netherlands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+NLD,Netherlands,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.51911997795105,2023,3
+NLD,Netherlands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+NLD,Netherlands,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+NLD,Netherlands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.6566689550594,2024,2
+NLD,Netherlands,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.6,2024,2
+NLD,Netherlands,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+NLD,Netherlands,population,denominator,SP.POP.TOTL,Total population,18087633,2025,1
+NOR,Norway,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+NOR,Norway,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.37849998474121,2024,2
+NOR,Norway,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+NOR,Norway,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+NOR,Norway,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.0470498172276,2024,2
+NOR,Norway,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+NOR,Norway,population,denominator,SP.POP.TOTL,Total population,5610870,2025,1
+NPL,Nepal,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),40.05521,2022,4
+NPL,Nepal,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.762479077438538,2025,1
+NPL,Nepal,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),93.6401246842117,2024,2
+NPL,Nepal,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+NPL,Nepal,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),86.0259805937649,2024,2
+NPL,Nepal,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",26,2024,2
+NPL,Nepal,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7,2022,4
+NPL,Nepal,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.2,2024,2
+NPL,Nepal,population,denominator,SP.POP.TOTL,Total population,29618118,2025,1
+NRU,Naoero,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.59734,2022,4
+NRU,Naoero,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.5964518220428,2025,1
+NRU,Naoero,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.8429618988897,2024,2
+NRU,Naoero,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+NRU,Naoero,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),71.321135135507,2024,2
+NRU,Naoero,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",16,2024,2
+NRU,Naoero,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.3,2023,3
+NRU,Naoero,population,denominator,SP.POP.TOTL,Total population,12025,2025,1
+NZL,New Zealand,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+NZL,New Zealand,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.62452006340027,2024,2
+NZL,New Zealand,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+NZL,New Zealand,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),89,2024,2
+NZL,New Zealand,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+NZL,New Zealand,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+NZL,New Zealand,population,denominator,SP.POP.TOTL,Total population,5324700,2025,1
+OMN,Oman,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+OMN,Oman,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),5.7558798789978,2024,2
+OMN,Oman,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),92.6702187093673,2024,2
+OMN,Oman,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+OMN,Oman,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.3209329311967,2024,2
+OMN,Oman,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",12.9,2024,2
+OMN,Oman,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",9.3,2017,9
+OMN,Oman,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),7.1,2024,2
+OMN,Oman,population,denominator,SP.POP.TOTL,Total population,5494691,2025,1
+PAK,Pakistan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),55.97371,2022,4
+PAK,Pakistan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),17.9321832663555,2024,2
+PAK,Pakistan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),90.6932992273275,2024,2
+PAK,Pakistan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),87,2024,2
+PAK,Pakistan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),71.8828600416756,2024,2
+PAK,Pakistan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",33.6,2024,2
+PAK,Pakistan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.1,2018,8
+PAK,Pakistan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),16.1,2024,2
+PAK,Pakistan,population,denominator,SP.POP.TOTL,Total population,255219554,2025,1
+PAN,Panama,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),16.3,2022,4
+PAN,Panama,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),7.69758987426758,2024,2
+PAN,Panama,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.2628238815705,2024,2
+PAN,Panama,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),72,2024,2
+PAN,Panama,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),89.0540402475148,2024,2
+PAN,Panama,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",14,2024,2
+PAN,Panama,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.1,2019,7
+PAN,Panama,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.7,2024,2
+PAN,Panama,population,denominator,SP.POP.TOTL,Total population,4571189,2025,1
+PER,Peru,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),45.05797,2022,4
+PER,Peru,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.156479999423027,2019,7
+PER,Peru,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.6370823826383,2024,2
+PER,Peru,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),80,2024,2
+PER,Peru,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),78.7732036574365,2024,2
+PER,Peru,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10.6,2024,2
+PER,Peru,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.6,2023,3
+PER,Peru,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.7,2024,2
+PER,Peru,population,denominator,SP.POP.TOTL,Total population,34576665,2025,1
+PHL,Philippines,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),35.874,2022,4
+PHL,Philippines,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),11.6352284796706,2024,2
+PHL,Philippines,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.8592214925506,2024,2
+PHL,Philippines,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),71,2024,2
+PHL,Philippines,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),87.1527398416478,2024,2
+PHL,Philippines,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",27.7,2024,2
+PHL,Philippines,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.4,2021,5
+PHL,Philippines,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),3.4,2024,2
+PHL,Philippines,population,denominator,SP.POP.TOTL,Total population,116786962,2025,1
+PLW,Palau,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.61832,2022,4
+PLW,Palau,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.33400252085981,2024,2
+PLW,Palau,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.5322473497037,2024,2
+PLW,Palau,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+PLW,Palau,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.0248681264887,2024,2
+PLW,Palau,population,denominator,SP.POP.TOTL,Total population,17663,2025,1
+PNG,Papua New Guinea,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),22.2687,2022,4
+PNG,Papua New Guinea,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.00264879525902,2021,5
+PNG,Papua New Guinea,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),53.298484868619,2024,2
+PNG,Papua New Guinea,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),42,2024,2
+PNG,Papua New Guinea,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),23.5743391458237,2024,2
+PNG,Papua New Guinea,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",47.6,2024,2
+PNG,Papua New Guinea,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),30.5,2024,2
+PNG,Papua New Guinea,population,denominator,SP.POP.TOTL,Total population,10762817,2025,1
+POL,Poland,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),4.21795,2022,4
+POL,Poland,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.091669999063015,2024,2
+POL,Poland,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),90.124463310463,2024,2
+POL,Poland,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+POL,Poland,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.9561729534462,2024,2
+POL,Poland,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1,2024,2
+POL,Poland,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.8,2018,8
+POL,Poland,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+POL,Poland,population,denominator,SP.POP.TOTL,Total population,36435861,2025,1
+PRI,Puerto Rico (US),education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),13.2522644734681,2024,2
+PRI,Puerto Rico (US),wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+PRI,Puerto Rico (US),wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+PRI,Puerto Rico (US),population,denominator,SP.POP.TOTL,Total population,3184835,2025,1
+PRK,"Korea, Dem. People's Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),23.03639,2022,4
+PRK,"Korea, Dem. People's Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),93.9109177513255,2023,3
+PRK,"Korea, Dem. People's Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+PRK,"Korea, Dem. People's Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),84.8184516885649,2023,3
+PRK,"Korea, Dem. People's Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",16.6,2024,2
+PRK,"Korea, Dem. People's Rep.",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.5,2017,9
+PRK,"Korea, Dem. People's Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),47,2018,8
+PRK,"Korea, Dem. People's Rep.",population,denominator,SP.POP.TOTL,Total population,26571036,2025,1
+PRT,Portugal,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.05897,2022,4
+PRT,Portugal,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.508170008659363,2023,3
+PRT,Portugal,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.287612173499,2024,2
+PRT,Portugal,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+PRT,Portugal,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.6591815840337,2024,2
+PRT,Portugal,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.2,2024,2
+PRT,Portugal,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.1,2016,10
+PRT,Portugal,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+PRT,Portugal,population,denominator,SP.POP.TOTL,Total population,10804871,2025,1
+PRY,Paraguay,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),15.1,2022,4
+PRY,Paraguay,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),13.3311253107393,2024,2
+PRY,Paraguay,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.6035956651355,2024,2
+PRY,Paraguay,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),80,2024,2
+PRY,Paraguay,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.9347586765151,2024,2
+PRY,Paraguay,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.2,2024,2
+PRY,Paraguay,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1,2016,10
+PRY,Paraguay,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.1,2024,2
+PRY,Paraguay,population,denominator,SP.POP.TOTL,Total population,7013078,2025,1
+PSE,West Bank and Gaza,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),19.5,2020,6
+PSE,West Bank and Gaza,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),9.55693065349131,2023,3
+PSE,West Bank and Gaza,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.7717073984261,2024,2
+PSE,West Bank and Gaza,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),88,2024,2
+PSE,West Bank and Gaza,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.3950169288026,2024,2
+PSE,West Bank and Gaza,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8,2024,2
+PSE,West Bank and Gaza,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.3,2020,6
+PSE,West Bank and Gaza,population,denominator,SP.POP.TOTL,Total population,5413596,2025,1
+PYF,French Polynesia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.5,2022,4
+PYF,French Polynesia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+PYF,French Polynesia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.5098895490704,2024,2
+PYF,French Polynesia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.6,2024,2
+PYF,French Polynesia,population,denominator,SP.POP.TOTL,Total population,282465,2025,1
+QAT,Qatar,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+QAT,Qatar,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.61719989776611,2024,2
+QAT,Qatar,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9889721417312,2024,2
+QAT,Qatar,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+QAT,Qatar,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.936545083788,2024,2
+QAT,Qatar,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.4,2024,2
+QAT,Qatar,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.6,2023,3
+QAT,Qatar,population,denominator,SP.POP.TOTL,Total population,2972215,2025,1
+ROU,Romania,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.52038,2022,4
+ROU,Romania,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),15.589879989624,2023,3
+ROU,Romania,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999994247989,2024,2
+ROU,Romania,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),79,2024,2
+ROU,Romania,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),90.5413612422841,2024,2
+ROU,Romania,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7,2024,2
+ROU,Romania,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+ROU,Romania,population,denominator,SP.POP.TOTL,Total population,19020271,2025,1
+RUS,Russian Federation,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.61887,2022,4
+RUS,Russian Federation,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.93521976470947,2023,3
+RUS,Russian Federation,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.9002616074642,2024,2
+RUS,Russian Federation,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+RUS,Russian Federation,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),92.2175878296841,2024,2
+RUS,Russian Federation,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+RUS,Russian Federation,population,denominator,SP.POP.TOTL,Total population,143513328,2025,1
+RWA,Rwanda,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),38.34923,2022,4
+RWA,Rwanda,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.97025520511033,2024,2
+RWA,Rwanda,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),61.392176021167,2024,2
+RWA,Rwanda,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+RWA,Rwanda,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),81.3307323783745,2024,2
+RWA,Rwanda,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",29.8,2024,2
+RWA,Rwanda,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.1,2020,6
+RWA,Rwanda,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),22.6,2024,2
+RWA,Rwanda,population,denominator,SP.POP.TOTL,Total population,14569341,2025,1
+SAU,Saudi Arabia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.55,2022,4
+SAU,Saudi Arabia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.526757106679931,2024,2
+SAU,Saudi Arabia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.0407817713525,2024,2
+SAU,Saudi Arabia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+SAU,Saudi Arabia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.6074983619299,2024,2
+SAU,Saudi Arabia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",11.1,2024,2
+SAU,Saudi Arabia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.9,2020,6
+SAU,Saudi Arabia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+SAU,Saudi Arabia,population,denominator,SP.POP.TOTL,Total population,36973555,2025,1
+SDN,Sudan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),73.7,2022,4
+SDN,Sudan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),43.8378410339355,2019,7
+SDN,Sudan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),64.8917129502851,2024,2
+SDN,Sudan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),39,2024,2
+SDN,Sudan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),65.7085965688426,2024,2
+SDN,Sudan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",35.4,2024,2
+SDN,Sudan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),10.9,2021,5
+SDN,Sudan,population,denominator,SP.POP.TOTL,Total population,51662147,2025,1
+SEN,Senegal,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),46.41165,2022,4
+SEN,Senegal,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),24.5260525439769,2024,2
+SEN,Senegal,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),88.0435670438381,2024,2
+SEN,Senegal,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+SEN,Senegal,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),62.5195952667746,2024,2
+SEN,Senegal,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",17.2,2024,2
+SEN,Senegal,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",10.2,2023,3
+SEN,Senegal,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.3,2024,2
+SEN,Senegal,population,denominator,SP.POP.TOTL,Total population,18931966,2025,1
+SGP,Singapore,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0,2022,4
+SGP,Singapore,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.211558480808623,2023,3
+SGP,Singapore,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+SGP,Singapore,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+SGP,Singapore,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+SGP,Singapore,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",2.8,2024,2
+SGP,Singapore,population,denominator,SP.POP.TOTL,Total population,6111175,2025,1
+SLB,Solomon Islands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.94965,2022,4
+SLB,Solomon Islands,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),30.1391142134865,2024,2
+SLB,Solomon Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),71.6090318452294,2024,2
+SLB,Solomon Islands,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),87,2024,2
+SLB,Solomon Islands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),34.6490737425976,2024,2
+SLB,Solomon Islands,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",29.8,2024,2
+SLB,Solomon Islands,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),27,2024,2
+SLB,Solomon Islands,population,denominator,SP.POP.TOTL,Total population,838645,2025,1
+SLE,Sierra Leone,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),49.27874,2022,4
+SLE,Sierra Leone,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),68.0790238061869,2024,2
+SLE,Sierra Leone,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+SLE,Sierra Leone,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),24.9136362418086,2024,2
+SLE,Sierra Leone,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",25.2,2024,2
+SLE,Sierra Leone,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",6.3,2021,5
+SLE,Sierra Leone,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),25.3,2024,2
+SLE,Sierra Leone,population,denominator,SP.POP.TOTL,Total population,8819794,2025,1
+SLV,El Salvador,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),16.47714,2022,4
+SLV,El Salvador,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),8.66362597172731,2024,2
+SLV,El Salvador,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),91.6199927341916,2024,2
+SLV,El Salvador,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+SLV,El Salvador,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),88.0411163426053,2024,2
+SLV,El Salvador,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",9.4,2024,2
+SLV,El Salvador,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.9,2021,5
+SLV,El Salvador,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.3,2024,2
+SLV,El Salvador,population,denominator,SP.POP.TOTL,Total population,6365503,2025,1
+SMR,San Marino,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.13207547169811,2024,2
+SMR,San Marino,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9999961845643,2024,2
+SMR,San Marino,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),88,2024,2
+SMR,San Marino,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),100,2024,2
+SMR,San Marino,population,denominator,SP.POP.TOTL,Total population,34109,2025,1
+SOM,"Somalia, Fed. Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.68591,2022,4
+SOM,"Somalia, Fed. Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),75.294796457137707,2024,2
+SOM,"Somalia, Fed. Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),70,2024,2
+SOM,"Somalia, Fed. Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),44.4568438332571,2024,2
+SOM,"Somalia, Fed. Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",23.9,2024,2
+SOM,"Somalia, Fed. Rep.",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),56.5,2024,2
+SOM,"Somalia, Fed. Rep.",population,denominator,SP.POP.TOTL,Total population,19654739,2025,1
+SRB,Serbia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.41509,2022,4
+SRB,Serbia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.33343005180359,2024,2
+SRB,Serbia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.39838202106,2024,2
+SRB,Serbia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),95,2024,2
+SRB,Serbia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.9422983506613,2024,2
+SRB,Serbia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.6,2024,2
+SRB,Serbia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.6,2019,7
+SRB,Serbia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+SRB,Serbia,population,denominator,SP.POP.TOTL,Total population,6549143,2025,1
+SSD,South Sudan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),94.2,2022,4
+SSD,South Sudan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),64.7346801757812,2024,2
+SSD,South Sudan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),39.7494391327564,2024,2
+SSD,South Sudan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),73,2024,2
+SSD,South Sudan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),14.4282401482886,2024,2
+SSD,South Sudan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",30,2024,2
+SSD,South Sudan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),19.1,2024,2
+SSD,South Sudan,population,denominator,SP.POP.TOTL,Total population,12188788,2025,1
+STP,Sao Tome and Principe,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),82.39333,2022,4
+STP,Sao Tome and Principe,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.87733006477356,2017,9
+STP,Sao Tome and Principe,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),77.957445837032,2024,2
+STP,Sao Tome and Principe,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),87,2024,2
+STP,Sao Tome and Principe,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),48.6785052753612,2024,2
+STP,Sao Tome and Principe,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",10,2024,2
+STP,Sao Tome and Principe,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.1,2019,7
+STP,Sao Tome and Principe,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),23,2024,2
+STP,Sao Tome and Principe,population,denominator,SP.POP.TOTL,Total population,240254,2025,1
+SUR,Suriname,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),15.80035,2022,4
+SUR,Suriname,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),16.2221505973869,2024,2
+SUR,Suriname,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.9978493893275,2024,2
+SUR,Suriname,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),69,2024,2
+SUR,Suriname,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),89.9982745800564,2024,2
+SUR,Suriname,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8,2024,2
+SUR,Suriname,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.5,2018,8
+SUR,Suriname,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),12.7,2024,2
+SUR,Suriname,population,denominator,SP.POP.TOTL,Total population,639850,2025,1
+SVK,Slovak Republic,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.06602,2022,4
+SVK,Slovak Republic,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.06402003765106,2024,2
+SVK,Slovak Republic,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.7860717473563,2024,2
+SVK,Slovak Republic,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+SVK,Slovak Republic,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.5429596376154,2024,2
+SVK,Slovak Republic,population,denominator,SP.POP.TOTL,Total population,5413813,2025,1
+SVN,Slovenia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.52712,2022,4
+SVN,Slovenia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.44739997386932,2023,3
+SVN,Slovenia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.5745942010052,2024,2
+SVN,Slovenia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),90,2024,2
+SVN,Slovenia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.3111577508786,2024,2
+SVN,Slovenia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+SVN,Slovenia,population,denominator,SP.POP.TOTL,Total population,2130986,2025,1
+SWE,Sweden,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.3362,2022,4
+SWE,Sweden,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.570439994335175,2024,2
+SWE,Sweden,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.7607966673045,2024,2
+SWE,Sweden,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),96,2024,2
+SWE,Sweden,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.743188223274,2024,2
+SWE,Sweden,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+SWE,Sweden,population,denominator,SP.POP.TOTL,Total population,10596620,2025,1
+SWZ,Eswatini,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),17.00571,2022,4
+SWZ,Eswatini,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.8254239516235,2022,4
+SWZ,Eswatini,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),80.3737107191052,2024,2
+SWZ,Eswatini,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),84,2024,2
+SWZ,Eswatini,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),64.4605026249554,2024,2
+SWZ,Eswatini,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",18.9,2024,2
+SWZ,Eswatini,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.8,2021,5
+SWZ,Eswatini,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),15.1,2024,2
+SWZ,Eswatini,population,denominator,SP.POP.TOTL,Total population,1256174,2025,1
+SXM,Sint Maarten (Dutch part),shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.88821,2022,4
+SXM,Sint Maarten (Dutch part),education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.78133010864258,2023,3
+SXM,Sint Maarten (Dutch part),wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.3111793297519,2017,9
+SXM,Sint Maarten (Dutch part),wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.7810265603988,2017,9
+SXM,Sint Maarten (Dutch part),population,denominator,SP.POP.TOTL,Total population,43923,2025,1
+SYC,Seychelles,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.68591,2022,4
+SYC,Seychelles,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.80491018295288,2024,2
+SYC,Seychelles,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.7273290215423,2024,2
+SYC,Seychelles,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+SYC,Seychelles,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.7,2024,2
+SYC,Seychelles,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.2,2024,2
+SYC,Seychelles,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+SYC,Seychelles,population,denominator,SP.POP.TOTL,Total population,122730,2025,1
+SYR,Syrian Arab Republic,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),41.12579,2022,4
+SYR,Syrian Arab Republic,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),21.8050308227539,2024,2
+SYR,Syrian Arab Republic,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),94.1259941580026,2024,2
+SYR,Syrian Arab Republic,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),73,2024,2
+SYR,Syrian Arab Republic,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.6484324566991,2024,2
+SYR,Syrian Arab Republic,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",23.5,2024,2
+SYR,Syrian Arab Republic,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),40.8,2024,2
+SYR,Syrian Arab Republic,population,denominator,SP.POP.TOTL,Total population,25620427,2025,1
+TCA,Turks and Caicos Islands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.6313,2022,4
+TCA,Turks and Caicos Islands,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.133396408670034,2024,2
+TCA,Turks and Caicos Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.8323379770944,2024,2
+TCA,Turks and Caicos Islands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),93.1525997991534,2024,2
+TCA,Turks and Caicos Islands,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",3.2,2024,2
+TCA,Turks and Caicos Islands,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.2,2020,6
+TCA,Turks and Caicos Islands,population,denominator,SP.POP.TOTL,Total population,46855,2025,1
+TCD,Chad,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),82,2022,4
+TCD,Chad,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),24.8041149068773,2024,2
+TCD,Chad,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),52.2090525523694,2024,2
+TCD,Chad,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),68,2024,2
+TCD,Chad,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),13.1415290614475,2024,2
+TCD,Chad,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",31.5,2024,2
+TCD,Chad,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.8,2022,4
+TCD,Chad,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),33.6,2024,2
+TCD,Chad,population,denominator,SP.POP.TOTL,Total population,21003705,2025,1
+TGO,Togo,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),38.46053,2022,4
+TGO,Togo,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.63859610825703494,2024,2
+TGO,Togo,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),64.7862455498292,2024,2
+TGO,Togo,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),90,2024,2
+TGO,Togo,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),25.1681056691569,2024,2
+TGO,Togo,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",23,2024,2
+TGO,Togo,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.7,2017,9
+TGO,Togo,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),10.2,2024,2
+TGO,Togo,population,denominator,SP.POP.TOTL,Total population,8591626,2025,1
+THA,Thailand,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2,2019,7
+THA,Thailand,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.817190014634514,2025,1
+THA,Thailand,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),100,2024,2
+THA,Thailand,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+THA,Thailand,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.3504878190651,2024,2
+THA,Thailand,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",12.3,2024,2
+THA,Thailand,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",7.2,2022,4
+THA,Thailand,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.4,2024,2
+THA,Thailand,population,denominator,SP.POP.TOTL,Total population,71619863,2025,1
+TJK,Tajikistan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.05,2016,10
+TJK,Tajikistan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.15082979202271,2017,9
+TJK,Tajikistan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),89.1914749965589,2024,2
+TJK,Tajikistan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+TJK,Tajikistan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.9857039731115,2023,3
+TJK,Tajikistan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",13.1,2024,2
+TJK,Tajikistan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",6.4,2023,3
+TJK,Tajikistan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),8,2024,2
+TJK,Tajikistan,population,denominator,SP.POP.TOTL,Total population,10786734,2025,1
+TKM,Turkmenistan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),8.38201,2022,4
+TKM,Turkmenistan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),4.30782245373809,2024,2
+TKM,Turkmenistan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9219552580212,2024,2
+TKM,Turkmenistan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),98,2024,2
+TKM,Turkmenistan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.7354493287639,2024,2
+TKM,Turkmenistan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.5,2024,2
+TKM,Turkmenistan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.1,2019,7
+TKM,Turkmenistan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4.1,2024,2
+TKM,Turkmenistan,population,denominator,SP.POP.TOTL,Total population,7618847,2025,1
+TLS,Timor-Leste,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),33.92051,2022,4
+TLS,Timor-Leste,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.87728977203369,2023,3
+TLS,Timor-Leste,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),87.3296506057336,2024,2
+TLS,Timor-Leste,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),83,2024,2
+TLS,Timor-Leste,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),72.935802279964,2024,2
+TLS,Timor-Leste,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",45.4,2024,2
+TLS,Timor-Leste,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",8.3,2020,6
+TLS,Timor-Leste,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),16.9,2024,2
+TLS,Timor-Leste,population,denominator,SP.POP.TOTL,Total population,1418517,2025,1
+TON,Tonga,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.30753,2022,4
+TON,Tonga,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.28040974723023,2022,4
+TON,Tonga,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.8583466602623,2024,2
+TON,Tonga,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+TON,Tonga,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),93.933454352263,2024,2
+TON,Tonga,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",1.6,2024,2
+TON,Tonga,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.1,2019,7
+TON,Tonga,population,denominator,SP.POP.TOTL,Total population,103742,2025,1
+TTO,Trinidad and Tobago,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),8.62727,2022,4
+TTO,Trinidad and Tobago,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),7.16445243681472,2024,2
+TTO,Trinidad and Tobago,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.2503077495039,2024,2
+TTO,Trinidad and Tobago,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),92,2024,2
+TTO,Trinidad and Tobago,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),94.1780681697959,2024,2
+TTO,Trinidad and Tobago,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",7.8,2024,2
+TTO,Trinidad and Tobago,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),10.4,2024,2
+TTO,Trinidad and Tobago,population,denominator,SP.POP.TOTL,Total population,1367764,2025,1
+TUN,Tunisia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),7.64301,2022,4
+TUN,Tunisia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.09419000148773,2023,3
+TUN,Tunisia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),96.7327873288014,2024,2
+TUN,Tunisia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+TUN,Tunisia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.5373409254893,2024,2
+TUN,Tunisia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8.9,2024,2
+TUN,Tunisia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.1,2018,8
+TUN,Tunisia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.8,2024,2
+TUN,Tunisia,population,denominator,SP.POP.TOTL,Total population,12348573,2025,1
+TUR,Turkiye,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),14.12611,2022,4
+TUR,Turkiye,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.602609992027283,2023,3
+TUR,Turkiye,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),95.9866257794699,2024,2
+TUR,Turkiye,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+TUR,Turkiye,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.2777016762549,2024,2
+TUR,Turkiye,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.5,2024,2
+TUR,Turkiye,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.7,2018,8
+TUR,Turkiye,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+TUR,Turkiye,population,denominator,SP.POP.TOTL,Total population,85878556,2025,1
+TUV,Tuvalu,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),50.89943,2022,4
+TUV,Tuvalu,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.536631120029539,2024,2
+TUV,Tuvalu,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.7415397759091,2024,2
+TUV,Tuvalu,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+TUV,Tuvalu,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),89.674451389507,2024,2
+TUV,Tuvalu,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",5.3,2024,2
+TUV,Tuvalu,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.8,2019,7
+TUV,Tuvalu,population,denominator,SP.POP.TOTL,Total population,9492,2025,1
+TZA,Tanzania,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),70.08585,2022,4
+TZA,Tanzania,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),16.3666331530062,2024,2
+TZA,Tanzania,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),64.6059619473789,2024,2
+TZA,Tanzania,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),83,2024,2
+TZA,Tanzania,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),37.2193614570345,2024,2
+TZA,Tanzania,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",29.9,2024,2
+TZA,Tanzania,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.1,2022,4
+TZA,Tanzania,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),19.1,2024,2
+TZA,Tanzania,population,denominator,SP.POP.TOTL,Total population,70545865,2025,1
+UGA,Uganda,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),52.68098,2022,4
+UGA,Uganda,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),63.0058015721971,2024,2
+UGA,Uganda,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+UGA,Uganda,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),23.896386630237,2024,2
+UGA,Uganda,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",23.5,2024,2
+UGA,Uganda,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.2,2022,4
+UGA,Uganda,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),20.9,2024,2
+UGA,Uganda,population,denominator,SP.POP.TOTL,Total population,51384894,2025,1
+UKR,Ukraine,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.1,2018,8
+UKR,Ukraine,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),12.933690071106,2024,2
+UKR,Ukraine,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),93.4790922597539,2024,2
+UKR,Ukraine,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),88,2024,2
+UKR,Ukraine,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.7258264478011,2024,2
+UKR,Ukraine,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",11.7,2024,2
+UKR,Ukraine,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),10.8,2024,2
+UKR,Ukraine,population,denominator,SP.POP.TOTL,Total population,38980376,2025,1
+URY,Uruguay,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.3,2022,4
+URY,Uruguay,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.0354518135477778,2023,3
+URY,Uruguay,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.6326913879836,2024,2
+URY,Uruguay,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+URY,Uruguay,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.1507922342621,2024,2
+URY,Uruguay,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.5,2024,2
+URY,Uruguay,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",1.4,2018,8
+URY,Uruguay,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+URY,Uruguay,population,denominator,SP.POP.TOTL,Total population,3384688,2025,1
+USA,United States,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.09318,2022,4
+USA,United States,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.98220992088318,2022,4
+USA,United States,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.9804443465812,2024,2
+USA,United States,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),94,2024,2
+USA,United States,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.6182734760609,2024,2
+USA,United States,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",4.2,2024,2
+USA,United States,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",0.1,2022,4
+USA,United States,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+USA,United States,population,denominator,SP.POP.TOTL,Total population,341784857,2025,1
+UZB,Uzbekistan,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),7.1,2022,4
+UZB,Uzbekistan,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.655471451573637,2025,1
+UZB,Uzbekistan,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.2904869756033,2024,2
+UZB,Uzbekistan,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),90,2024,2
+UZB,Uzbekistan,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),96.547826032469,2024,2
+UZB,Uzbekistan,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",6.7,2024,2
+UZB,Uzbekistan,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",2.4,2021,5
+UZB,Uzbekistan,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),2.5,2024,2
+UZB,Uzbekistan,population,denominator,SP.POP.TOTL,Total population,37053428,2025,1
+VCT,St. Vincent and the Grenadines,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),2.75506,2022,4
+VCT,St. Vincent and the Grenadines,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.590386993531064,2017,9
+VCT,St. Vincent and the Grenadines,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),97.7283062747314,2018,8
+VCT,St. Vincent and the Grenadines,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),99,2024,2
+VCT,St. Vincent and the Grenadines,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),89.7010629819102,2018,8
+VCT,St. Vincent and the Grenadines,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),4,2024,2
+VCT,St. Vincent and the Grenadines,population,denominator,SP.POP.TOTL,Total population,99924,2025,1
+VEN,"Venezuela, RB",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),25.7,2022,4
+VEN,"Venezuela, RB",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),0.553709983825684,2023,3
+VEN,"Venezuela, RB",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),93.3316109894304,2024,2
+VEN,"Venezuela, RB",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),62,2024,2
+VEN,"Venezuela, RB",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),98.3955859787771,2024,2
+VEN,"Venezuela, RB",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",11.7,2024,2
+VEN,"Venezuela, RB",food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.3,2024,2
+VEN,"Venezuela, RB",population,denominator,SP.POP.TOTL,Total population,28516896,2025,1
+VGB,British Virgin Islands,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),0.13562,2022,4
+VGB,British Virgin Islands,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),26.9662895202637,2024,2
+VGB,British Virgin Islands,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.8643835616439,2024,2
+VGB,British Virgin Islands,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),96.8579794836767,2016,10
+VGB,British Virgin Islands,population,denominator,SP.POP.TOTL,Total population,39732,2025,1
+VIR,Virgin Islands (U.S.),shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),1.09573,2022,4
+VIR,Virgin Islands (U.S.),wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.4656802967685,2024,2
+VIR,Virgin Islands (U.S.),wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),99.2588820364163,2024,2
+VIR,Virgin Islands (U.S.),population,denominator,SP.POP.TOTL,Total population,103792,2025,1
+VNM,Viet Nam,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),32.5,2022,4
+VNM,Viet Nam,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.73176990456513,2024,2
+VNM,Viet Nam,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),98.761246653694,2024,2
+VNM,Viet Nam,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),97,2024,2
+VNM,Viet Nam,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),95.447026934425,2024,2
+VNM,Viet Nam,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",19.2,2024,2
+VNM,Viet Nam,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.4,2023,3
+VNM,Viet Nam,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),6.1,2024,2
+VNM,Viet Nam,population,denominator,SP.POP.TOTL,Total population,101598527,2025,1
+VUT,Vanuatu,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),3.064,2022,4
+VUT,Vanuatu,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),2.53090856763272,2024,2
+VUT,Vanuatu,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),87.1200605921327,2024,2
+VUT,Vanuatu,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),71,2024,2
+VUT,Vanuatu,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),47.8141509828146,2024,2
+VUT,Vanuatu,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",31,2024,2
+VUT,Vanuatu,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),5.8,2024,2
+VUT,Vanuatu,population,denominator,SP.POP.TOTL,Total population,335169,2025,1
+WSM,Samoa,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),34.58533,2022,4
+WSM,Samoa,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),1.80919443651844,2024,2
+WSM,Samoa,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),99.4409290344985,2024,2
+WSM,Samoa,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),85,2024,2
+WSM,Samoa,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),97.0991039585403,2024,2
+WSM,Samoa,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",8.4,2024,2
+WSM,Samoa,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.1,2019,7
+WSM,Samoa,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),3.4,2024,2
+WSM,Samoa,population,denominator,SP.POP.TOTL,Total population,219306,2025,1
+XKX,Kosovo,population,denominator,SP.POP.TOTL,Total population,1576876,2025,1
+YEM,"Yemen, Rep.",shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),44.2,2022,4
+YEM,"Yemen, Rep.",education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),30.6211204528809,2016,10
+YEM,"Yemen, Rep.",wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),75.0357620960457,2024,2
+YEM,"Yemen, Rep.",health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),42,2024,2
+YEM,"Yemen, Rep.",wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),63.0827307655577,2024,2
+YEM,"Yemen, Rep.",nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",47.4,2024,2
+YEM,"Yemen, Rep.",nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",16.8,2022,4
+YEM,"Yemen, Rep.",population,denominator,SP.POP.TOTL,Total population,41773878,2025,1
+ZAF,South Africa,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),24.2,2022,4
+ZAF,South Africa,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),6.0640471391014,2023,3
+ZAF,South Africa,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),90.1916801364739,2024,2
+ZAF,South Africa,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),74,2024,2
+ZAF,South Africa,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),77.384521067613,2024,2
+ZAF,South Africa,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",24.4,2024,2
+ZAF,South Africa,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",3.6,2017,9
+ZAF,South Africa,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),11.2,2024,2
+ZAF,South Africa,population,denominator,SP.POP.TOTL,Total population,64747319,2025,1
+ZMB,Zambia,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),48.25813,2022,4
+ZMB,Zambia,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),3.51462006568909,2024,2
+ZMB,Zambia,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),73.4120376414689,2024,2
+ZMB,Zambia,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+ZMB,Zambia,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),37.4763362189112,2024,2
+ZMB,Zambia,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",32.3,2024,2
+ZMB,Zambia,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",4.2,2018,8
+ZMB,Zambia,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),41,2024,2
+ZMB,Zambia,population,denominator,SP.POP.TOTL,Total population,21913874,2025,1
+ZWE,Zimbabwe,shelter,development,EN.POP.SLUM.UR.ZS,Urban population in slums (%),54.88268,2022,4
+ZWE,Zimbabwe,education,development,SE.PRM.UNER.ZS,Primary-age children out of school (%),10.524498911807,2024,2
+ZWE,Zimbabwe,wash,development,SH.H2O.BASW.ZS,At least basic drinking water (%),67.2110209689938,2024,2
+ZWE,Zimbabwe,health,development,SH.IMM.IDPT,DTP3 vaccination coverage (%),91,2024,2
+ZWE,Zimbabwe,wash,development,SH.STA.BASS.ZS,At least basic sanitation (%),34.6414985324477,2024,2
+ZWE,Zimbabwe,nutrition,development,SH.STA.STNT.ME.ZS,"Stunting, children under 5 (%, modelled)",23.7,2024,2
+ZWE,Zimbabwe,nutrition,humanitarian,SH.STA.WAST.ZS,"Wasting, children under 5 (%)",5.1,2024,2
+ZWE,Zimbabwe,food,development,SN.ITK.DEFC.ZS,Prevalence of undernourishment (%),18.4,2024,2
+ZWE,Zimbabwe,population,denominator,SP.POP.TOTL,Total population,16950795,2025,1
