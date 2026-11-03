@@ -145,18 +145,6 @@ body {
   .about-text { font-size: .78rem; }
 }
 
-/* "Beta version" in the title, styled like the card titles above each map */
-.beta-tag {
-  font-family: $font-family-sans-serif;   // DM Sans
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: $gold;
-  vertical-align: middle;
-  margin-left: .6rem;
-  white-space: nowrap;
-}
 /* ---------- Tab bar: keep all 11 tabs on one line ---------- */
 /* Each tab name stays on one line (no "Food / security" stacking) */
 .navbar .nav-link {

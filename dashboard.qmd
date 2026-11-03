@@ -663,7 +663,8 @@ plot_ly(neglect, type = "choropleth", locations = ~iso3, z = ~severity,
 
       // Slow turning, only in globe mode
       function spin() {
-        if (mode === 'globe' && !paused && !reduceMotion &&
+        var onScreen = el.offsetParent !== null;   // false while another tab is open
+        if (mode === 'globe' && !paused && !reduceMotion && onScreen &&
             document.visibilityState === 'visible') {
           lon = lon - 0.5;
           if (lon < -180) lon += 360;
