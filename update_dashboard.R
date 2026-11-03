@@ -25,6 +25,7 @@ source("scripts/03_inform.R")
 source("scripts/04_structural.R")
 source("scripts/05_climate.R")
 source("scripts/06_hapi.R")
+source("scripts/07_inform_risk.R")   # needs the INFORM Risk Excel file in data/ (updated yearly)
 
 # 1c. News attention (slow, about 30-40 minutes)
 source("scripts/01_gdelt.R")

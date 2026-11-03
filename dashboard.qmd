@@ -278,23 +278,20 @@ side_table <- function(...) {
             columns = cols, theme = sa_table_theme)
 }
 
-# ---- Global tab: development thresholds count --------------------------------
-# Counts development indicators beyond an internationally recognised threshold:
-#   stunting 20% or more (WHO/UNICEF "high" or "very high")
-#   DTP3 vaccination below 90% (Immunization Agenda 2030 national target)
-dev_flags <- full_join(ind("SH.STA.STNT.ME.ZS") |> select(iso3, stunting = value),
-                       ind("SH.IMM.IDPT")       |> select(iso3, dtp3 = value), by = "iso3") |>
-  mutate(n_avail = (!is.na(stunting)) + (!is.na(dtp3)),
-         count   = coalesce(as.integer(stunting >= 20), 0L) + coalesce(as.integer(dtp3 < 90), 0L),
-         detail  = paste0(ifelse(is.na(stunting), "Stunting: no data",
-                                 paste0("Stunting: ", sprintf("%.1f", stunting), "%",
-                                        ifelse(stunting >= 20, " (high or very high)", ""))),
-                          "<br>",
-                          ifelse(is.na(dtp3), "DTP3: no data",
-                                 paste0("DTP3: ", sprintf("%.0f", dtp3), "%",
-                                        ifelse(dtp3 < 90, " (below 90% target)", ""))))) |>
-  filter(n_avail > 0) |>
-  add_names()
+# ---- Global tab: INFORM Risk (JRC), Development & Deprivation component -------
+inform_risk <- read_opt("data/inform_risk.csv",
+                        tibble(iso3 = character(), risk = numeric(), vulnerability = numeric(),
+                               lcc = numeric(), dev_depr = numeric(), release = character()))
+risk_release <- if (nrow(inform_risk) > 0) as.character(inform_risk$release[1]) else "(not loaded)"
+
+dev_global <- inform_risk |>
+  filter(!is.na(dev_depr)) |>
+  add_names() |>
+  mutate(hover = paste0("<b>", country, "</b>",
+                        "<br>Development & deprivation: ", sprintf("%.1f", dev_depr),
+                        ifelse(is.na(lcc), "", paste0("<br>Lack of coping capacity: ", sprintf("%.1f", lcc))),
+                        ifelse(is.na(risk), "", paste0("<br>INFORM Risk (overall): ", sprintf("%.1f", risk))),
+                        "<br>INFORM Risk ", risk_release))
 
 hum_global <- severity |>
   transmute(iso3, country, value = severity, top_crisis,
@@ -317,21 +314,14 @@ plot_ly(hum_global, type = "choropleth", locations = ~iso3, z = ~value, zmin = 0
 ```
 
 ```{r}
-#| title: "Development: indicators beyond international thresholds"
-plot_ly(dev_flags, type = "choropleth", locations = ~iso3, z = ~count, zmin = -0.5, zmax = 2.5,
-        colorscale = list(c(0, class_cols[1]), c(1/3, class_cols[1]), c(1/3, class_cols[3]),
-                          c(2/3, class_cols[3]), c(2/3, class_cols[5]), c(1, class_cols[5])),
-        text = ~paste0("<b>", country, "</b><br>", count, " of ", n_avail,
-                       " indicators beyond threshold<br>", detail),
-        hovertemplate = "%{text}<extra></extra>",
-        colorbar = list(title = list(text = "INDICATORS<br>BEYOND<br>THRESHOLD", side = "top",
-                                     font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 10)),
-                        tickvals = 0:2, ticktext = c("0", "1", "2"), tickfont = brand_font_small,
-                        outlinewidth = 0, thickness = 20, len = 0.6,
-                        x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle"),
+#| title: "Development: development & deprivation (INFORM Risk)"
+plot_ly(dev_global, type = "choropleth", locations = ~iso3, z = ~dev_depr, zmin = 0, zmax = 10,
+        colorscale = sev_scale, text = ~hover, hovertemplate = "%{text}<extra></extra>",
+        colorbar = cbar_brand("DEVELOPMENT &<br>DEPRIVATION"),
         marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
   map_layout("No data",
-             "Stunting 20% or more (WHO/UNICEF 'high') and DTP3 vaccination below 90% (Immunization Agenda 2030 target).")
+             paste0("INFORM Risk ", risk_release, ", European Commission JRC (CC BY 4.0). ",
+                    "Development & deprivation component (0-10), shown as published."))
 ```
 
 ## Row {height=520px}
@@ -342,23 +332,22 @@ country_names |>
   left_join(select(severity, iso3, `Crisis severity` = severity), by = "iso3") |>
   left_join(ipc_d |> select(iso3, `IPC Phase 3+ (%)` = value), by = "iso3") |>
   left_join(pin_of("intersectoral") |> select(iso3, `People in need, all sectors (%)` = value), by = "iso3") |>
-  left_join(dev_flags |> select(iso3, Stunting = stunting, `DTP3 (%)` = dtp3,
-                                `Indicators beyond threshold` = count), by = "iso3") |>
-  mutate(Stunting = ifelse(is.na(Stunting), NA_character_,
-                           paste0(sprintf("%.1f", Stunting), "% (",
-                                  who_labels[who_class(Stunting, stunting_cuts)], ")"))) |>
-  filter(!is.na(`Crisis severity`) | !is.na(`Indicators beyond threshold`)) |>
+  left_join(inform_risk |> select(iso3, `Development & deprivation` = dev_depr,
+                                  `Lack of coping capacity` = lcc,
+                                  `INFORM Risk (overall)` = risk), by = "iso3") |>
+  filter(!is.na(`Crisis severity`) | !is.na(`Development & deprivation`)) |>
   select(-iso3) |>
   rename(Country = country) |>
   arrange(desc(`Crisis severity`)) |>
   reactable(searchable = TRUE, compact = TRUE, highlight = TRUE,
-            defaultColDef = colDef(na = "–", minWidth = 110, format = colFormat(digits = 1)),
+            defaultColDef = colDef(na = "–", minWidth = 120, format = colFormat(digits = 1)),
             columns = list(Country = colDef(minWidth = 140),
                            `Crisis severity` = colDef(format = colFormat(digits = 1), na = "not assessed"),
                            `IPC Phase 3+ (%)` = colDef(format = colFormat(digits = 1), na = "not analysed"),
-                           `People in need, all sectors (%)` = colDef(format = colFormat(digits = 1), na = "not analysed", minWidth = 150),
-                           `DTP3 (%)` = colDef(format = colFormat(digits = 0)),
-                           `Indicators beyond threshold` = colDef(format = colFormat(digits = 0), minWidth = 150)),
+                           `People in need, all sectors (%)` = colDef(format = colFormat(digits = 1),
+                                                                      na = "not analysed", minWidth = 150),
+                           `Development & deprivation` = colDef(format = colFormat(digits = 1), minWidth = 150),
+                           `Lack of coping capacity` = colDef(format = colFormat(digits = 1), minWidth = 140)),
             theme = sa_table_theme)
 ```
 
@@ -746,7 +735,7 @@ reactable(neglect,
 
 ::: {.card title="About this data"}
 ::: {.about-text}
-**Beta version.** This dashboard is in development and its methodology is under review; indicators and presentation may change. Last updated: `r date_label(Sys.Date())`.
+**Beta version.** This dashboard is in development and its methodology is under review; indicators and presentation may change. It is a starting point for questions about where support may be needed, not a ranking of where funding should go. Last updated: `r date_label(Sys.Date())`.
 
 **How the sector tabs work:** each tab shows a humanitarian (acute) indicator on the left and a development (structural) indicator on the right, using the sector's own established classification or measure. SA Analytical does not create its own scores for the sectors.
 
@@ -754,13 +743,13 @@ reactable(neglect,
 
 **Development maps:** prevalence of undernourishment (FAO, SDG 2.1.1); stunting (UNICEF/WHO/World Bank Joint Malnutrition Estimates, classified with WHO/UNICEF prevalence thresholds); at least basic drinking water and sanitation (WHO/UNICEF JMP); DTP3 vaccination (WHO/UNICEF estimates, against the 90% global target) and the UHC service coverage index; primary out-of-school rate (UNESCO Institute for Statistics); urban slum population (UN-Habitat, urban areas only). All via the World Bank, using the latest value within 10 years; each value's year is shown. There is no established development benchmark for protection.
 
-**Global vulnerability map:** the left map shows ACAPS's INFORM Severity Index (0–10) for `r ref_label`. The right map counts development indicators beyond an internationally recognised threshold: stunting of 20% or more (WHO/UNICEF "high") and DTP3 coverage below 90% (Immunization Agenda 2030 target). Other sectors have no recognised "high" threshold and are not counted.
+**Global vulnerability map:** the left map shows ACAPS's INFORM Severity Index (0–10) for `r ref_label`, a measure of current crisis severity. The right map shows the Development & deprivation component of the INFORM Risk Index (0–10), published annually by the European Commission Joint Research Centre and drawing on the Human Development Index and the Multidimensional Poverty Index; it is shown as published, without changes. INFORM Risk `r risk_release`, © European Union, licensed under CC BY 4.0. Both scores run from 0 to 10 but are built differently, so the two maps are best compared by pattern rather than exact value.
 
 **Climate:** ND-GAIN Country Index (University of Notre Dame). The map shows climate vulnerability; readiness to adapt and ND-GAIN's sector vulnerability scores are in the table.
 
 **Funding tab:** media visibility is each country's share of global online news coverage (GDELT Project, `r ref_label`), counting all coverage of the country. "Lowest media visibility vs. severity" is exploratory, not a measure of neglect. Appeal funding coverage is reported humanitarian funding as a share of appeal requirements (OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, as of `r date_label(funding_date)`).
 
-**Disclaimer:** ACAPS, the IPC, OCHA and HDX, the GDELT Project, the World Bank, FAO, WHO, UNICEF, UNESCO, UN-Habitat and the University of Notre Dame (ND-GAIN) are independent data providers. They are not affiliated with SA Analytical and do not endorse this dashboard. The analysis and any errors are SA Analytical's own.
+**Disclaimer:** ACAPS, the European Commission Joint Research Centre (INFORM Risk), the IPC, OCHA and HDX, the GDELT Project, the World Bank, FAO, WHO, UNICEF, UNESCO, UN-Habitat and the University of Notre Dame (ND-GAIN) are independent data providers. They are not affiliated with SA Analytical and do not endorse this dashboard. The analysis and any errors are SA Analytical's own.
 
 © `r format(Sys.Date(), "%Y")` SA Analytical. All rights reserved. Dashboard design and analysis by SA Analytical; underlying data remain the property of their respective providers.
 :::
