@@ -160,18 +160,17 @@ body {
   padding-right: .6rem !important;
 }
 
-/* Laptops and most desktop screens: slightly smaller tabs so they fit */
-@media (max-width: 1900px) {
-  .navbar .nav-link {
-    font-size: .85rem;
-    padding-left: .45rem !important;
-    padding-right: .45rem !important;
-  }
-}
-
-/* Safety net on every screen wider than a phone: if the tabs still
-   don't fit, the tab row scrolls sideways instead of wrapping or stacking */
+/* Tabs on their own row, under the logo, title and subtitle (screens wider than a phone).
+   If the tabs still don't fit, the row scrolls sideways instead of wrapping. */
 @media (min-width: 768px) {
-  #dashboard-collapse { overflow-x: auto; scrollbar-width: thin; }
+  #quarto-dashboard-header .navbar-container { flex-wrap: wrap; }
+  #dashboard-collapse {
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: .45rem;
+    border-top: 1px solid rgba(175, 139, 47, 0.18);
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
   #dashboard-collapse .navbar-nav { flex-wrap: nowrap; }
 }
