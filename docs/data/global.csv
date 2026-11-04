@@ -1,0 +1,194 @@
+﻿"Source and licence: IPC acute food insecurity, current analyses (Integrated Food Security Phase Classification, via HDX HAPI). Licence: public domain. People in need: humanitarian needs overviews (OCHA, via HDX HAPI). Licence: Creative Commons Attribution (CC BY). Share of population calculated by SA Analytical with World Bank population (SP.POP.TOTL). INFORM Risk 2026, European Commission Joint Research Centre. © European Union. Licence: CC BY 4.0. Compiled by SA Analytical (dashboard.sa-analytical.com), 2026-11-04."
+Country,ISO3,IPC Phase 3+ (%),IPC Phase 3+ (%) - year,"People in need, all sectors (%)","People in need, all sectors (%) - year",Development & deprivation (0-10),Lack of coping capacity (0-10),INFORM Risk (0-10)
+West Bank and Gaza,PSE,58.5,2026,,,3,5.4,6.5
+Haiti,HTI,50.4,2026,53.9,2026,7.8,7.1,7.6
+"Yemen, Rep.",YEM,47.5,2026,55.3,2026,8.5,6.9,7.7
+Uganda,UGA,42.4,2026,,,8,6.5,6.7
+South Sudan,SSD,42,2025,81.3,2026,10,9.1,8.3
+Sudan,SDN,41,2026,65.2,2026,8.5,7.7,7.8
+Afghanistan,AFG,31.5,2026,49.9,2026,8.9,7.4,7.8
+Central African Republic,CAF,29.4,2026,41.5,2026,9.8,8.6,7.8
+"Somalia, Fed. Rep.",SOM,26.2,2026,24.4,2026,9.9,7,8.2
+"Congo, Dem. Rep.",COD,21.2,2025,13.2,2026,8.6,8.2,8
+Pakistan,PAK,20.3,2026,,,7.9,5.4,6.6
+Eswatini,SWZ,18,2026,,,4.9,4.7,4
+Kenya,KEN,16.8,2026,,,6.6,5.2,6.1
+Lebanon,LBN,16.8,2026,,,3,5.5,6.4
+Djibouti,DJI,16.1,2026,,,7.7,6.1,5.2
+Bangladesh,BGD,15.4,2026,,,5.7,4.2,5.9
+Lesotho,LSO,15.4,2026,,,7.3,6,3.7
+Namibia,NAM,15.1,2025,,,6.9,4.5,4.2
+Mozambique,MOZ,14.3,2026,6.6,2026,8.8,6.9,7.1
+Ecuador,ECU,13.8,2026,,,2.9,4.9,5.8
+Burundi,BDI,13.7,2026,,,9.5,6.1,6.5
+Honduras,HND,13.6,2026,14.9,2025,5.7,5.8,5.7
+Guatemala,GTM,13.4,2026,11.6,2025,6.6,4.7,5.9
+Nigeria,NGA,12.5,2025,2.5,2026,7.6,7.1,7.2
+Chad,TCD,11.9,2026,21.5,2026,9.9,8.4,7.9
+Guinea,GIN,11.9,2025,,,8.9,6.3,4.8
+Sierra Leone,SLE,11,2025,,,8.9,6.9,4.8
+Cameroon,CMR,10.6,2025,9.7,2026,7.7,6.5,6.7
+Tanzania,TZA,10.4,2026,,,7.9,6.1,6
+Malawi,MWI,10.1,2026,,,8.3,5.9,4.7
+Dominican Republic,DOM,8.6,2025,,,3,4.2,4.4
+Madagascar,MDG,7.9,2026,,,9.1,7.5,5.7
+Liberia,LBR,7.4,2025,,,8.4,7,5
+Cabo Verde,CPV,7.3,2025,,,4.6,3.9,2.4
+Benin,BEN,6.9,2025,,,8.5,7.1,6.1
+Guinea-Bissau,GNB,6.7,2025,,,8.7,7.5,4.2
+Niger,NER,6.6,2025,9.3,2026,9.8,7.8,7.8
+Mauritania,MRT,5.6,2025,,,8.3,6.5,5.3
+Ghana,GHA,4.5,2025,,,6.6,5.2,5.1
+Togo,TGO,4.5,2025,,,7.6,6,5.5
+Cote d'Ivoire,CIV,4.2,2025,,,7.7,6.3,5.2
+Zambia,ZMB,3.7,2026,,,7.7,6.7,5.8
+Mali,MLI,3.3,2025,20.2,2026,9.6,6.9,7.3
+Senegal,SEN,2.5,2026,,,8.1,5.1,4.6
+Albania,ALB,,,,,1.7,3.3,3.1
+Algeria,DZA,,,,,2.7,4.1,4.2
+Angola,AGO,,,,,7.8,6.9,6
+Antigua and Barbuda,ATG,,,,,1,3.5,2.1
+Argentina,ARG,,,,,0.7,3.8,3.9
+Armenia,ARM,,,,,0.9,2.5,3.2
+Australia,AUS,,,,,0,2.3,2.4
+Austria,AUT,,,,,0,2.9,2.5
+Azerbaijan,AZE,,,,,1.2,4.5,4.6
+"Bahamas, The",BHS,,,,,1.6,3,2.3
+Bahrain,BHR,,,,,0,3.5,1.8
+Barbados,BRB,,,,,1.8,2.1,1.9
+Belarus,BLR,,,,,1.5,3,2.4
+Belgium,BEL,,,,,0,3.1,2.6
+Belize,BLZ,,,,,4.1,4.9,3.3
+Bhutan,BTN,,,,,5,4.2,2.8
+Bolivia,BOL,,,,,4.3,5.1,4.9
+Bosnia and Herzegovina,BIH,,,,,1.9,4.6,3.3
+Botswana,BWA,,,,,5.4,4.8,2.9
+Brazil,BRA,,,,,3.5,3.6,4.6
+Brunei Darussalam,BRN,,,,,1.3,2.8,2.3
+Bulgaria,BGR,,,,,1.1,3,2.7
+Burkina Faso,BFA,,,18.3,2026,9.1,6.9,7.3
+Cambodia,KHM,,,,,6.4,5.5,6.1
+Canada,CAN,,,,,0,1.9,2.6
+Chile,CHL,,,,,0.4,2.3,3.1
+China,CHN,,,,,3.4,3,2.9
+Colombia,COL,,,12.9,2026,3.6,3,5.3
+Comoros,COM,,,,,6.5,6.9,3.1
+"Congo, Rep.",COG,,,,,6.5,7,5.6
+Costa Rica,CRI,,,,,1.2,2.2,4
+Croatia,HRV,,,,,0.2,2.8,2.5
+Cuba,CUB,,,,,2.2,4,3.5
+Cyprus,CYP,,,,,0,2.4,2.9
+Czechia,CZE,,,,,0,1.6,1.9
+Denmark,DNK,,,,,0,0.9,1.5
+Dominica,DMA,,,,,2.8,3.6,2.6
+"Egypt, Arab Rep.",EGY,,,,,3.9,4,5.1
+El Salvador,SLV,,,12.9,2025,5,3.7,4.4
+Equatorial Guinea,GNQ,,,,,4.5,7.2,3.5
+Eritrea,ERI,,,,,7.9,7.8,4.5
+Estonia,EST,,,,,0,1.5,1.9
+Ethiopia,ETH,,,15.8,2024,8.9,6.6,7.1
+Fiji,FJI,,,,,3.1,3.2,3.1
+Finland,FIN,,,,,0,1.8,2
+France,FRA,,,,,0,2.1,2.6
+Gabon,GAB,,,,,4.7,5.8,3.5
+"Gambia, The",GMB,,,,,8,6,4.3
+Georgia,GEO,,,,,0.8,2.3,3.4
+Germany,DEU,,,,,0,1.4,2.4
+Greece,GRC,,,,,0,3,2.9
+Grenada,GRD,,,,,2.2,3.4,2.8
+Guyana,GUY,,,,,2.9,4.8,3.9
+Hungary,HUN,,,,,0.6,2.6,2.2
+Iceland,ISL,,,,,0,1.7,1.6
+India,IND,,,,,5.7,3.9,5.2
+Indonesia,IDN,,,,,3.8,3.9,4.5
+"Iran, Islamic Rep.",IRN,,,,,2,5.4,5.8
+Iraq,IRQ,,,,,4.9,4.8,5.8
+Ireland,IRL,,,,,0,3.1,2.3
+Israel,ISR,,,,,0,2,3.3
+Italy,ITA,,,,,0,3.4,3.1
+Jamaica,JAM,,,,,3.7,3.7,3.7
+Japan,JPN,,,,,0,0.9,2
+Jordan,JOR,,,,,2.3,3.2,4.1
+Kazakhstan,KAZ,,,,,1.1,3.1,2.6
+Kiribati,KIR,,,,,6.2,4.5,3.6
+"Korea, Dem. People's Rep.",PRK,,,,,0,6,3.6
+"Korea, Rep.",KOR,,,,,0,1.3,2
+Kuwait,KWT,,,,,1,4,3
+Kyrgyz Republic,KGZ,,,,,2.8,4,3.6
+Lao PDR,LAO,,,,,6.5,5.6,3.7
+Latvia,LVA,,,,,0.2,2.5,2.6
+Libya,LBY,,,,,3.4,6.3,5.5
+Liechtenstein,LIE,,,,,0,1,0.9
+Lithuania,LTU,,,,,0.1,2.3,2.1
+Luxembourg,LUX,,,,,0,1.1,1
+Malaysia,MYS,,,,,1.6,3.2,3.2
+Maldives,MDV,,,,,2.2,3.9,2.2
+Malta,MLT,,,,,0,2.7,1.6
+Marshall Islands,MHL,,,,,3.3,4.1,3.6
+Mauritius,MUS,,,,,1.9,2.4,2
+Mexico,MEX,,,,,3.6,3.5,4.9
+"Micronesia, Fed. Sts.",FSM,,,,,5.7,4.9,3.4
+Moldova,MDA,,,,,2.3,5,3.9
+Mongolia,MNG,,,,,4.3,3.7,2.6
+Montenegro,MNE,,,,,1.7,2.5,2.6
+Morocco,MAR,,,,,4.6,3.8,4.3
+Myanmar,MMR,,,29.6,2026,7.2,5.6,6.7
+Naoero,NRU,,,,,4.6,3.6,2.1
+Nepal,NPL,,,,,6.4,5.8,5.4
+Netherlands,NLD,,,,,0,1.8,2.5
+New Zealand,NZL,,,,,0,1.6,1.6
+Nicaragua,NIC,,,,,3.9,6.4,4.3
+North Macedonia,MKD,,,,,1.2,4,2.6
+Norway,NOR,,,,,0,1.6,2
+Oman,OMN,,,,,0.8,3.1,2.3
+Palau,PLW,,,,,2.3,3.6,2.2
+Panama,PAN,,,,,1.2,5.4,4
+Papua New Guinea,PNG,,,,,8,6.8,6.6
+Paraguay,PRY,,,,,3.9,4.7,3.1
+Peru,PER,,,,,3.7,3.7,4.9
+Philippines,PHL,,,,,4,3.8,5.3
+Poland,POL,,,,,0,2,2.4
+Portugal,PRT,,,,,0.2,1.7,1.9
+Qatar,QAT,,,,,0.3,1.3,1.5
+Romania,ROU,,,,,1.1,2.8,2.8
+Russian Federation,RUS,,,,,1.4,2.9,3.8
+Rwanda,RWA,,,,,7.8,4.8,5.4
+Samoa,WSM,,,,,4.5,3.8,2.7
+Sao Tome and Principe,STP,,,,,5.8,5.3,2.5
+Saudi Arabia,SAU,,,,,0,2.4,3.1
+Serbia,SRB,,,,,0.7,4.3,3.4
+Seychelles,SYC,,,,,1.4,2.5,1.5
+Singapore,SGP,,,,,0,0.8,0.7
+Slovak Republic,SVK,,,,,0.4,4.1,2.8
+Slovenia,SVN,,,,,0,2.5,1.9
+Solomon Islands,SLB,,,,,6.3,6.1,4.6
+South Africa,ZAF,,,,,4.3,5,5.2
+Spain,ESP,,,,,0,2.2,2.5
+Sri Lanka,LKA,,,,,3.2,4,3.4
+St. Kitts and Nevis,KNA,,,,,1.2,2.6,1.8
+St. Lucia,LCA,,,,,3,3.2,2.4
+St. Vincent and the Grenadines,VCT,,,,,2,3.9,2.9
+Suriname,SUR,,,,,3.8,4.9,3.1
+Sweden,SWE,,,,,0,3.5,2.7
+Switzerland,CHE,,,,,0,1.6,1.9
+Syrian Arab Republic,SYR,,,64.4,2026,6.7,6.7,7.6
+Tajikistan,TJK,,,,,4.8,4.5,4.3
+Thailand,THA,,,,,1.5,3.9,4.9
+Timor-Leste,TLS,,,,,7.4,5.5,3.8
+Tonga,TON,,,,,2.3,4.4,3
+Trinidad and Tobago,TTO,,,,,1.6,3,2.9
+Tunisia,TUN,,,,,2.6,4.5,3.4
+Turkiye,TUR,,,,,0.9,4.3,5.2
+Turkmenistan,TKM,,,,,1.4,4.9,2.8
+Tuvalu,TUV,,,,,3.8,4.7,2.5
+Ukraine,UKR,,,27.8,2026,2.4,3.8,5.7
+United Arab Emirates,ARE,,,,,0,3.1,2.3
+United Kingdom,GBR,,,,,0,1.6,2.2
+United States,USA,,,,,0,2.1,3.3
+Uruguay,URY,,,,,0.8,3.2,2.5
+Uzbekistan,UZB,,,,,3.1,3.4,3.2
+Vanuatu,VUT,,,,,6.8,6.1,4.3
+"Venezuela, RB",VEN,,,27.7,2026,3.8,6.9,6.4
+Viet Nam,VNM,,,,,3,4.3,3.9
+Zimbabwe,ZWE,,,,,6.9,5.8,4.9
+

@@ -203,13 +203,24 @@ class_cols  <- sev_colours[c(1, 3, 5, 8, 10)]
 class_scale <- do.call(c, lapply(1:5, function(i)
   list(c((i - 1) / 5, class_cols[i]), c(i / 5, class_cols[i]))))
 
-map_layout <- function(p, key_text, caption) {
+# "Get the data" link in the top-right corner of a map; opens that tab's section of the Data page
+# in a new browser tab. Plotly only accepts full web addresses (https://...) in links.
+data_page <- "https://dashboard.sa-analytical.com/data.html"
+data_link <- function(section) {
+  list(text = paste0("<a href='", data_page, "#", section, "' target='_blank' style='color:", brand_gold, "'>",
+                     "Get the data \u2192</a>"),
+       x = 1, y = 1, xref = "paper", yref = "paper", xanchor = "right", yanchor = "bottom",
+       showarrow = FALSE, font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 12))
+}
+
+map_layout <- function(p, key_text, caption, section) {
   p |>
     layout(paper_bgcolor = "rgba(0,0,0,0)", dragmode = FALSE,
            font = list(color = brand_text, family = "DM Sans, sans-serif"),
            hoverlabel = brand_hover, geo = flat_geo,
-           margin = list(l = 0, r = 0, t = 0, b = 30),
+           margin = list(l = 0, r = 0, t = 22, b = 30),
            annotations = list(
+             data_link(section),
              nodata_key(key_text, font = brand_font_small),
              list(text = caption, x = 0.01, y = 0, xref = "paper", yref = "paper",
                   xanchor = "left", yanchor = "top", showarrow = FALSE, align = "left",
@@ -220,7 +231,7 @@ map_layout <- function(p, key_text, caption) {
 add_names <- function(d) d |> left_join(country_names, by = "iso3") |> filter(!is.na(country))
 
 # Continuous map of a percentage. reverse = TRUE when higher values are better.
-pct_map <- function(d, label, bar_title, key_text, caption, zmax = 100, reverse = FALSE) {
+pct_map <- function(d, label, bar_title, key_text, caption, section, zmax = 100, reverse = FALSE) {
   d <- add_names(d) |>
     mutate(hover = paste0("<b>", country, "</b><br>", label, ": ",
                           sprintf("%.1f", value), "%", " (", year, ")"))
@@ -232,11 +243,11 @@ pct_map <- function(d, label, bar_title, key_text, caption, zmax = 100, reverse 
                           tickfont = brand_font_small, ticksuffix = "%", outlinewidth = 0,
                           thickness = 20, len = 0.6, x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle"),
           marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
-    map_layout(key_text, caption)
+    map_layout(key_text, caption, section)
 }
 
 # Map of an established five-class classification (e.g. WHO prevalence thresholds)
-class_map <- function(d, cuts, label, bar_title, key_text, caption) {
+class_map <- function(d, cuts, label, bar_title, key_text, caption, section) {
   d <- add_names(d) |>
     mutate(cls = who_class(value, cuts),
            hover = paste0("<b>", country, "</b><br>", label, ": ", sprintf("%.1f", value), "%",
@@ -249,32 +260,7 @@ class_map <- function(d, cuts, label, bar_title, key_text, caption) {
                           outlinewidth = 0, thickness = 20, len = 0.6,
                           x = 0.97, xanchor = "left", y = 0.5, yanchor = "middle"),
           marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
-    map_layout(key_text, caption)
-}
-
-# Table with the humanitarian and development values side by side
-side_table <- function(...) {
-  parts <- list(...)
-  out <- country_names
-  for (nm in names(parts)) {
-    p <- parts[[nm]] |> select(iso3, value, year)
-    names(p) <- c("iso3", nm, paste(nm, "(year)"))
-    out <- left_join(out, p, by = "iso3")
-  }
-  out <- out |>
-    filter(if_any(all_of(names(parts)), ~ !is.na(.x))) |>
-    mutate(`In crisis` = ifelse(iso3 %in% severity$iso3, "Yes", "")) |>
-    select(-iso3) |>
-    rename(Country = country) |>
-    arrange(desc(.data[[names(parts)[1]]]))
-  cols <- list(Country = colDef(minWidth = 140))
-  for (nm in names(parts)) {
-    cols[[nm]] <- colDef(format = colFormat(digits = 1), minWidth = 130)
-    cols[[paste(nm, "(year)")]] <- colDef(format = colFormat(digits = 0), minWidth = 70)
-  }
-  reactable(out, searchable = TRUE, compact = TRUE, highlight = TRUE,
-            defaultColDef = colDef(na = "–", minWidth = 90),
-            columns = cols, theme = sa_table_theme)
+    map_layout(key_text, caption, section)
 }
 
 # ---- Global tab: INFORM Risk (JRC), Development & Deprivation component -------
@@ -309,7 +295,8 @@ plot_ly(hum_global, type = "choropleth", locations = ~iso3, z = ~value, zmin = 0
         colorbar = cbar_brand("CRISIS<br>SEVERITY"),
         marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
   map_layout("Not assessed",
-             paste0("ACAPS INFORM Severity Index (0-10), ", ref_label, ". Grey: no crisis assessed by ACAPS."))
+             paste0("ACAPS INFORM Severity Index (0-10), ", ref_label, ". Grey: no crisis assessed by ACAPS."),
+             "global")
 ```
 
 ```{r}
@@ -320,181 +307,105 @@ plot_ly(dev_global, type = "choropleth", locations = ~iso3, z = ~dev_depr, zmin 
         marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
   map_layout("No data",
              paste0("INFORM Risk ", risk_release, ", European Commission JRC (CC BY 4.0). ",
-                    "Development & deprivation component (0-10), shown as published."))
-```
-
-## Row {height=520px}
-
-```{r}
-#| title: "All countries"
-country_names |>
-  left_join(select(severity, iso3, `Crisis severity` = severity), by = "iso3") |>
-  left_join(ipc_d |> select(iso3, `IPC Phase 3+ (%)` = value), by = "iso3") |>
-  left_join(pin_of("intersectoral") |> select(iso3, `People in need, all sectors (%)` = value), by = "iso3") |>
-  left_join(inform_risk |> select(iso3, `Development & deprivation` = dev_depr,
-                                  `Lack of coping capacity` = lcc,
-                                  `INFORM Risk (overall)` = risk), by = "iso3") |>
-  filter(!is.na(`Crisis severity`) | !is.na(`Development & deprivation`)) |>
-  select(-iso3) |>
-  rename(Country = country) |>
-  arrange(desc(`Crisis severity`)) |>
-  reactable(searchable = TRUE, compact = TRUE, highlight = TRUE,
-            defaultColDef = colDef(na = "–", minWidth = 120, format = colFormat(digits = 1)),
-            columns = list(Country = colDef(minWidth = 140),
-                           `Crisis severity` = colDef(format = colFormat(digits = 1), na = "not assessed"),
-                           `IPC Phase 3+ (%)` = colDef(format = colFormat(digits = 1), na = "not analysed"),
-                           `People in need, all sectors (%)` = colDef(format = colFormat(digits = 1),
-                                                                      na = "not analysed", minWidth = 150),
-                           `Development & deprivation` = colDef(format = colFormat(digits = 1), minWidth = 150),
-                           `Lack of coping capacity` = colDef(format = colFormat(digits = 1), minWidth = 140)),
-            theme = sa_table_theme)
+                    "Development & deprivation component (0-10), shown as published."),
+             "global")
 ```
 
 # Food security
 
-## Row {height=560px}
+## Row {height=600px}
 
 ```{r}
 #| title: "Humanitarian: IPC acute food insecurity, Phase 3 or above"
 pct_map(ipc_d, "Population in IPC Phase 3+", "PHASE 3+<br>(% OF ANALYSED<br>POPULATION)", "Not analysed",
-        "IPC current analysis (via HDX HAPI), last two years. 50% or more shown in the darkest colour.", zmax = 50)
+        "IPC current analysis (via HDX HAPI), last two years. 50% or more shown in the darkest colour.", zmax = 50, section = "food")
 ```
 
 ```{r}
 #| title: "Development: prevalence of undernourishment"
 pct_map(ind("SN.ITK.DEFC.ZS"), "Prevalence of undernourishment", "UNDER-<br>NOURISHMENT", "No data",
-        "FAO, SDG 2.1.1 (via World Bank), latest within 10 years. 50% or more shown in the darkest colour.", zmax = 50)
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`IPC Phase 3+ (%)` = ipc_d,
-           `Undernourishment (%)` = ind("SN.ITK.DEFC.ZS"))
+        "FAO, SDG 2.1.1 (via World Bank), latest within 10 years. 50% or more shown in the darkest colour.", zmax = 50, section = "food")
 ```
 
 # Nutrition
 
-## Row {height=560px}
+## Row {height=600px}
 
 ```{r}
 #| title: "Humanitarian: wasting (acute malnutrition), children under 5"
 class_map(ind("SH.STA.WAST.ZS"), wasting_cuts, "Wasting", "WASTING<br>(WHO/UNICEF)", "No data",
-          "WHO/UNICEF prevalence thresholds. Survey-based; check the year, as wasting changes quickly.")
+          "WHO/UNICEF prevalence thresholds. Survey-based; check the year, as wasting changes quickly.", section = "nutrition")
 ```
 
 ```{r}
 #| title: "Development: stunting (chronic malnutrition), children under 5"
 class_map(ind("SH.STA.STNT.ME.ZS"), stunting_cuts, "Stunting", "STUNTING<br>(WHO/UNICEF)", "No data",
-          "WHO/UNICEF prevalence thresholds. Joint Malnutrition Estimates (modelled), latest within 10 years.")
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`Wasting (%)` = ind("SH.STA.WAST.ZS"),
-           `Stunting (%)` = ind("SH.STA.STNT.ME.ZS"))
+          "WHO/UNICEF prevalence thresholds. Joint Malnutrition Estimates (modelled), latest within 10 years.", section = "nutrition")
 ```
 
 # WASH
 
-## Row {height=560px}
+## Row {height=600px}
 
 ```{r}
 #| title: "Humanitarian: people in need of WASH assistance"
 pct_map(pin_of("wash"), "People in need (WASH)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
-        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60, section = "wash")
 ```
 
 ```{r}
 #| title: "Development: Percentage of the Population with Basic Drinking Water"
 pct_map(ind("SH.H2O.BASW.ZS"), "At least basic drinking water", "BASIC WATER<br>(% OF POPULATION)", "No data",
-        "WHO/UNICEF JMP service ladder (via World Bank). Lower coverage is shown darker.", reverse = TRUE)
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`People in need, WASH (%)` = pin_of("wash"),
-           `Basic drinking water (%)` = ind("SH.H2O.BASW.ZS"),
-           `Basic sanitation (%)` = ind("SH.STA.BASS.ZS"))
+        "WHO/UNICEF JMP service ladder (via World Bank). Lower coverage is shown darker.", reverse = TRUE, section = "wash")
 ```
 
 # Shelter
 
-## Row {height=560px}
+## Row {height=600px}
 
 ```{r}
 #| title: "Humanitarian: people in need of shelter assistance"
 pct_map(pin_of("shelter"), "People in need (shelter)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
-        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60, section = "shelter")
 ```
 
 ```{r}
 #| title: "Development: urban population living in slums (urban areas only)"
 pct_map(ind("EN.POP.SLUM.UR.ZS"), "Urban population in slums", "SLUMS<br>(% OF URBAN<br>POPULATION)", "No data",
-        "UN-Habitat, SDG 11.1.1 (via World Bank). Covers urban areas only; data are irregular.")
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`People in need, shelter (%)` = pin_of("shelter"),
-           `Urban slum population (%)` = ind("EN.POP.SLUM.UR.ZS"))
+        "UN-Habitat, SDG 11.1.1 (via World Bank). Covers urban areas only; data are irregular.", section = "shelter")
 ```
 
 # Health
 
-## Row {height=560px}
+## Row {height=600px}
 
 ```{r}
 #| title: "Humanitarian: people in need of health assistance"
 pct_map(pin_of("health"), "People in need (health)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
-        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60, section = "health")
 ```
 
 ```{r}
 #| title: "Development: DTP3 vaccination coverage"
 pct_map(ind("SH.IMM.IDPT"), "DTP3 coverage", "DTP3<br>COVERAGE", "No data",
         "WHO/UNICEF immunisation estimates (via World Bank). Global target: 90% nationally. Lower coverage shown darker.",
-        reverse = TRUE)
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`People in need, health (%)` = pin_of("health"),
-           `DTP3 coverage (%)` = ind("SH.IMM.IDPT"),
-           `UHC service coverage index` = ind("SH.UHC.SRVS.CV.XD"))
+        reverse = TRUE, section = "health")
 ```
 
 # Education
 
-## Row {height=560px}
+## Row {height=600px}
 
 ```{r}
 #| title: "Humanitarian: people in need of education assistance"
 pct_map(pin_of("education"), "People in need (education)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
-        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60)
+        "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. 60% or more shown darkest.", zmax = 60, section = "education")
 ```
 
 ```{r}
 #| title: "Development: primary-age children out of school"
 pct_map(ind("SE.PRM.UNER.ZS"), "Out of school, primary age", "OUT OF<br>SCHOOL", "No data",
-        "UNESCO Institute for Statistics, SDG 4 (via World Bank). 60% or more shown darkest.", zmax = 60)
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`People in need, education (%)` = pin_of("education"),
-           `Out of school, primary (%)` = ind("SE.PRM.UNER.ZS"))
+        "UNESCO Institute for Statistics, SDG 4 (via World Bank). 60% or more shown darkest.", zmax = 60, section = "education")
 ```
 
 # Protection
@@ -505,14 +416,7 @@ side_table(`People in need, education (%)` = pin_of("education"),
 #| title: "Humanitarian: people in need of protection assistance"
 pct_map(pin_of("protection"), "People in need (protection)", "PEOPLE IN NEED<br>(% OF POPULATION)", "Not analysed",
         "Humanitarian needs overviews (JIAF, via HDX HAPI), last two years. There is no established development benchmark for protection.",
-        zmax = 60)
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-side_table(`People in need, protection (%)` = pin_of("protection"))
+        zmax = 60, section = "protection")
 ```
 
 # Climate
@@ -532,20 +436,8 @@ plot_ly(clim_v, type = "choropleth", locations = ~iso3, z = ~value, zmin = 0, zm
         colorscale = sev_scale, text = ~hover, hovertemplate = "%{text}<extra></extra>",
         colorbar = cbar_brand("CLIMATE<br>VULNERABILITY"),
         marker = list(line = list(color = "#FFFFFF", width = 0.4))) |>
-  map_layout("No data", "ND-GAIN vulnerability (0-1, shown x10): exposure, sensitivity and adaptive capacity.")
-```
-
-## Row {height=460px}
-
-```{r}
-#| title: "Countries"
-clim_part <- function(m) climate_detail |> filter(measure == m) |> transmute(iso3, value = score, year)
-side_table(`Climate vulnerability (0-10)` = clim_part("vulnerability"),
-           `Lack of readiness (0-10)` = clim_part("readiness"),
-           `Food (sector, 0-10)` = clim_part("vuln_food"),
-           `Water (sector, 0-10)` = clim_part("vuln_water"),
-           `Health (sector, 0-10)` = clim_part("vuln_health"),
-           `Habitat (sector, 0-10)` = clim_part("vuln_habitat"))
+  map_layout("No data", "ND-GAIN vulnerability (0-1, shown x10): exposure, sensitivity and adaptive capacity.",
+             "climate")
 ```
 
 # Funding (beta)
@@ -747,7 +639,9 @@ reactable(neglect,
 
 **Global vulnerability map:** the left map shows ACAPS's INFORM Severity Index (0–10) for `r ref_label`, a measure of current crisis severity. The right map shows the Development & deprivation component of the INFORM Risk Index (0–10), published annually by the European Commission Joint Research Centre and drawing on the Human Development Index and the Multidimensional Poverty Index; it is shown as published, without changes. INFORM Risk `r risk_release`, © European Union, licensed under CC BY 4.0. Both scores run from 0 to 10 but are built differently, so the two maps are best compared by pattern rather than exact value.
 
-**Climate:** ND-GAIN Country Index (University of Notre Dame). The map shows climate vulnerability; readiness to adapt and ND-GAIN's sector vulnerability scores are in the table.
+**Climate:** ND-GAIN Country Index (University of Notre Dame). The map shows climate vulnerability; readiness to adapt and ND-GAIN's sector vulnerability scores are on the Data page.
+
+**Get the data:** the "Get the data" link on each map opens the tables behind it, which can be downloaded as CSV or Excel files with their sources and licences. ACAPS INFORM Severity scores are shown on the maps but are not included in the downloads; they are free from [ACAPS](https://www.acaps.org/en/data).
 
 **Funding tab:** media visibility is each country's share of global online news coverage (GDELT Project, `r ref_label`), counting all coverage of the country. "Lowest media visibility vs. severity" is exploratory, not a measure of neglect. Appeal funding coverage is reported humanitarian funding as a share of appeal requirements (OCHA Financial Tracking Service, `r format(funding_date, "%Y")` appeals, as of `r date_label(funding_date)`).
 

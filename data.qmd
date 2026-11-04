@@ -1,0 +1,167 @@
+---
+title: "Get the data"
+subtitle: "Severe Crises. Silent Headlines."
+description: "Download the tables behind the SA Analytical dashboard maps as CSV or Excel files, with sources and licences."
+format:
+  html:
+    theme: [darkly, brand.scss]
+    embed-resources: true
+    toc: true
+    toc-title: "On this page"
+    toc-depth: 2
+execute:
+  echo: false
+  warning: false
+  message: false
+output-file: data.html
+---
+
+```{r}
+#| include: false
+# The tables come from scripts/08_data_tables.R, which also writes the download files.
+library(reactable)
+library(htmltools)
+
+d <- readRDS("data/tables.rds")
+
+gold       <- "#AF8B2F"
+card_grey  <- "#36363A"
+deep_grey  <- "#1F1F21"
+line_grey  <- "#45454A"
+text_light <- "#E8E6E1"
+
+table_theme <- reactableTheme(
+  color = text_light, backgroundColor = card_grey,
+  borderColor = line_grey, highlightColor = line_grey,
+  style = list(fontFamily = "DM Sans, sans-serif", fontSize = "0.85rem"),
+  headerStyle = list(background = deep_grey, color = gold, textTransform = "uppercase",
+                     letterSpacing = "0.08em", fontSize = "0.68rem", fontWeight = 500),
+  searchInputStyle = list(backgroundColor = deep_grey, color = text_light, borderColor = line_grey),
+  paginationStyle = list(color = text_light),
+  pageButtonStyle = list(color = text_light)
+)
+
+# One section of the page: intro, download buttons, table, source line
+show <- function(key) {
+  t   <- d$tabs[[key]]
+  tab <- t$screen
+  cols <- list(Country = colDef(minWidth = 150, sticky = "left"),
+               ISO3    = colDef(minWidth = 60))
+  for (nm in names(tab)[-(1:2)]) {
+    cols[[nm]] <- if (grepl(" - year$", nm)) colDef(name = "Year", minWidth = 60, format = colFormat(digits = 0))
+                  else if (grepl("\\(people\\)", nm)) colDef(minWidth = 130, format = colFormat(digits = 0, separators = TRUE))
+                  else colDef(minWidth = 120, format = colFormat(digits = 1))
+  }
+  tagList(
+    p(class = "tab-intro", t$intro),
+    div(class = "dl-buttons",
+        a(class = "dl-btn", href = paste0("data/", key, ".csv"),  download = NA, "Download CSV"),
+        a(class = "dl-btn", href = paste0("data/", key, ".xlsx"), download = NA, "Download Excel"),
+        span(class = "dl-count", paste(t$n, "countries"))),
+    if (isTRUE(t$acaps))
+      p(class = "acaps-note", HTML(paste0(
+        "The crisis severity column (ACAPS INFORM Severity Index) is shown here for reference only and is not included in the downloads. ",
+        "The scores are free from <a href='https://www.acaps.org/en/data' target='_blank'>ACAPS</a>."))),
+    reactable(tab, searchable = TRUE, compact = TRUE, highlight = TRUE, striped = FALSE,
+              defaultPageSize = 10, showPageSizeOptions = TRUE, pageSizeOptions = c(10, 25, 100),
+              defaultColDef = colDef(na = "–", headerVAlign = "bottom"),
+              columns = cols, theme = table_theme),
+    p(class = "source-line", t$source)
+  )
+}
+```
+
+```{=html}
+<style>
+  /* Page layout: dark background like the dashboard */
+  body { background-color: #2B2B2E; }
+  #title-block-header .title { font-family: "Syne", "DM Sans", sans-serif; font-weight: 800; }
+  #title-block-header .subtitle { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #AF8B2F; }
+  h1, h2 { color: #E8E6E1; }
+  h2 { font-family: "Syne", "DM Sans", sans-serif; font-weight: 700; margin-top: 3rem;
+       padding-top: 1rem; border-top: 1px solid #45454A; scroll-margin-top: 1rem; }
+  .back-link { display: inline-block; margin-bottom: 1.5rem; color: #C9AA58; text-decoration: none;
+               font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+  .back-link:hover { color: #AF8B2F; }
+  .tab-intro { color: #B8B0A4; }
+  .reactable select { background: #1F1F21; color: #E8E6E1; border-color: #45454A; }
+
+  /* Download buttons in the website's gold */
+  .dl-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: .4rem 0 1rem; }
+  .dl-btn { display: inline-block; padding: .5rem 1.1rem; border-radius: 4px; text-decoration: none;
+            background: #B5943F; color: #1A1A1B !important; font-size: .72rem; font-weight: 600;
+            letter-spacing: .12em; text-transform: uppercase; }
+  .dl-btn:hover { background: #C9AA58; }
+  .dl-count { font-size: .75rem; color: #8A8278; margin-left: .3rem; }
+
+  /* Small print */
+  .acaps-note { font-size: .78rem; color: #B8B0A4; border-left: 2px solid #AF8B2F; padding-left: .7rem; }
+  .source-line { font-size: .72rem; color: #8A8278; margin-top: .7rem; line-height: 1.6; }
+</style>
+```
+
+<a class="back-link" href="https://dashboard.sa-analytical.com">&larr; Back to the dashboard</a>
+
+These are the tables behind the dashboard maps, one per tab. Each table can be searched and sorted here, or downloaded as a **CSV** or **Excel** file. Every file names its sources and licences; the Excel files also have a Notes sheet explaining each column. Please credit the original data providers when you use the data.
+
+Updated `r format(d$created, "%d %B %Y")`. The Funding (beta) tab is not included.
+
+## Global vulnerability map {#global}
+
+```{r}
+show("global")
+```
+
+## Food security {#food}
+
+```{r}
+show("food")
+```
+
+## Nutrition {#nutrition}
+
+```{r}
+show("nutrition")
+```
+
+## WASH {#wash}
+
+```{r}
+show("wash")
+```
+
+## Shelter {#shelter}
+
+```{r}
+show("shelter")
+```
+
+## Health {#health}
+
+```{r}
+show("health")
+```
+
+## Education {#education}
+
+```{r}
+show("education")
+```
+
+## Protection {#protection}
+
+```{r}
+show("protection")
+```
+
+## Climate {#climate}
+
+```{r}
+show("climate")
+```
+
+## Terms of use {#terms}
+
+The data belong to their providers and are shared under their licences: IPC (public domain); World Bank World Development Indicators, INFORM Risk (European Commission Joint Research Centre) and humanitarian needs overviews via HDX (Creative Commons Attribution); ND-GAIN (University of Notre Dame, free and open access with citation). The providers are independent of SA Analytical and do not endorse these tables. Shares of the population in need are calculated by SA Analytical. Any errors are SA Analytical's own.
+
+&copy; `r format(Sys.Date(), "%Y")` SA Analytical.

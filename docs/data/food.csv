@@ -1,0 +1,175 @@
+﻿"Source and licence: IPC acute food insecurity, current analyses (Integrated Food Security Phase Classification, via HDX HAPI). Licence: public domain. World Bank, World Development Indicators. Licence: CC BY 4.0. The original producer of each indicator is named in the Notes. Compiled by SA Analytical (dashboard.sa-analytical.com), 2026-11-04."
+Country,ISO3,IPC Phase 3+ (%),IPC Phase 3+ (%) - year,IPC Phase 3+ (people),IPC Phase 3+ (people) - year,Undernourishment (%),Undernourishment (%) - year
+West Bank and Gaza,PSE,58.5,2026,1239657,2026,,
+Haiti,HTI,50.4,2026,5697628,2026,51.4,2024
+"Yemen, Rep.",YEM,47.5,2026,4980505,2026,,
+Uganda,UGA,42.4,2026,673241,2026,20.9,2024
+South Sudan,SSD,42,2025,5972144,2025,19.1,2024
+Sudan,SDN,41,2026,19466533,2026,10.9,2021
+Afghanistan,AFG,31.5,2026,15908130,2026,27.8,2024
+Central African Republic,CAF,29.4,2026,1928733,2026,29.8,2024
+"Somalia, Fed. Rep.",SOM,26.2,2026,5095741,2026,56.5,2024
+"Congo, Dem. Rep.",COD,21.2,2025,24812776,2025,39.5,2024
+Pakistan,PAK,20.3,2026,18097728,2026,16.1,2024
+Eswatini,SWZ,18,2026,222251,2026,15.1,2024
+Kenya,KEN,16.8,2026,3086659,2026,34.9,2024
+Lebanon,LBN,16.8,2026,873739,2026,11.1,2024
+Djibouti,DJI,16.1,2026,165896,2026,14.7,2024
+Bangladesh,BGD,15.4,2026,15270914,2026,8.2,2024
+Lesotho,LSO,15.4,2026,234468,2026,,
+Namibia,NAM,15.1,2025,455668,2025,20.1,2024
+Mozambique,MOZ,14.3,2026,1185926,2026,22.3,2024
+Ecuador,ECU,13.8,2026,2541934,2026,10.8,2024
+Burundi,BDI,13.7,2026,1765517,2026,,
+Honduras,HND,13.6,2026,1387086,2026,14.3,2024
+Guatemala,GTM,13.4,2026,2453907,2026,12.7,2024
+Nigeria,NGA,12.5,2025,27212933,2025,22.2,2024
+Chad,TCD,11.9,2026,2098953,2026,33.6,2024
+Guinea,GIN,11.9,2025,1480656,2025,8.7,2024
+Sierra Leone,SLE,11,2025,998608,2025,25.3,2024
+Cameroon,CMR,10.6,2025,3120294,2025,4.9,2024
+Tanzania,TZA,10.4,2026,1028267,2026,19.1,2024
+Malawi,MWI,10.1,2026,1935075,2026,24.5,2024
+Dominican Republic,DOM,8.6,2025,924905,2025,2.5,2024
+Madagascar,MDG,7.9,2026,2572569,2026,41.8,2024
+Liberia,LBR,7.4,2025,418213,2025,37.3,2024
+Cabo Verde,CPV,7.3,2025,37752,2025,8.1,2024
+Benin,BEN,6.9,2025,191108,2025,11.1,2024
+Guinea-Bissau,GNB,6.7,2025,121695,2025,20,2024
+Niger,NER,6.6,2025,1855774,2025,12.9,2024
+Mauritania,MRT,5.6,2025,295561,2025,11,2024
+Ghana,GHA,4.5,2025,1561223,2025,6.4,2024
+Togo,TGO,4.5,2025,288383,2025,10.2,2024
+Cote d'Ivoire,CIV,4.2,2025,1033335,2025,11.4,2024
+Zambia,ZMB,3.7,2026,697809,2026,41,2024
+Mali,MLI,3.3,2025,855640,2025,12.1,2024
+Senegal,SEN,2.5,2026,490588,2026,5.3,2024
+Albania,ALB,,,,,5.6,2024
+Algeria,DZA,,,,,2.5,2024
+Angola,AGO,,,,,17.4,2024
+Argentina,ARG,,,,,2.8,2024
+Armenia,ARM,,,,,2.5,2024
+Australia,AUS,,,,,2.5,2024
+Austria,AUT,,,,,2.5,2024
+Azerbaijan,AZE,,,,,2.5,2024
+Barbados,BRB,,,,,5,2024
+Belarus,BLR,,,,,2.5,2024
+Belgium,BEL,,,,,2.5,2024
+Belize,BLZ,,,,,4.4,2024
+Bolivia,BOL,,,,,19.5,2024
+Bosnia and Herzegovina,BIH,,,,,2.5,2024
+Botswana,BWA,,,,,18.2,2024
+Brazil,BRA,,,,,2.5,2024
+Bulgaria,BGR,,,,,2.5,2024
+Burkina Faso,BFA,,,,,11.7,2024
+Cambodia,KHM,,,,,4.7,2024
+Canada,CAN,,,,,2.5,2024
+Chile,CHL,,,,,2.5,2024
+China,CHN,,,,,2.5,2024
+Colombia,COL,,,,,4.1,2024
+Comoros,COM,,,,,16.5,2024
+"Congo, Rep.",COG,,,,,25,2024
+Costa Rica,CRI,,,,,2.5,2024
+Croatia,HRV,,,,,2.5,2024
+Cuba,CUB,,,,,3.5,2024
+Cyprus,CYP,,,,,2.5,2024
+Czechia,CZE,,,,,2.5,2024
+Denmark,DNK,,,,,2.5,2024
+Dominica,DMA,,,,,3,2024
+"Egypt, Arab Rep.",EGY,,,,,8.4,2024
+El Salvador,SLV,,,,,5.3,2024
+Estonia,EST,,,,,2.5,2024
+Ethiopia,ETH,,,,,19.9,2024
+Fiji,FJI,,,,,7.2,2024
+Finland,FIN,,,,,2.5,2024
+France,FRA,,,,,2.5,2024
+French Polynesia,PYF,,,,,2.6,2024
+Gabon,GAB,,,,,23.3,2024
+"Gambia, The",GMB,,,,,17.5,2024
+Georgia,GEO,,,,,2.5,2024
+Germany,DEU,,,,,2.5,2024
+Greece,GRC,,,,,2.5,2024
+Guyana,GUY,,,,,2.5,2024
+Hungary,HUN,,,,,2.5,2024
+Iceland,ISL,,,,,2.5,2024
+India,IND,,,,,9.8,2024
+Indonesia,IDN,,,,,6.3,2024
+"Iran, Islamic Rep.",IRN,,,,,6.7,2024
+Iraq,IRQ,,,,,13.4,2024
+Ireland,IRL,,,,,2.5,2024
+Israel,ISR,,,,,2.5,2024
+Italy,ITA,,,,,2.5,2024
+Jamaica,JAM,,,,,8,2024
+Japan,JPN,,,,,2.5,2024
+Jordan,JOR,,,,,12.2,2024
+Kazakhstan,KAZ,,,,,2.5,2024
+Kiribati,KIR,,,,,3.8,2024
+"Korea, Dem. People's Rep.",PRK,,,,,47,2018
+"Korea, Rep.",KOR,,,,,2.5,2024
+Kuwait,KWT,,,,,2.5,2024
+Kyrgyz Republic,KGZ,,,,,4.8,2024
+Lao PDR,LAO,,,,,10,2024
+Latvia,LVA,,,,,2.5,2024
+Libya,LBY,,,,,18.7,2024
+Lithuania,LTU,,,,,2.5,2024
+Luxembourg,LUX,,,,,2.5,2024
+Malaysia,MYS,,,,,2.5,2024
+Malta,MLT,,,,,2.5,2024
+Mauritius,MUS,,,,,4.9,2024
+Mexico,MEX,,,,,3.1,2024
+Moldova,MDA,,,,,2.5,2024
+Mongolia,MNG,,,,,2.5,2024
+Montenegro,MNE,,,,,2.5,2024
+Morocco,MAR,,,,,6.5,2024
+Myanmar,MMR,,,,,4.6,2024
+Nepal,NPL,,,,,5.2,2024
+Netherlands,NLD,,,,,2.5,2024
+New Caledonia,NCL,,,,,4.1,2024
+New Zealand,NZL,,,,,2.5,2024
+Nicaragua,NIC,,,,,17.3,2022
+North Macedonia,MKD,,,,,2.5,2024
+Norway,NOR,,,,,2.5,2024
+Oman,OMN,,,,,7.1,2024
+Panama,PAN,,,,,4.7,2024
+Papua New Guinea,PNG,,,,,30.5,2024
+Paraguay,PRY,,,,,4.1,2024
+Peru,PER,,,,,5.7,2024
+Philippines,PHL,,,,,3.4,2024
+Poland,POL,,,,,2.5,2024
+Portugal,PRT,,,,,2.5,2024
+Romania,ROU,,,,,2.5,2024
+Russian Federation,RUS,,,,,2.5,2024
+Rwanda,RWA,,,,,22.6,2024
+Samoa,WSM,,,,,3.4,2024
+Sao Tome and Principe,STP,,,,,23,2024
+Saudi Arabia,SAU,,,,,2.5,2024
+Serbia,SRB,,,,,2.5,2024
+Seychelles,SYC,,,,,2.5,2024
+Slovenia,SVN,,,,,2.5,2024
+Solomon Islands,SLB,,,,,27,2024
+South Africa,ZAF,,,,,11.2,2024
+Spain,ESP,,,,,2.5,2024
+Sri Lanka,LKA,,,,,4.9,2024
+St. Vincent and the Grenadines,VCT,,,,,4,2024
+Suriname,SUR,,,,,12.7,2024
+Sweden,SWE,,,,,2.5,2024
+Switzerland,CHE,,,,,2.5,2024
+Syrian Arab Republic,SYR,,,,,40.8,2024
+Tajikistan,TJK,,,,,8,2024
+Thailand,THA,,,,,5.4,2024
+Timor-Leste,TLS,,,,,16.9,2024
+Trinidad and Tobago,TTO,,,,,10.4,2024
+Tunisia,TUN,,,,,2.8,2024
+Turkiye,TUR,,,,,2.5,2024
+Turkmenistan,TKM,,,,,4.1,2024
+Ukraine,UKR,,,,,10.8,2024
+United Arab Emirates,ARE,,,,,2.5,2024
+United Kingdom,GBR,,,,,2.5,2024
+United States,USA,,,,,2.5,2024
+Uruguay,URY,,,,,2.5,2024
+Uzbekistan,UZB,,,,,2.5,2024
+Vanuatu,VUT,,,,,5.8,2024
+"Venezuela, RB",VEN,,,,,5.3,2024
+Viet Nam,VNM,,,,,6.1,2024
+Zimbabwe,ZWE,,,,,18.4,2024
+

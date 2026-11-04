@@ -26,6 +26,7 @@ source("scripts/04_structural.R")
 source("scripts/05_climate.R")
 source("scripts/06_hapi.R")
 source("scripts/07_inform_risk.R")   # needs the INFORM Risk Excel file in data/ (updated yearly)
+source("scripts/08_data_tables.R")   # the CSV/Excel downloads (docs/data/) and the tables for the Data page
 
 # 1c. News attention (slow, about 30-40 minutes)
 source("scripts/01_gdelt.R")
@@ -38,13 +39,18 @@ if (length(gdelt_missing) > 0) {
 # 1d. Funding
 source("scripts/02_fts.R")
 
-# 2. Bake the dashboard into index.html
+# 2. Bake the dashboard into index.html, and the Data page into data.html
 quarto::quarto_render("dashboard.qmd")
+quarto::quarto_render("data.qmd")
 
 # 3. Put it in the shop window
 dir.create("docs", showWarnings = FALSE)
-ok <- file.copy("index.html", "docs/index.html", overwrite = TRUE)
-if (!ok) stop("Could not copy index.html into docs/. Did the render work?")
+ok <- file.copy(c("index.html", "data.html"), "docs/", overwrite = TRUE)
+if (!all(ok)) stop("Could not copy index.html and data.html into docs/. Did both renders work?")
+
+# GitHub Pages settings: only needed if the dashboard is published with GitHub Pages
+writeLines("dashboard.sa-analytical.com", "docs/CNAME")
+file.create("docs/.nojekyll")
 
 # 4. Send everything to GitHub
 gert::git_add(".")
