@@ -71,13 +71,22 @@ build_table <- function(parts) {
     names(p) <- c("iso3", nm, paste0(nm, " - year"))
     out <- left_join(out, p, by = "iso3")
   }
-  out |>
+  out <- out |>
     filter(if_any(all_of(names(parts)), ~ !is.na(.x))) |>
-    select(where(~ !all(is.na(.x)))) |>                  # drop "year" columns that are empty (e.g. INFORM Risk)
-    mutate(across(all_of(names(parts)), ~ round(.x, 1))) |>
+    mutate(across(all_of(names(parts)), ~ round(.x, 1)))
+  
+  # Drop columns with no data at all (e.g. the empty "year" columns of INFORM Risk,
+  # or an indicator the World Bank has no recent values for) and say so
+  empty <- names(out)[sapply(out, function(x) all(is.na(x)))]
+  gone  <- intersect(empty, names(parts))
+  if (length(gone) > 0) message("  No data for: ", paste(gone, collapse = ", "), " (column left out)")
+  out <- out |> select(-all_of(empty), -any_of(paste0(gone, " - year")))
+  
+  first <- intersect(names(parts), names(out))[1]     # sort by the first indicator that has data
+  out |>
     rename(Country = country, ISO3 = iso3) |>
     relocate(Country, ISO3) |>
-    arrange(desc(.data[[names(parts)[1]]]), Country)
+    arrange(desc(.data[[first]]), Country)
 }
 
 # ---- Source and licence texts --------------------------------------------------------
@@ -210,16 +219,17 @@ acaps_text <- paste("ACAPS INFORM Severity scores are not included in this file 
 for (key in names(tabs)) {
   t <- tabs[[key]]
   file_table <- build_table(t$parts)                       # no ACAPS data in here
+  t$about <- t$about[names(t$about) %in% names(file_table)]  # only explain columns that are in the file
   source_line <- paste0("Source and licence: ", paste(unlist(src[t$sources]), collapse = " "),
                         " Compiled by SA Analytical (dashboard.sa-analytical.com), ", today, ".")
-
+  
   # CSV: the source line first (in quotes, so it stays in one cell in Excel), then the table.
   # The invisible "﻿" at the start makes Excel read accents (e.g. Côte d'Ivoire) correctly.
   csv_path <- file.path(out_dir, paste0(key, ".csv"))
   writeLines(c(paste0("﻿\"", gsub("\"", "'", source_line), "\""),
                format_csv(file_table, na = "")),
              csv_path, useBytes = TRUE)
-
+  
   # Excel: the table, plus a Notes sheet
   notes <- tibble(
     Item = c("Dataset", "Source and licence", "Columns", names(t$about),
@@ -236,7 +246,7 @@ for (key in names(tabs)) {
                 "The data providers are independent of SA Analytical and do not endorse this dataset. Any errors are SA Analytical's own.")
   )
   write_xlsx(list(Data = file_table, Notes = notes), file.path(out_dir, paste0(key, ".xlsx")))
-
+  
   # For the Data page: the same table, plus (Global tab only) the ACAPS score shown on screen
   screen_table <- file_table
   if (isTRUE(t$acaps)) {
