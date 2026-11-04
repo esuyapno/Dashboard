@@ -6,9 +6,6 @@ format:
   html:
     theme: [darkly, brand.scss]
     embed-resources: true
-    toc: true
-    toc-title: "On this page"
-    toc-depth: 2
 execute:
   echo: false
   warning: false
@@ -62,7 +59,8 @@ show <- function(key) {
       p(class = "acaps-note", HTML(paste0(
         "The crisis severity column (ACAPS INFORM Severity Index) is shown here for reference only and is not included in the downloads. ",
         "The scores are free from <a href='https://www.acaps.org/en/data' target='_blank'>ACAPS</a>."))),
-    reactable(tab, searchable = TRUE, compact = TRUE, highlight = TRUE, striped = FALSE,
+    reactable(tab, elementId = paste0("table-", key),   # the id lets the script below reset the table
+              searchable = TRUE, compact = TRUE, highlight = TRUE, striped = FALSE,
               defaultPageSize = 10, showPageSizeOptions = TRUE, pageSizeOptions = c(10, 25, 100),
               defaultColDef = colDef(na = "–", headerVAlign = "bottom"),
               columns = cols, theme = table_theme),
@@ -74,7 +72,7 @@ show <- function(key) {
 ```{=html}
 <style>
   /* Page layout: dark background like the dashboard */
-  body { background-color: #2B2B2E; }
+  body { background-color: #2B2B2E; color: #E8E6E1; }
   #title-block-header .title { font-family: "Syne", "DM Sans", sans-serif; font-weight: 800; }
   #title-block-header .subtitle { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: #AF8B2F; }
   h1, h2 { color: #E8E6E1; }
@@ -97,7 +95,66 @@ show <- function(key) {
   /* Small print */
   .acaps-note { font-size: .78rem; color: #B8B0A4; border-left: 2px solid #AF8B2F; padding-left: .7rem; }
   .source-line { font-size: .72rem; color: #8A8278; margin-top: .7rem; line-height: 1.6; }
+
+  /* MENU: gold button fixed in the top-right corner; opens a list of the sections */
+  .data-menu { position: fixed; top: 1rem; right: 1rem; z-index: 1000;
+               display: flex; flex-direction: column; align-items: flex-end; }
+  .data-menu-toggle {
+    display: flex; align-items: center; gap: .55rem;
+    padding: .55rem 1rem; border: none; border-radius: 4px; cursor: pointer;
+    background: #B5943F; color: #1A1A1B;
+    font-family: "DM Sans", sans-serif; font-size: .72rem; font-weight: 600;
+    letter-spacing: .14em; text-transform: uppercase;
+    box-shadow: 0 6px 20px rgba(0,0,0,.35);
+  }
+  .data-menu-toggle:hover, .data-menu-toggle[aria-expanded="true"] { background: #C9AA58; }
+  .data-menu-icon, .data-menu-icon::before, .data-menu-icon::after {
+    display: block; width: 14px; height: 2px; background: #1A1A1B; position: relative; content: "";
+  }
+  .data-menu-icon::before { position: absolute; top: -4px; }
+  .data-menu-icon::after  { position: absolute; top: 4px; }
+  .data-menu-list {
+    list-style: none; margin: .5rem 0 0; padding: .4rem 0; min-width: 230px;
+    background: #1F1F21; border: 1px solid rgba(175,139,47,.35); border-radius: 6px;
+    box-shadow: 0 16px 40px rgba(0,0,0,.45);
+  }
+  .data-menu-list[hidden] { display: none; }
+  .data-menu-list a {
+    display: block; padding: .55rem 1.1rem; text-decoration: none;
+    color: #E8E6E1; font-size: .85rem;
+  }
+  .data-menu-list a:hover, .data-menu-list a:focus-visible { background: #B5943F; color: #1A1A1B; }
+  .data-menu-list li + li { border-top: 1px solid #36363A; }
+  html { scroll-behavior: smooth; }
+  /* Phones: push the page down a little so the Menu button doesn't cover the title */
+  @media (max-width: 768px) {
+    body { padding-top: 3.2rem; }
+    .data-menu { top: .75rem; right: .75rem; }
+    .data-menu-list { max-height: calc(100vh - 5rem); overflow-y: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
+
+<!-- MENU: "Menu" button in the top-right corner. Click it, pick a section,
+     the page scrolls there and the menu closes again. -->
+<nav class="data-menu" aria-label="Sections">
+  <button class="data-menu-toggle" id="dataMenuBtn" type="button" aria-expanded="false" aria-controls="dataMenuList">
+    <span class="data-menu-icon" aria-hidden="true"></span>Menu
+  </button>
+  <ul class="data-menu-list" id="dataMenuList" hidden>
+    <li><a href="#global">Global vulnerability map</a></li>
+    <li><a href="#food">Food security</a></li>
+    <li><a href="#nutrition">Nutrition</a></li>
+    <li><a href="#wash">WASH</a></li>
+    <li><a href="#shelter">Shelter</a></li>
+    <li><a href="#health">Health</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#protection">Protection</a></li>
+    <li><a href="#climate">Climate</a></li>
+    <li><a href="#terms">Terms of use</a></li>
+    <li><a href="https://dashboard.sa-analytical.com">&larr; Back to the dashboard</a></li>
+  </ul>
+</nav>
 ```
 
 <a class="back-link" href="https://dashboard.sa-analytical.com">&larr; Back to the dashboard</a>
@@ -165,3 +222,48 @@ show("climate")
 The data belong to their providers and are shared under their licences: IPC (public domain); World Bank World Development Indicators, INFORM Risk (European Commission Joint Research Centre) and humanitarian needs overviews via HDX (Creative Commons Attribution); ND-GAIN (University of Notre Dame, free and open access with citation). The providers are independent of SA Analytical and do not endorse these tables. Shares of the population in need are calculated by SA Analytical. Any errors are SA Analytical's own.
 
 &copy; `r format(Sys.Date(), "%Y")` SA Analytical.
+
+```{=html}
+<script>
+// MENU: open/close the list; picking a section closes it. Clicking outside or pressing Esc also closes it.
+(function () {
+  var btn  = document.getElementById('dataMenuBtn');
+  var list = document.getElementById('dataMenuList');
+  function setOpen(open) {
+    list.hidden = !open;
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function (e) { e.stopPropagation(); setOpen(list.hidden); });
+  list.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('click', function (e) { if (!e.target.closest('.data-menu')) setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setOpen(false); btn.focus(); } });
+})();
+
+// TABLES: when a table leaves the screen (you scroll past it, or back up above it),
+// it goes back to 10 rows on page 1. If the table is above you when it shrinks,
+// the page is shifted by the same amount, so what you are reading doesn't jump.
+window.addEventListener('load', function () {
+  if (!window.Reactable || !('IntersectionObserver' in window)) return;
+  var tables = document.querySelectorAll('.reactable[id^="table-"]');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) return;
+      var id = entry.target.id, state;
+      try { state = Reactable.getState(id); } catch (err) { return; }
+      if (state.pageSize === 10 && state.pageIndex === 0) return;   // already reset
+      var above  = entry.boundingClientRect.bottom <= 0;
+      var before = entry.target.offsetHeight;
+      var table = Reactable.getInstance(id);
+      table.setPageSize(10);
+      table.gotoPage(0);
+      if (above) {
+        requestAnimationFrame(function () {
+          window.scrollBy({ top: entry.target.offsetHeight - before, behavior: 'instant' });
+        });
+      }
+    });
+  });
+  tables.forEach(function (t) { observer.observe(t); });
+});
+</script>
+```
