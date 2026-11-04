@@ -48,30 +48,37 @@ body {
   width: auto;
 }
 
-/* Stack the subtitle under the title, with the logo on the left */
+/* Logo on the left; title with the subtitle underneath, on every screen size.
+   The subtitle is never wider than the title: it wraps onto a second line instead,
+   so it doesn't take room from the tabs. */
 .navbar-brand-container {
-  display: grid !important;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto;
-  column-gap: .9rem;
-  row-gap: .1rem;
+  display: flex !important;
   align-items: center;
-}
-.navbar-brand-container .navbar-brand {
-  grid-row: 1 / span 2;          /* logo spans both lines */
+  gap: .9rem;
+  flex-shrink: 0;
 }
 .navbar-brand-container .navbar-title {
-  grid-column: 2;
-  grid-row: 1;
+  display: inline-flex !important;
+  flex-direction: column;
+  align-items: flex-start;
   line-height: 1.1;
+  margin: 0;
 }
-.navbar-brand-container .navbar-subtitle {
-  grid-column: 2;
-  grid-row: 2;
-  font-size: .68rem;
+.navbar-brand-container .navbar-title-text {
+  white-space: nowrap;
+}
+.quarto-dashboard #quarto-dashboard-header .navbar .navbar-subtitle {
+  display: block !important;
+  margin-right: 0;
+  width: 0;
+  min-width: 100%;               /* = the width of the title above it */
+  margin-top: .25rem;
+  font-size: .6rem;
   font-weight: 400;
-  letter-spacing: .18em;
+  line-height: 1.45;
+  letter-spacing: .14em;
   text-transform: uppercase;
+  white-space: normal;
   color: $text-muted;
 }
 
@@ -116,10 +123,10 @@ body {
 /* ---------- Phones and small tablets ---------- */
 @media (max-width: 768px) {
 
-  /* Title bar: smaller logo and title, hide the subtitle */
+  /* Title bar: smaller logo, title and subtitle */
   .navbar-logo, .navbar-brand img { max-height: 28px; }
-  .navbar-title { font-size: 1.05rem; }
-  .navbar-subtitle { display: none; }
+  .quarto-dashboard #quarto-dashboard-header .navbar .navbar-title-text { font-size: 1.05rem; }
+  .quarto-dashboard #quarto-dashboard-header .navbar .navbar-subtitle { font-size: .5rem; letter-spacing: .1em; }
 
   /* Value boxes: smaller numbers so country names fit */
   .bslib-value-box span[style*="Syne"] { font-size: 1.25rem !important; }
@@ -152,14 +159,9 @@ body {
   padding-left: .6rem !important;
   padding-right: .6rem !important;
 }
-/* The title stays on one line; the subtitle wraps under it (max. 2 lines) */
-.navbar-brand-container { flex-shrink: 0; }
-.navbar-brand-container .navbar-title { white-space: nowrap; }
-.navbar-brand-container .navbar-subtitle { max-width: 26rem; white-space: normal; }
 
-/* Laptops and most desktop screens: hide the subtitle and tighten the tabs so they fit */
+/* Laptops and most desktop screens: slightly smaller tabs so they fit */
 @media (max-width: 1900px) {
-  .navbar-brand-container .navbar-subtitle { display: none; }
   .navbar .nav-link {
     font-size: .85rem;
     padding-left: .45rem !important;
@@ -172,9 +174,4 @@ body {
 @media (min-width: 768px) {
   #dashboard-collapse { overflow-x: auto; scrollbar-width: thin; }
   #dashboard-collapse .navbar-nav { flex-wrap: nowrap; }
-}
-
-/* Tablets and small laptops: logo only, so the tabs have the room */
-@media (min-width: 768px) and (max-width: 1240px) {
-  .navbar-brand-container .navbar-title { display: none !important; }
 }
