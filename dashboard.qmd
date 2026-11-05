@@ -9,6 +9,18 @@ format:
     theme: [darkly, brand.scss]
     logo: logo.png
     embed-resources: true
+    include-after-body:
+      text: |
+        <script>
+        // Phones: after picking a tab in the hamburger menu, close the menu and go to the top of the page
+        document.addEventListener('click', function (e) {
+          var link = e.target.closest('#dashboard-collapse .nav-link');
+          var menu = document.getElementById('dashboard-collapse');
+          if (!link || !menu || !menu.classList.contains('show')) return;
+          bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
+          window.scrollTo({ top: 0 });
+        });
+        </script>
 output-file: index.html
 ---
 
@@ -203,14 +215,18 @@ class_cols  <- sev_colours[c(1, 3, 5, 8, 10)]
 class_scale <- do.call(c, lapply(1:5, function(i)
   list(c((i - 1) / 5, class_cols[i]), c(i / 5, class_cols[i]))))
 
-# "Get the data" link in the top-right corner of a map; opens that tab's section of the Data page
-# in a new browser tab. Plotly only accepts full web addresses (https://...) in links.
-data_page <- "https://dashboard.sa-analytical.com/data.html"
-data_link <- function(section) {
-  list(text = paste0("<a href='", data_page, "#", section, "' target='_blank' style='color:", brand_gold, "'>",
-                     "Get the data \u2192</a>"),
-       x = 1, y = 1, xref = "paper", yref = "paper", xanchor = "right", yanchor = "bottom",
-       showarrow = FALSE, font = list(color = brand_gold, family = "DM Sans, sans-serif", size = 12))
+# Each map card = "Get the data" link (top-right corner of the card) + the map + a note underneath
+# with the grey "no data" key and the source. The link and the note are ordinary web text
+# (not part of the plotly map), so they stay inside the card and wrap on small phones.
+map_card <- function(p, key_text, caption, section) {
+  htmltools::tagList(
+    htmltools::tags$a(class = "get-data", href = paste0("data.html#", section), target = "_blank",
+                      "Get the data \u2192"),
+    p,
+    htmltools::tags$div(class = "map-note",
+                        htmltools::tags$span(class = "nodata-key", key_text),
+                        htmltools::tags$span(caption))
+  )
 }
 
 map_layout <- function(p, key_text, caption, section) {
@@ -218,14 +234,9 @@ map_layout <- function(p, key_text, caption, section) {
     layout(paper_bgcolor = "rgba(0,0,0,0)", dragmode = FALSE,
            font = list(color = brand_text, family = "DM Sans, sans-serif"),
            hoverlabel = brand_hover, geo = flat_geo,
-           margin = list(l = 0, r = 0, t = 22, b = 30),
-           annotations = list(
-             data_link(section),
-             nodata_key(key_text, font = brand_font_small),
-             list(text = caption, x = 0.01, y = 0, xref = "paper", yref = "paper",
-                  xanchor = "left", yanchor = "top", showarrow = FALSE, align = "left",
-                  font = list(color = "#8a8278", family = "DM Sans, sans-serif", size = 10)))) |>
-    config(displayModeBar = FALSE, scrollZoom = FALSE)
+           margin = list(l = 0, r = 0, t = 30, b = 0)) |>
+    config(displayModeBar = FALSE, scrollZoom = FALSE) |>
+    map_card(key_text, caption, section)
 }
 
 add_names <- function(d) d |> left_join(country_names, by = "iso3") |> filter(!is.na(country))

@@ -109,6 +109,29 @@ body {
   background: $gold;
 }
 
+/* Map cards: "Get the data" link in the top-right corner, note (key + source) under the map */
+.card-body { position: relative; }
+.get-data {
+  position: absolute;
+  top: .55rem;
+  right: 1rem;
+  z-index: 5;
+  font-size: .75rem;
+  letter-spacing: .04em;
+  color: $gold-light !important;
+  text-decoration: none;
+}
+.get-data:hover { color: $gold !important; text-decoration: underline; }
+.map-note {
+  flex: 0 0 auto;
+  padding: .35rem .2rem 0;
+  font-size: .68rem;
+  line-height: 1.5;
+  color: #8a8278;
+}
+.map-note .nodata-key { color: $text-light; margin-right: .8rem; white-space: nowrap; }
+.map-note .nodata-key::before { content: "\25A0  "; color: #8A8A8F; }   /* grey square = no data */
+
 /* "About this data" text */
 .about-text {
   font-size: .82rem;
@@ -123,7 +146,12 @@ body {
 /* ---------- Phones and small tablets ---------- */
 @media (max-width: 768px) {
 
-  /* Title bar: smaller logo, title and subtitle */
+  /* Title bar: smaller logo, title and subtitle. The title may wrap,
+     so the header never gets wider than the screen. */
+  .navbar-brand-container { flex-shrink: 1 !important; min-width: 0; max-width: 100%; gap: .6rem; }
+  .navbar-brand-container .navbar-title { flex: 1 1 auto; min-width: 0; }
+  .navbar-brand-container .navbar-title-text { white-space: normal; }
+  .quarto-dashboard #quarto-dashboard-header .navbar .navbar-subtitle { width: auto; min-width: 0; }
   .navbar-logo, .navbar-brand img { max-height: 28px; }
   .quarto-dashboard #quarto-dashboard-header .navbar .navbar-title-text { font-size: 1.05rem; }
   .quarto-dashboard #quarto-dashboard-header .navbar .navbar-subtitle { font-size: .5rem; letter-spacing: .1em; }
@@ -138,13 +166,18 @@ body {
     min-height: 0 !important;
   }
 
-  /* Charts and table: a comfortable fixed height once stacked */
+  /* Charts and table: a comfortable height once stacked.
+     Map cards grow to fit the note under the map, so nothing is cut off. */
   .card:has(.plotly), .card:has(.reactable) {
     min-height: 420px !important;
     height: 420px !important;
   }
+  .card:has(.map-note) {
+    min-height: 0 !important;
+    height: auto !important;
+  }
   .card .plotly.html-widget {
-    height: 360px !important;
+    height: 340px !important;
   }
 
   /* Smaller card titles and About text */
