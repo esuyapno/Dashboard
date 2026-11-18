@@ -8,6 +8,11 @@ format:
     scrolling: true
     theme: [darkly, brand.scss]
     logo: logo.png
+    nav-buttons:
+      - text: "Back to sa-analytical.com"
+        icon: arrow-left
+        href: https://sa-analytical.com
+        aria-label: "Back to the SA Analytical website"
     embed-resources: true
     include-after-body:
       text: |
@@ -19,6 +24,15 @@ format:
           if (!link || !menu || !menu.classList.contains('show')) return;
           bootstrap.Collapse.getOrCreateInstance(menu, { toggle: false }).hide();
           window.scrollTo({ top: 0 });
+        });
+
+        // "Back to sa-analytical.com": Quarto puts this button inside the tab menu, which is
+        // hidden on phones. Move it into the top bar so it shows on every screen
+        // (top-right corner on computers; next to the menu button on phones).
+        document.addEventListener('DOMContentLoaded', function () {
+          var back = document.querySelector('.quarto-dashboard-links');
+          var tabs = document.getElementById('dashboard-collapse');
+          if (back && tabs) { tabs.parentNode.insertBefore(back, tabs); back.classList.add('back-home'); }
         });
         </script>
 output-file: index.html
